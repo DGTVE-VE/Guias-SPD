@@ -11,6 +11,7 @@ $nombre = filter_input(INPUT_POST, 'nombre');
 
 if (!file_exists($materialesDir)) {
     mkdir($materialesDir);
+    chmod($materialesDir, 777);
 }
 $tmp_name = $_FILES['material']['tmp_name'];
 $name = $_FILES['material']['name'];
@@ -27,6 +28,6 @@ foreach ($materiales as $material){
     $daoGuias->update($material);
 }
 
-header('Location: index.php?m=uploadMaterial');
+header('Location: index.php?m=uploadMateriales');
 die ();
 

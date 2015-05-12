@@ -27,8 +27,10 @@ $material = $daoGuias->queryGuias();
                     print '<tr><td>';
                     print $guia->gUIADEESTUDIO;
                     print '</td>';
-                    print '<td>';                    
-                    print '<a href="' . $guia->uRLGUIA. '"> PDF </a>';                    
+                    print '<td>';                         
+                    if ($guia->uRLGUIA !== NULL){
+                        print '<a href="' . $guia->uRLGUIA. '"> PDF </a>';
+                    }                    
                     print '</td>';
                     print '<td> <a href="?m=showGuia&nombre=' . $guia->gUIADEESTUDIO. '">';
                     print 'Bibliografía </a></td></tr>';

@@ -10,7 +10,9 @@ $nombre = filter_input(INPUT_POST, 'nombre');
 
 if (!file_exists($guiasDir)) {
     mkdir($guiasDir);
+    chmod($guiasDir, 777);
 }
+
 $tmp_name = $_FILES['guia']['tmp_name'];
 $name = $_FILES['guia']['name'];
 

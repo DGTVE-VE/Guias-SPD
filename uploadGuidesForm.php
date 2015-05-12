@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
 }
 require 'validaUsuario.php';
     
-$bibliografia = DAOFactory::getBibliografiaDAO()->queryGuias();
+$bibliografia = DAOFactory::getBibliografiaDAO()->queryGuiasNullURL();
 ?>
 <h2> Sólo se muestran las guías que no tienen PDF</h2>
 <div class="row">

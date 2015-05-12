@@ -14,5 +14,5 @@ $material->uRLMATERIAL = "#";
 $dao->update($material);
 
 
-header('Location: index.php?m=uploadMaterial');
+header('Location: index.php?m=uploadMateriales');
 die ();

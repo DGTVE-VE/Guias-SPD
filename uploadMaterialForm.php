@@ -6,6 +6,8 @@ require 'validaUsuario.php';
 
 $bibliografia = DAOFactory::getBibliografiaDAO()->queryMateriales();
 ?>
+<h2> Sólo se muestran los materiales que no tienen PDF. </h2>
+<h3> Si no quieres que se muestre el material, presiona el botón <span>Omitir</span></h3>
 <div class="row">
     <div class="col-md-12">
         <table class="table-condensed table table-bordered table-hover table-responsive table-striped">
@@ -27,8 +29,9 @@ $bibliografia = DAOFactory::getBibliografiaDAO()->queryMateriales();
                         '</td>';
 
                 print '<td>' . $b->bIBLIOGRAFIA . '</td>';
-                print '<td>' . $b->nOMENCLATURA . '</td>';
-                print '<td>' . $b->lIGAOREFERENCIA . '</td>';
+                print '<td>' . $b->nOMENCLATURA . '</td>';                
+                print '<td>' . ($b->lIGAOREFERENCIA == NULL || trim($b->lIGAOREFERENCIA) == '')? '':
+                      '<a href="'.  $b->lIGAOREFERENCIA . '"> Link </a></td>';
                 print '</tr>';
             }
             ?>

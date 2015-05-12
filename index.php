@@ -3,7 +3,7 @@ session_start();
 require 'include_dao.php';
 $module = filter_input(INPUT_GET, 'm');
 if ($module === NULL || $module === false) {
-    $module = 'uploadGuia';
+    $module = 'showGuias';
 }
 
 $modulos = [
@@ -61,9 +61,12 @@ if (array_key_exists($module, $modulos)) {
                         </div>
                         <button type="submit" class="btn btn-success">Inicia sesión</button>                            
                     </form>
-                <?php } else {?>
-                    <a href="cierraSesion.php"> Cierra Sesión </a>
-                <?php }?>
+                <?php } ?>
+                <?php if (isset($_SESSION['usuario'])){?>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="cierraSesion.php">Cerrar sesión</a></li>
+                    </ul>
+                <?php } ?>
                 </div><!--/.navbar-collapse -->
                 
             </div>
@@ -77,8 +80,7 @@ if (array_key_exists($module, $modulos)) {
             <div class="row"> 
                 <div class="col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li> <a href="?m=showGuias">Guias</a></li>
-                        <li> <a href="#">Materiales </a></li>
+                        <li> <a href="?m=showGuias">Guias</a></li>                        
                         <li> <a href="#">Perfiles </a></li>
                         <li> <a href="#">Repositorio </a></li>                        
                     </ul>
@@ -86,9 +88,7 @@ if (array_key_exists($module, $modulos)) {
                     <h3>Administración</h3>
                     <ul class="nav nav-sidebar">
                         <li> <a href="?m=uploadGuia">Sube Guias</a></li>
-                        <li> <a href="?m=uploadMateriales">Sube Materiales</a></li>
-                        <li> <a href="#">Modifica Guias</a></li>
-                        <li> <a href="#">Modifica Materiales</a></li>                        
+                        <li> <a href="?m=uploadMateriales">Sube Materiales</a></li>                        
                     </ul>
                     <?php }?>
                 </div>
@@ -103,8 +103,5 @@ if (array_key_exists($module, $modulos)) {
                 </div>
             </div>
         </div>
-
-
-        
     </body>
 </html>

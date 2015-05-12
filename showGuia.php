@@ -12,14 +12,15 @@ $guias3 = $dao->queryByGuia_Dimension($nombre, 3);
 $guias4 = $dao->queryByGuia_Dimension($nombre, 4);
 $guias5 = $dao->queryByGuia_Dimension($nombre, 5);
 
+
 function showMateriales($guias) {
     foreach ($guias as $guia){
         print '<br>';
-        if ($guia->uRLMATERIAL !== NULL) {
+        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
             print '<a href="' . $guia->uRLMATERIAL . '">';
         }
         print trim($guia->bIBLIOGRAFIA);
-        if ($guia->uRLMATERIAL !== NULL) {
+        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
             print '</a>';
         }
         print '<br>';

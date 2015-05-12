@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/05/2015, 12:08:29 PM
+    Author     : SMARTINEZ
+*/
+
+.footer{
+    background: #a7a6a4; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a7a6a4 0%, #cdcecc 43%, #f3f3f3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7a6a4), color-stop(43%,#cdcecc), color-stop(100%,#f3f3f3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a7a6a4 0%,#cdcecc 43%,#f3f3f3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a7a6a4 0%,#cdcecc 43%,#f3f3f3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a7a6a4 0%,#cdcecc 43%,#f3f3f3 100%); /* IE10+ */
+    /*background: linear-gradient(to bottom,  #a7a6a4 0%,#cdcecc 43%,#f3f3f3 100%);  W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7a6a4', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+    height: 150px;
+    font:20px bold  Arial;
+}
+
+.logofoot{
+    width: 120px;
+    height: 60px;
+}
+.logofoot1{
+    width: 150px;
+    height: 60px;
+}
+.logofoot2{
+    width: 200px;
+    height: 60px;
+}

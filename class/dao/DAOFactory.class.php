@@ -15,6 +15,20 @@ class DAOFactory{
 	}
 
 	/**
+	 * @return BibliografiaMsDAO
+	 */
+	public static function getBibliografiaMsDAO(){
+		return new BibliografiaMsMySqlExtDAO();
+	}
+
+	/**
+	 * @return PerfilesDAO
+	 */
+	public static function getPerfilesDAO(){
+		return new PerfilesMySqlExtDAO();
+	}
+
+	/**
 	 * @return UsuariosDAO
 	 */
 	public static function getUsuariosDAO(){

@@ -16,6 +16,7 @@ if (md5($password) == $usuario[0]->pass){
     $_SESSION['usuario'] = $usuario;
     header('Location: index.php?m=uploadGuia');
 } else {
+//    print "-".md5($password)."-";
     $_SESSION['mensaje'] = 'El password es incorrecto';
     header('Location: index.php?m=mensaje');
 }

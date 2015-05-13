@@ -54,5 +54,6 @@ if ($_FILES['archivoRecurso']) {
     }
 }
 
-header('Location: index.php?m=showGuias');
+
+
 die ();

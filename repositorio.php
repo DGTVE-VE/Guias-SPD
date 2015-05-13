@@ -2,9 +2,9 @@
     <div class="col-md-12">
         <div class="col-md-5">
             <h3>Ingresa filtro:</h3>
-            <form role="search">
+            <form role="search" action="?m=repositorio" method="post">
                 <div class="input-group">
-                    <input type="text" class="form-control"  placeholder="Buscar">
+                    <input type="text" class="form-control" name="busqueda"  placeholder="Buscar">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -12,9 +12,47 @@
             </form>
         </div>
         <div class="col-md-7"></div>
-        <div class="col-md-12">
-            
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+<?php
+if (isset($_POST['busqueda'])) {
+    $busqueda = $_POST['busqueda'];
+    $dao = DAOFactory::getBibliografiaDAO();
+    $repositorio = $dao->queryRepositorio($busqueda);
+    $mensaje = 'Resultados de la consulta';
+    echo'<table id="tblRepositorio" class="table-hover">';
+    echo'    <caption> ' . $mensaje . '</caption>';
+    echo'    <thead>';
+    echo'        <tr>';
+    echo'            <th>BIBLIOGRAFÍA</th>';
+    echo'        </tr>';
+    echo'    </thead>';
+    echo'    <tbody>';
+    
+    foreach ($repositorio as $rep) {
+        
+        if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
+        echo'<tr>';   
+        
+             echo'<td><a href="'.$rep->uRLMATERIAL.'">' . $rep->bIBLIOGRAFIA . '</a></td>';             
+        echo'</tr>';
+        }
+    }
+    echo'</tbody>';
+    echo'</table>';
+} else {
+    $mensaje = '';
+    echo '<div class="row">';
+    echo '<div class="col-md-12 text-center" id="contenidoVacio">';
+    echo '<br><br><bt>';
+    echo '<h3>'.$mensaje.'</h3>';
+    echo '</div>';
+    echo '</div>';
+}
+?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<?php

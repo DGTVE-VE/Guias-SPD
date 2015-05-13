@@ -21,6 +21,7 @@ $modulos = [
     "uploadMaterialesMS" => "uploadMaterialMSForm.php",
     "showPerfiles" => "showPerfiles.php",
     "uploadPerfiles" => "uploadPerfilesForm.php"
+
 ];
 
 //Modulo por default
@@ -41,6 +42,10 @@ if (array_key_exists($module, $modulos)) {
         <link href="css/estilo.css" type="text/css" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>        
+        
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/scrollbar.js"></script>
+        
         <script src="js/spd.js"></script>
         <title>Guías Servicio Profesional Docente</title>
     </head>

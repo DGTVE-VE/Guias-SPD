@@ -13,6 +13,10 @@
 	require_once('class/dto/Bibliografia.class.php');
 	require_once('class/mysql/BibliografiaMySqlDAO.class.php');
 	require_once('class/mysql/ext/BibliografiaMySqlExtDAO.class.php');
+	require_once('class/dao/BibliografiaMediaSuperiorDAO.class.php');
+	require_once('class/dto/BibliografiaMediaSuperior.class.php');
+	require_once('class/mysql/BibliografiaMediaSuperiorMySqlDAO.class.php');
+	require_once('class/mysql/ext/BibliografiaMediaSuperiorMySqlExtDAO.class.php');
 	require_once('class/dao/BibliografiaMsDAO.class.php');
 	require_once('class/dto/BibliografiaM.class.php');
 	require_once('class/mysql/BibliografiaMsMySqlDAO.class.php');

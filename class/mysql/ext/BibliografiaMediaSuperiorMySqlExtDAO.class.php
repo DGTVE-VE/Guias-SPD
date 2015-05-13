@@ -8,7 +8,7 @@
 class BibliografiaMediaSuperiorMySqlExtDAO extends BibliografiaMediaSuperiorMySqlDAO{
 
 	public function queryPerfiles(){
-		$sql = 'SELECT DISTINCT Perfil, URL_PERFIL FROM bibliografia_media_superior';
+		$sql = 'SELECT DISTINCT PERFIL, URL_PERFIL FROM bibliografia_media_superior';
 		$sqlQuery = new SqlQuery($sql);
 		$tab = QueryExecutor::execute($sqlQuery);
 		$ret = array();

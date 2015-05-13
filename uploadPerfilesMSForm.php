@@ -28,14 +28,14 @@ $perfiles = $dao->queryPerfiles();
                     print '<td>'. 
                               '<form action="uploadPerfilMS.php" method="POST" enctype="multipart/form-data">'.
                                 '<input type="file" name="perfil">'.
-                                '<input type="hidden" name="id" value="'.$perfil->nUMERO.'" >'.
+                                '<input type="hidden" name="perfil" value="'.$perfil->pERFIL.'" >'.
                                 '<input type="submit" value="Sube perfil">'.
                               '</form>'.
                               '</td>'; 
                     print '<td>';
                     print $perfil->pERFIL;
                     print '</td>';
-                    
+                    print '<td>';
                     if ($perfil->uRLPERFIL !== NULL && trim($perfil->uRLPERFIL)!= false){
                         print '<a href="' . $perfil->uRLPERFIL. '"> PDF </a>';
                     }                    

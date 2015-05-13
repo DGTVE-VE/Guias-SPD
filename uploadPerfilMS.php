@@ -6,7 +6,7 @@ require_once './include_dao.php';
 require_once './funciones.php';
 
 $perfilesDir = "./perfilesMS";
-$id = filter_input(INPUT_POST, 'id');
+$id = filter_input(INPUT_POST, 'perfil');
 
 
 if (!file_exists($perfilesDir)) {
@@ -23,9 +23,11 @@ move_uploaded_file($tmp_name, $path);
 
 /* @var $dao PerfilesDAO*/
 $dao = DAOFactory::getBibliografiaMediaSuperiorDAO();
-$perfil = $dao->load($id);
-$perfil->uRLPERFIL = $path;
+$perfiles = $dao->queryByPERFIL($id);
+foreach ($perfiles as $perfil){
+  $perfil->uRLPERFIL = $path;
+  $dao->update($perfil);
+}
 
-$dao->update($perfil);
 header('Location: index.php?m=uploadPerfilesMS');
 die ();

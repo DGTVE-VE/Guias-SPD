@@ -59,7 +59,11 @@ hr{
 /*barra*/
 
 .dropdown-submenu {
-    position: relative;
+    position: relative;    
+}
+.nav li a:hover {
+    background: #007FBE;
+    color: white;
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -88,6 +92,7 @@ hr{
     border-left-color: #ccc;
     margin-top: 5px;
     margin-right: -10px;
+    
 }
 
 .dropdown-submenu:hover>a:after {

@@ -156,27 +156,25 @@ if (array_key_exists($module, $modulos)) {
             </div>
         </div>
         <div class="col-md-2"></div>
-        <footer class="footer col-md-12">
+        <footer id="footer" class="col-md-12">
+        <div class="footer-bottom">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12"> 
-                        <img class="col-md-1 logofoot2" src="imgs/sep.png">
-                        <img class="col-md-1 logofoot" src="imgs/seb.jpg">
-                        <img class="col-md-1 logofoot" src="imgs/imgres.jpg">
-                        <img class="col-md-1 logofoot" src="imgs/inee.png">
-                        <img class="col-md-1 logofoot1" src="imgs/logo-dgtve.jpg">
-                        <img class="col-md-1 logofoot" src="imgs/log_ilce.png">
-                        <img class="col-md-1 logofoot" src="imgs/logounadm.png">
-                        <img class="col-md-1 logofoot" src="imgs/normateca.png">
-
-                    </div>
-                </div><hr>
-
-                <div class="row">
-                    <p class="text-muted ">© 2015 DGTVE
-                        Desarrollado por Ventana Educativa</p>
+                <div class="pull-right">
+                    <ul class="nav nav-pills payments">
+                            <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/logo-tve-solo-esfera.png"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/log_ilce.png"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/logounadm.png"></li>
+                        <li><img class="col-md-1 logofoot" src="imgs/normateca.png"></li>
+                    </ul> <br>
+                    <hr>
+                    <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
                 </div>
             </div>
+        </div>
         </footer>
     </body>
 </html>

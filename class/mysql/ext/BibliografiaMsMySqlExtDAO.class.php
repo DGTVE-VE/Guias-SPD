@@ -37,6 +37,21 @@ class BibliografiaMsMySqlExtDAO extends BibliografiaMsMySqlDAO{
         }
         return $ret;        
     }
+    public function queryGuiasByFuncionProceso($funcion, $proceso) {
+        $sql = 'SELECT DISTINCT 
+                GUIA_DE_ESTUDIO, FUNCION, 
+                PROCESO, NIVEL_SERVICIO, URL_GUIA
+                FROM bibliografia_ms 
+                WHERE PROCESO = \''.$proceso.'\' AND FUNCION = \''. $funcion .
+                '\' ORDER BY GUIA_DE_ESTUDIO ';        
+        $sqlQuery = new SqlQuery($sql);
+        $tab = QueryExecutor::execute($sqlQuery);
+        $ret = array();
+        for ($i = 0; $i < count($tab); $i++) {
+            $ret[$i] = $this->readGuia($tab[$i]);
+        }
+        return $ret;        
+    }
     public function queryGuias() {
         $sql = 'SELECT DISTINCT DISTINCT GUIA_DE_ESTUDIO, FUNCION, '
                 . ' PROCESO, NIVEL_SERVICIO, URL_GUIA '

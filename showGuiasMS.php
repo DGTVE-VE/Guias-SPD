@@ -6,11 +6,12 @@ require_once './include_dao.php';
 
 /*@var daoGuias BibliografiaDAO*/
 $daoGuias = DAOFactory::getBibliografiaMsDAO();
-$material = $daoGuias->queryGuias();
+$material = $daoGuias->queryGuiasByFuncionProceso($_SESSION['funcion'], $_SESSION['proceso']);
 
 ?>
 <div class="page-header">
     <h1>Guias Media Superior</h1>
+    <h2><?php print $_SESSION['proceso'].'-' .$_SESSION['funcion']?>  </h2>
 </div>
 <div class="row">
     <div class="col-md-2"></div>

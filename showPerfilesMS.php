@@ -10,7 +10,7 @@ $perfiles = $dao->queryPerfiles();
 
 ?>
 <div class="page-header">
-    <h1>Perfiles</h1>
+    <h1>Perfiles Media Superior</h1>
 </div>
 <div class="row">
     <div class="col-md-2"></div>

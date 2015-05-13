@@ -1,6 +1,14 @@
 <?php
 session_start();
 require 'include_dao.php';
+
+abstract class PROCESOS {
+
+    const INGRESO = 'INGRESO';
+    const PROMOCION = 'PROMOCIÓN';
+
+}
+
 $module = filter_input(INPUT_GET, 'm');
 if ($module === NULL || $module === false) {
     $module = 'showGuias';
@@ -17,11 +25,10 @@ $modulos = [
     "repositorio" => "repositorio.php",
     "showGuiasMS" => "showGuiasMS.php",
     "showGuiaMS" => "showGuiaMS.php",
-    "uploadGuiaMS" => "uploadGuidesMSForm.php",    
+    "uploadGuiaMS" => "uploadGuidesMSForm.php",
     "uploadMaterialesMS" => "uploadMaterialMSForm.php",
     "showPerfiles" => "showPerfiles.php",
     "uploadPerfiles" => "uploadPerfilesForm.php"
-
 ];
 
 //Modulo por default
@@ -42,10 +49,10 @@ if (array_key_exists($module, $modulos)) {
         <link href="css/estilo.css" type="text/css" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>        
-        
+
         <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/scrollbar.js"></script>
-        
+
         <script src="js/spd.js"></script>
         <title>Guías Servicio Profesional Docente</title>
     </head>
@@ -67,27 +74,21 @@ if (array_key_exists($module, $modulos)) {
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle">Guias <b class="caret"></b></a>
+                        <li class="dropdown deeper parent">
+                            <a data-toggle="dropdown" class="dropdown-toggle">Ingreso<b class="caret"></b></a>
                             <ul role="menu" class="dropdown-menu">
-                                <li><a href="?m=showGuias">Básica</a></li>
-                                <li><a href="?m=showGuiasMS">Media Superior</a></li>
-                            </ul>
-                        </li>                    
-                        <li><a href="?m=showPerfiles">Perfiles Educación Básica</a></li>
-                        <li><a href="?m=repositorio">Repositorio</a></li>
-                        <?php if (isset($_SESSION['usuario'])) { ?>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle"> Subir Documentos <b class="caret"></b></a>
-                            <ul role="menu" class="dropdown-menu">
-                                <li><a href="?m=uploadGuia">Guias Básica</a></li>
-                                <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>
-                                <li><a href="?m=uploadMateriales">Materiales Básica</a></li>
-                                <li><a href="?m=uploadMaterialesMS">Materiales Media Superior</a></li>
-                                <li><a href="?m=uploadPerfiles">Perfiles Educación Básica</a></li>
-                            </ul>
+                                <li class="dropdown dropdown-submenu">
+                                    <a data-toggle="dropdown" class="dropdown-toggle">Educación Básica<b class="caret"></b></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="?m=showPerfiles">Docentes</a></li>
+                                        <li><a href="?m=showPerfiles">Técnicos Docentes</a></li>
+                                    </ul>                            
+                                </li>
+                                <li><a href="?m=showPerfiles">Media Superior</a></li>
+                            </ul>                            
                         </li>  
-                        <?php } ?>
+                        <li><a href="?m=filtro&filtro=ingreso">Ingreso</a></li>
+                        <li><a href="?m=filtro&filtro=ingreso">Promoción</a></li>                        
                     </ul>
                     <?php if (!isset($_SESSION['usuario'])) { ?>                
                         <form method="POST" action="login.php" class="navbar-form navbar-right">
@@ -108,62 +109,47 @@ if (array_key_exists($module, $modulos)) {
                 </div>
             </nav>
 
-            <!--        <nav class="navbar navbar-inverse navbar-fixed-top">
-                        <div class="container">
-                            <div class="navbar-header">                    
-                                <a class="navbar-brand" href="#">GSPD</a>
-                                
-                            </div>
-                            <div id="navbar" >
-                                <ul class="nav navbar-nav">
-                                    <li><a href="?m=showGuias">Guías</a></li>
-                                    <li><a href="?m=uploadGuia">Subir</a></li>
-                                </ul>
-                            </div>/.nav-collapse 
-                            <div class="navbar-collapse collapse">
-                                
-            <?php // if (!isset($_SESSION['usuario'])){?>                
-                                <form method="POST" action="login.php" class="navbar-form navbar-right">
-                                    <div class="form-group">
-                                        <input type="text" name="email" placeholder="Email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" placeholder="Password" class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Inicia sesión</button>                            
-                                </form>
-            <?php // } ?>
-            <?php // if (isset($_SESSION['usuario'])){?>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="cierraSesion.php">Cerrar sesión</a></li>
-                                </ul>
-            <?php // } ?>
-                            </div>/.navbar-collapse 
-                            
-                        </div>
-                    </nav>-->
-            <div class="container-fluid theme-showcase" role="main">
-                <!-- Main jumbotron for a primary marketing message or call to action -->
-                <!--            <div class="jumbotron">
-                                <h1>Servicio profesional docente</h1>
-                                <p>Descarga la guía y los recursos asociados a esta para estudiar</p>
-                            </div>-->
+            <div class="container-fluid theme-showcase" role="main">                
                 <div class="row"> 
-                    <!--                <div class="col-md-2 sidebar">
-                                        <ul class="nav nav-sidebar">
-                                            <li> <a href="?m=showGuias">Guias</a></li>                        
-                                            <li> <a href="#">Perfiles </a></li>
-                                            <li> <a href="#">Repositorio </a></li>                        
-                                        </ul>
-                    <?php // if (isset ($_SESSION['usuario'])){?>
-                                        <h3>Administración</h3>
-                                        <ul class="nav nav-sidebar">
-                                            <li> <a href="?m=uploadGuia">Sube Guias</a></li>
-                                            <li> <a href="?m=uploadMateriales">Sube Materiales</a></li>                        
-                                        </ul>
-                    <?php // }?>
-                                    </div>-->
-                    <div class="col-md-12">
+                    <div class="col-md-2 sidebar">
+                        <ul class="nav nav-sidebar">
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle">Nivel Modalidad y Asignatura <b class="caret"></b></a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="?m=showGuias">Básica</a></li>
+                                    <li><a href="?m=showGuiasMS">Media Superior</a></li>
+                                </ul>
+                            </li>   
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="?m=showPerfiles">Básica</a></li>
+                                    <li><a href="?m=showPerfiles">Media Superior</a></li>
+                                </ul>                            
+                            </li>    
+                            <li><a href="?m=showGuias">Guias de estudio</a></li>
+                            <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
+                            <li><a href="?m=estrategias">Estrategias de estudio</a></li>
+                            <li><a href="?m=simulador">Simulador de examen</a></li>
+                            <li><a href="?m=faq">Preguntas frecuentes</a></li>
+                            <li><a href="?m=contacto">Contacto</a></li>
+
+                            <?php if (isset($_SESSION['usuario'])) { ?>
+                                <h3>Administración</h3>
+                                <li class="dropdown nav nav-sidebar">
+                                    <a data-toggle="dropdown" class="dropdown-toggle"> Subir Documentos <b class="caret"></b></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="?m=uploadGuia">Guias Básica</a></li>
+                                        <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>
+                                        <li><a href="?m=uploadMateriales">Materiales Básica</a></li>
+                                        <li><a href="?m=uploadMaterialesMS">Materiales Media Superior</a></li>
+                                        <li><a href="?m=uploadPerfiles">Perfiles Educación Básica</a></li>
+                                    </ul>
+                                </li>  
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <div class="col-md-10">
                         <?php require $modulo; ?>
                     </div>
                 </div>

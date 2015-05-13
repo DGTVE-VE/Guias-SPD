@@ -50,7 +50,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     public function queryGuiasNullURL() {
         $sql = 'SELECT DISTINCT '
                 . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO'
+                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA'
                 . ' FROM bibliografia WHERE URL_GUIA IS NULL';
         $sqlQuery = new SqlQuery($sql);
         $tab = QueryExecutor::execute($sqlQuery);
@@ -63,7 +63,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     public function queryGuias() {
         $sql = 'SELECT DISTINCT '
                 . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO'
+                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA'
                 . ' FROM bibliografia ORDER BY GUIA_DE_ESTUDIO';
         $sqlQuery = new SqlQuery($sql);
         $tab = QueryExecutor::execute($sqlQuery);
@@ -79,6 +79,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
         $bibliografia->fUNCION = $row['FUNCION'];
         $bibliografia->pROCESO = $row['PROCESO'];
         $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];        
+        $bibliografia->uRLGUIA = $row['URL_GUIA'];        
         return $bibliografia;
     }
 

@@ -5,22 +5,25 @@ if (!isset($_SESSION)) {
 
 $nombre = filter_input(INPUT_GET, 'nombre');
 
-$dao = DAOFactory::getBibliografiaDAO();
-$guias1 = $dao->queryByGuia_Dimension($nombre, 1);
-$guias2 = $dao->queryByGuia_Dimension($nombre, 2);
-$guias3 = $dao->queryByGuia_Dimension($nombre, 3);
-$guias4 = $dao->queryByGuia_Dimension($nombre, 4);
-$guias5 = $dao->queryByGuia_Dimension($nombre, 5);
+$dao = DAOFactory::getBibliografiaMsDAO();
+$guias1 = $dao->queryByGuia_Dimension($nombre, '1');
+$guias2 = $dao->queryByGuia_Dimension($nombre, '2');
+$guias3 = $dao->queryByGuia_Dimension($nombre, '3');
+$guias4 = $dao->queryByGuia_Dimension($nombre, '4');
+$guias5 = $dao->queryByGuia_Dimension($nombre, '5');
+$guias6 = $dao->queryByGuia_Dimension($nombre, 'GENERAL');
+$guias7 = $dao->queryByGuia_Dimension($nombre, 'SUGERIDA');
 
 
 function showMateriales($guias) {
+    /* @var $guia BibliografiaM*/
     foreach ($guias as $guia){
         print '<br>';
-        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
-            print '<a href="' . $guia->uRLMATERIAL . '">';
+        if ($guia->url_material !== NULL && $guia->url_material != '#') {
+            print '<a href="' . $guia->url_material . '">';
         }
         print trim($guia->bIBLIOGRAFIA);
-        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
+        if ($guia->url_material !== NULL && $guia->url_material != '#') {
             print '</a>';
         }
         print '<br>';
@@ -59,6 +62,12 @@ function showMateriales($guias) {
                 <?php } if (count($guias5)>0){?>
                 <li role="presentation">
                     <a href="#d5" aria-controls="d5" role="tab" data-toggle="tab">Dimensión 5</a></li>
+                <?php } if (count($guias6)>0){?>
+                <li role="presentation">
+                    <a href="#d6" aria-controls="d6" role="tab" data-toggle="tab">GENERAL</a></li>
+                <?php } if (count($guias7)>0){?>
+                <li role="presentation">
+                    <a href="#d7" aria-controls="d7" role="tab" data-toggle="tab">SUGERIDA</a></li>
                 <?php } ?>
             </ul>
 
@@ -79,6 +88,13 @@ function showMateriales($guias) {
                 <div role="tabpanel" class="tab-pane " id="d5">
                     <?php showMateriales($guias5);?>
                 </div>
+                <div role="tabpanel" class="tab-pane " id="d6">
+                    <?php showMateriales($guias6);?>
+                </div>
+                <div role="tabpanel" class="tab-pane " id="d7">
+                    <?php showMateriales($guias7);?>
+                </div>
+                
             </div>
 
         </div>

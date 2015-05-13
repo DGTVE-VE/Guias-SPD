@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="contenidoRepositorio">
     <div class="col-md-12">
         <div class="col-md-5">
             <h3>Ingresa filtro:</h3>
@@ -21,7 +21,7 @@ if (isset($_POST['busqueda'])) {
     $dao = DAOFactory::getBibliografiaDAO();
     $repositorio = $dao->queryRepositorio($busqueda);
     $mensaje = 'Resultados de la consulta';
-    echo'<table id="tblRepositorio" class="table-hover">';
+    echo'<table id="tblRepositorio" class="table table-bordered">';
     echo'    <caption> ' . $mensaje . '</caption>';
     echo'    <thead>';
     echo'        <tr>';
@@ -33,23 +33,14 @@ if (isset($_POST['busqueda'])) {
     foreach ($repositorio as $rep) {
         
         if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
-        echo'<tr>';   
-        
+        echo'<tr>';           
              echo'<td><a href="'.$rep->uRLMATERIAL.'">' . $rep->bIBLIOGRAFIA . '</a></td>';             
         echo'</tr>';
         }
     }
     echo'</tbody>';
     echo'</table>';
-} else {
-    $mensaje = '';
-    echo '<div class="row">';
-    echo '<div class="col-md-12 text-center" id="contenidoVacio">';
-    echo '<br><br><bt>';
-    echo '<h3>'.$mensaje.'</h3>';
-    echo '</div>';
-    echo '</div>';
-}
+} else{ echo 'Búsqueda';} 
 ?>
                 </div>
             </div>

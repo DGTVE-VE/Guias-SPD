@@ -7,7 +7,9 @@ and open the template in the editor.
     Created on : 12/05/2015, 12:08:29 PM
     Author     : SMARTINEZ
 */
-
+*{
+    /*border: 1px dashed #007FBE;*/
+}
 #footer{
     background: #a7a6a4; /* Old browsers */
     background: -moz-linear-gradient(top,  #a7a6a4 0%, #cdcecc 43%, #f3f3f3 100%); /* FF3.6+ */
@@ -53,9 +55,19 @@ hr{
     color: white;
     width: 100%;
 }
+#tblContacto{
+ width: 100%;
+ border: 2px solid #F1F1F1;
+}
 
+#tblContacto th{
+    color: #007FBE;
+    font-size: 15px;
+}
 
-
+#espacios{
+    width: 10%;
+}
 /*barra*/
 
 .dropdown-submenu {

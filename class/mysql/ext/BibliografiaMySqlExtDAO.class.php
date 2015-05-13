@@ -7,8 +7,30 @@
  * @date: 2015-05-11 17:30
  */
 class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
+    public function queryRepositorio($busqueda){
+//        $sql = 'SELECT * FROM bibliografia WHERE MATCH(bibliografia) AGAINST (\''.$busqueda.'\')';
+       
+        $sql ='SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
+                . '(SELECT * FROM bibliografia WHERE MATCH(BIBLIOGRAFIA) '
+                . 'AGAINST (\''.$busqueda.'\')) as TEMP';
+//                . ' WHERE URL_MATERIAL != "" ';
+        $sqlQuery = new SqlQuery($sql);        
+        $tab = QueryExecutor::execute($sqlQuery);        
+        $ret = array();
+        for ($i = 0; $i < count($tab); $i++) {
+            $ret[$i] = $this->readPartialRow($tab[$i]);
+        }
+        return $ret;
+        
+    }
+    protected function readPartialRow($row) {
+        $bibliografia = new Bibliografia();        
+        $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];        
+        $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
+        return $bibliografia;
+    }
 
-     public function queryByGuia_Dimension($value, $dimension) {
+        public function queryByGuia_Dimension($value, $dimension) {
 //        var_dump ($value);
          $sql = 'SELECT * FROM bibliografia WHERE GUIA_DE_ESTUDIO = ? AND DIMENSION = ?';
         $sqlQuery = new SqlQuery($sql);

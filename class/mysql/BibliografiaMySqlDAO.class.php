@@ -306,9 +306,9 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
     protected function readRow($row) {
         $bibliografia = new Bibliografia();
         $bibliografia->nUMERO = $row['NUMERO'];
-        $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
+      $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
         $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];
-        $bibliografia->fUNCION = $row['FUNCION'];
+          $bibliografia->fUNCION = $row['FUNCION'];
         $bibliografia->pROCESO = $row['PROCESO'];
         $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];
         $bibliografia->dIMENSION = $row['DIMENSION'];

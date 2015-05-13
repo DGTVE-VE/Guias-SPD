@@ -33,3 +33,11 @@ and open the template in the editor.
     width: 200px;
     height: 60px;
 }
+#tblRepositorio{
+    width: 100%;
+    height: 300px;
+    border: 2px dashed red;
+}
+#contenidoVacio{
+    height: 300px;
+}

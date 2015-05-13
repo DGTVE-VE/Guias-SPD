@@ -2,14 +2,21 @@
 session_start();
 require 'include_dao.php';
 
+abstract class PROCESOS {
+
+  const INGRESO = 'INGRESO';
+  const PROMOCION = 'PROMOCIÓN';
+
+}
+
 $module = filter_input(INPUT_GET, 'm');
 if ($module === NULL || $module === false) {
   $module = 'home';
 }
 
 $modulos = [
-    "filtro" => "filtro.php",
     "home" => "home.php",
+    "filtro" => "filtro.php",
     "uploadGuia" => "uploadGuidesForm.php",
     "showGuias" => "showGuias.php",
     "showGuia" => "showGuia.php",
@@ -54,111 +61,92 @@ if (array_key_exists($module, $modulos)) {
     <title>Guías Servicio Profesional Docente</title>
   </head>
   <body>
-    <div class="col-md-1"></div>
-    <div class="col-md-10">           
-      <div><img src="imgs/logo.png" width="70%" class="center-block"></div>
-      <nav role="navigation" class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Menú</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!--                <a href="#" class="navbar-brand">Logotipo</a>-->
-        </div>
+    <div class='row'>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">           
+        <div><img src="imgs/logo.png" width="70%" class="center-block"></div>
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Menú</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <?php if (!isset($_SESSION['usuario'])) { ?>  
+                <li class="dropdown nav pull-right" id="menuLogin"> 
+                  <br>
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Ingreso</a>
+                  <div class="dropdown-menu" style="padding:37px;">                                                 
+                    <form method="POST" action="login.php" class="navbar-form navbar-right">
+                      <div class="form-group">
+                        <label></label>
+                        <input type="text" name="email" placeholder="Email" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label></label>
+                        <input type="password" name="password" placeholder="Password" class="form-control">
+                        <label></label>
+                      </div>
 
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.php">Inicio</a></li>                        
-            <li><a href="filtro.php?pag=showGuias&funcion=DOCENTE&proceso=INGRESO">
-                Ingreso Educación Básica Docentes</a></li>
-            <li><a href="filtro.php?pag=showGuias&funcion=DOCENTE&proceso=PROMOCION">
-                Promoción Educación Básica Docentes</a></li>                        
-            <li><a href="filtro.php?pag=showGuias&funcion=TECNICO_DOCENTE&proceso=INGRESO">
-                Ingreso Educación Básica Técnicos Docentes</a></li>                        
-            <li><a href="filtro.php?pag=showGuias&funcion=TECNICO_DOCENTE&proceso=PROMOCION">
-                Promoción Educación Básica Tecnicos Docentes</a></li>                        
-            <li><a href="filtro.php?pag=showGuiasMS&funcion=DOCENTE&proceso=INGRESO">
-                Ingreso Educación Media Superior</a></li>                        
-            <li><a href="filtro.php?pag=showGuiasMS&funcion=DOCENTE&proceso=PROMOCION">
-                Promoción Educación Media Superior</a></li>                        
-||||||| merged common ancestors
-        <script src="js/spd.js"></script>
-        <title>Guías Servicio Profesional Docente</title>
-    </head>
-    <body>
-        <div class="col-md-1"></div>
-        <div class="col-md-10">           
-            <div><img src="imgs/logo.png" width="70%" class="center-block"></div>
-            <nav role="navigation" class="navbar navbar-default">
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Menú</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!--                <a href="#" class="navbar-brand">Logotipo</a>-->
+                      <button type="submit" class="btn btn-success">Inicia sesión</button>                            
+                    </form>
+                  <?php } ?>
                 </div>
-=======
-        <script src="js/spd.js"></script>
-        <title>Guías Servicio Profesional Docente</title>
-    </head>
-    <body>
-        <div class="col-md-1"></div>
-        <div class="col-md-10">           
-            <div><img src="imgs/logo.png" width="70%" class="center-block"></div>
-            <div class="navbar navbar-default" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Menú</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <?php if (!isset($_SESSION['usuario'])) { ?>  
-                            <li class="dropdown nav pull-right" id="menuLogin"> 
-                                <br>
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Ingreso</a>
-                                <div class="dropdown-menu" style="padding:37px;">                                                 
-                                    <form method="POST" action="login.php" class="navbar-form navbar-right">
-                                        <div class="form-group">
-                                            <label></label>
-                                            <input type="text" name="email" placeholder="Email" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label></label>
-                                            <input type="password" name="password" placeholder="Password" class="form-control">
-                                            <label></label>
-                                        </div>
->>>>>>> 07558b447ad74b9bcfbd944aad14362065887b67
+              </li>
+              <?php if (isset($_SESSION['usuario'])) { ?>
+                <li class="dropdown nav pull-right" id="menuLogin"><a href="cierraSesion.php"><br>Cerrar sesión</a></li>
+              <?php } ?>
+              <ul class="nav navbar-nav">
+                <li><a class="navbar-header" href="index.php">Inicio</a></li>                                
+                <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso<b class="caret"></b></a>
+                  <ul class="dropdown-menu multi-level">
+                    <li class="dropdown-submenu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="filtro.php?pag=showGuias&proceso=INGRESO&funcion=DOCENTE">
+                            Docentes</a></li>
+                        <li><a href="filtro.php?pag=showGuias&proceso=INGRESO&funcion=TECNICO_DOCENTE">
+                            Técnicos Docentes</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Promoción<b class="caret"></b></a>
+                  <ul class="dropdown-menu multi-level">
+                    <li class="dropdown-submenu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Educación Básica</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=TECNICO_DOCENTE">
+                            Docentes</a></li>
+                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=TECNICO_DOCENTE">
+                            Técnicos Docentes</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">
+                        Educación Media Superior</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="dropdown-toggle">Reconocimiento</a></li>
+                <li><a href="#" class="dropdown-toggle">Permanencia</a></li>
+                <li><a href="?m=repositorio" class="dropdown-toggle">Repositorio</a></li>
 
-<<<<<<< HEAD
-          </ul>
-          <?php if (!isset($_SESSION['usuario'])) { ?>                
-            <form method="POST" action="login.php" class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" name="email" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" name="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Inicia sesión</button>                            
-            </form>
-          <?php } ?>
-          <?php if (isset($_SESSION['usuario'])) { ?>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="cierraSesion.php">Cerrar sesión</a></li>
-            </ul>
-          <?php } ?>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
-      </nav>
-
-      <div class="container-fluid theme-showcase" role="main">                
+      </div>
+      <div class="container theme-showcase" role="main">                
         <div class="row"> 
           <div class="col-md-2 sidebar">
             <ul class="nav nav-sidebar">
@@ -180,143 +168,8 @@ if (array_key_exists($module, $modulos)) {
               <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
               <li><a href="?m=estrategias">Estrategias de estudio</a></li>
               <li><a href="?m=simulador">Simulador de examen</a></li>
-              <li><a href="?m=faq">Preguntas frecuentes</a></li>
+              <li><a href="?m=preguntas_frecuentes">Preguntas frecuentes</a></li>
               <li><a href="?m=contacto">Contacto</a></li>
-||||||| merged common ancestors
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">Inicio</a></li>
-                        <li class="dropdown deeper parent">
-                            <a data-toggle="dropdown" class="dropdown-toggle">Ingreso<b class="caret"></b></a>
-                            <ul role="menu" class="dropdown-menu">
-                                <li class="dropdown dropdown-submenu">
-                                    <a data-toggle="dropdown" class="dropdown-toggle">Educación Básica<b class="caret"></b></a>
-                                    <ul role="menu" class="dropdown-menu">
-                                        <li><a href="?m=showPerfiles">Docentes</a></li>
-                                        <li><a href="?m=showPerfiles">Técnicos Docentes</a></li>
-                                    </ul>                            
-                                </li>
-                                <li><a href="?m=showPerfiles">Media Superior</a></li>
-                            </ul>                            
-                        </li>  
-                        <li><a href="?m=filtro&filtro=ingreso">Ingreso</a></li>
-                        <li><a href="?m=filtro&filtro=ingreso">Promoción</a></li>                        
-                    </ul>
-                    <?php if (!isset($_SESSION['usuario'])) { ?>                
-                        <form method="POST" action="login.php" class="navbar-form navbar-right">
-                            <div class="form-group">
-                                <input type="text" name="email" placeholder="Email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="password" placeholder="Password" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-success">Inicia sesión</button>                            
-                        </form>
-                    <?php } ?>
-                    <?php if (isset($_SESSION['usuario'])) { ?>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="cierraSesion.php">Cerrar sesión</a></li>
-                        </ul>
-                    <?php } ?>
-                </div>
-            </nav>
-
-            <div class="container-fluid theme-showcase" role="main">                
-                <div class="row"> 
-                    <div class="col-md-2 sidebar">
-                        <ul class="nav nav-sidebar">
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle">Nivel Modalidad y Asignatura <b class="caret"></b></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="?m=showGuias">Básica</a></li>
-                                    <li><a href="?m=showGuiasMS">Media Superior</a></li>
-                                </ul>
-                            </li>   
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="?m=showPerfiles">Básica</a></li>
-                                    <li><a href="?m=showPerfiles">Media Superior</a></li>
-                                </ul>                            
-                            </li>    
-                            <li><a href="?m=showGuias">Guias de estudio</a></li>
-                            <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
-                            <li><a href="?m=estrategias">Estrategias de estudio</a></li>
-                            <li><a href="?m=simulador">Simulador de examen</a></li>
-                            <li><a href="?m=faq">Preguntas frecuentes</a></li>
-                            <li><a href="?m=contacto">Contacto</a></li>
-=======
-                                        <button type="submit" class="btn btn-success">Inicia sesión</button>                            
-                                    </form>
-                                <?php } ?>
-                            </div>
-                        </li>
-                        <?php if (isset($_SESSION['usuario'])) { ?>
-                            <li class="dropdown nav pull-right" id="menuLogin"><a href="cierraSesion.php"><br>Cerrar sesión</a></li>
-                        <?php } ?>
-                        <ul class="nav navbar-nav">
-                            <li><a class="navbar-header" href="index.php">Inicio</a></li>                                
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso<b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Docentes</a></li>
-                                            <li><a href="#">Técnicos Docentes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Educación Media Superior</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Promoción<b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Docentes</a></li>
-                                            <li><a href="#">Técnicos Docentes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Educación Media Superior</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" class="dropdown-toggle">Reconocimiento</a></li>
-                            <li><a href="#" class="dropdown-toggle">Permanencia</a></li>
-                            <li><a href="#" class="dropdown-toggle">Repositorio</a></li>
-
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-            <div class="container-fluid theme-showcase" role="main">                
-                <div class="row"> 
-                    <div class="col-md-2 sidebar">
-                        <ul class="nav nav-sidebar">
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle">Nivel Modalidad y Asignatura <b class="caret"></b></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="?m=showGuias">Básica</a></li>
-                                    <li><a href="?m=showGuiasMS">Media Superior</a></li>
-                                </ul>
-                            </li>   
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="?m=showPerfiles">Básica</a></li>
-                                    <li><a href="?m=showPerfiles">Media Superior</a></li>
-                                </ul>                            
-                            </li>    
-                            <li><a href="?m=showGuias">Guias de estudio</a></li>
-                            <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
-                            <li><a href="?m=estrategias">Estrategias de estudio</a></li>
-                            <li><a href="?m=simulador">Simulador de examen</a></li>
-                            <li><a href="?m=preguntas_frecuentes">Preguntas frecuentes</a></li>
-                            <li><a href="?m=contacto">Contacto</a></li>
->>>>>>> 07558b447ad74b9bcfbd944aad14362065887b67
 
               <?php if (isset($_SESSION['usuario'])) { ?>
                 <h3>Administración</h3>
@@ -336,6 +189,7 @@ if (array_key_exists($module, $modulos)) {
           <div class="col-md-10">
             <?php require $modulo; ?>
           </div>
+
         </div>
       </div>
     </div>
@@ -349,7 +203,7 @@ if (array_key_exists($module, $modulos)) {
               <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
               <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
               <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/logo-tve-solo-esfera.png"></li>
+              <li><img class="col-md-1 logofoot3" src="imgs/logo-tve-solo-esfera.png"></li>
               <li><img class="col-md-1 logofoot" src="imgs/log_ilce.png"></li>
               <li><img class="col-md-1 logofoot" src="imgs/logounadm.png"></li>
               <li><img class="col-md-1 logofoot" src="imgs/normateca.png"></li>
@@ -361,51 +215,4 @@ if (array_key_exists($module, $modulos)) {
       </div>
     </footer>
   </body>
-||||||| merged common ancestors
-        <div class="col-md-2"></div>
-        <footer id="footer" class="col-md-12">
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="pull-right">
-                    <ul class="nav nav-pills payments">
-                            <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/logo-tve-solo-esfera.png"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/log_ilce.png"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/logounadm.png"></li>
-                        <li><img class="col-md-1 logofoot" src="imgs/normateca.png"></li>
-                    </ul> <br>
-                    <hr>
-                    <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
-                </div>
-            </div>
-        </div>
-        </footer>
-    </body>
-=======
-        <div class="col-md-2"></div>
-        <footer id="footer" class="col-md-12">
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="pull-right">
-                        <ul class="nav nav-pills payments">
-                            <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
-                            <li><img class="col-md-1 logofoot3" src="imgs/logo-tve-solo-esfera.png"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/log_ilce.png"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/logounadm.png"></li>
-                            <li><img class="col-md-1 logofoot" src="imgs/normateca.png"></li>
-                        </ul> <br>
-                        <hr>
-                        <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </body>
->>>>>>> 07558b447ad74b9bcfbd944aad14362065887b67
 </html>

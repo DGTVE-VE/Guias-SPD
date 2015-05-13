@@ -28,7 +28,7 @@
             <tr>
                 <td></td>
                 <td class="text-center"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></td>
-                <td>http://servicioprofesionaldocente.sep.gob.mx/</td>
+                <td><a href="http://servicioprofesionaldocente.sep.gob.mx/">http://servicioprofesionaldocente.sep.gob.mx/</a></td>
             </tr>
         </table>
     </div>    

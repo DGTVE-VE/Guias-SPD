@@ -69,7 +69,7 @@ if (array_key_exists($module, $modulos)) {
                                 <li><a href="?m=showGuiasMS">Media Superior</a></li>
                             </ul>
                         </li>                    
-                        <li><a href="?m=showPerfiles">Perfiles</a></li>
+                        <li><a href="?m=showPerfiles">Perfiles Educación Básica</a></li>
                         <li><a href="?m=repositorio">Repositorio</a></li>
                         <?php if (isset($_SESSION['usuario'])) { ?>
                         <li class="dropdown">
@@ -79,7 +79,7 @@ if (array_key_exists($module, $modulos)) {
                                 <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>
                                 <li><a href="?m=uploadMateriales">Materiales Básica</a></li>
                                 <li><a href="?m=uploadMaterialesMS">Materiales Media Superior</a></li>
-                                <li><a href="?m=uploadPerfiles">Perfiles</a></li>
+                                <li><a href="?m=uploadPerfiles">Perfiles Educación Básica</a></li>
                             </ul>
                         </li>  
                         <?php } ?>

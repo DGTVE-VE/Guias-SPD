@@ -177,7 +177,14 @@ if (array_key_exists($module, $modulos)) {
                 <li><a href="?m=showPerfilesMS">Media Superior</a></li>
               </ul>                            
             </li>    
-            <li><a href="?m=showGuias">Guias de estudio</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle">Guías de estudio<b class="caret"></b></a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a href="?m=showGuias&all=true">Básica</a></li>
+                <li><a href="?m=showGuiasMS&all=true">Media Superior</a></li>
+              </ul>                            
+            </li> 
+            
             <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
             <li><a href="?m=estrategias">Estrategias de estudio</a></li>
             <li><a href="?m=simulador">Simulador de examen</a></li>

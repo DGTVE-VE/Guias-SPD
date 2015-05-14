@@ -20,6 +20,7 @@ if (isset($_POST['busqueda'])) {
     $busqueda = $_POST['busqueda'];
     $dao = DAOFactory::getBibliografiaDAO();
     $repositorio = $dao->queryRepositorio($busqueda);
+    $repositorioMS = DAOFactory::getBibliografiaMsDAO()->queryRepositorio($busqueda);
     $mensaje = 'Resultados de la consulta';
     echo'<table id="tblRepositorio" class="table table-bordered">';
     echo'    <caption> ' . $mensaje . '</caption>';
@@ -31,6 +32,14 @@ if (isset($_POST['busqueda'])) {
     echo'    <tbody>';
     
     foreach ($repositorio as $rep) {
+        
+        if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
+        echo'<tr>';           
+             echo'<td><a href="'.$rep->uRLMATERIAL.'">' . $rep->bIBLIOGRAFIA . '</a></td>';             
+        echo'</tr>';
+        }
+    }
+    foreach ($repositorioMS as $rep) {
         
         if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
         echo'<tr>';           

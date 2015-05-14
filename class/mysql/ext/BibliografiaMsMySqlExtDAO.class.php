@@ -7,6 +7,25 @@
  */
 class BibliografiaMsMySqlExtDAO extends BibliografiaMsMySqlDAO{
 
+    public function queryRepositorio($busqueda) {
+        $sql = 'SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
+                . '(SELECT * FROM bibliografia_ms WHERE MATCH(BIBLIOGRAFIA) '
+                . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
+        $sqlQuery = new SqlQuery($sql);
+        $tab = QueryExecutor::execute($sqlQuery);
+        $ret = array();
+        for ($i = 0; $i < count($tab); $i++) {
+            $ret[$i] = $this->readPartialRow($tab[$i]);
+        }
+        return $ret;
+    }
+    protected function readPartialRow($row) {
+        $bibliografia = new Bibliografia();
+        $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
+        $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
+        return $bibliografia;
+    }
+    
     public function queryMateriales() {
         $sql = 'SELECT * FROM bibliografia_ms WHERE URL_MATERIAL IS NULL'
                 . ' ORDER BY GUIA_DE_ESTUDIO';

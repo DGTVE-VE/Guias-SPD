@@ -9,12 +9,9 @@
 class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
 
     public function queryRepositorio($busqueda) {
-//        $sql = 'SELECT * FROM bibliografia WHERE MATCH(bibliografia) AGAINST (\''.$busqueda.'\')';
-
         $sql = 'SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
                 . '(SELECT * FROM bibliografia WHERE MATCH(BIBLIOGRAFIA) '
                 . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
-//                . ' WHERE URL_MATERIAL != "" ';
         $sqlQuery = new SqlQuery($sql);
         $tab = QueryExecutor::execute($sqlQuery);
         $ret = array();

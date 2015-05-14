@@ -7,18 +7,23 @@ require_once './include_dao.php';
 /* @var daoGuias BibliografiaDAO */
 $daoGuias = DAOFactory::getBibliografiaDAO();
 
-$material = $daoGuias->queryGuiasByFuncionProceso($_SESSION['funcion'], $_SESSION['proceso']);
+$all = filter_input(INPUT_GET, 'all');
 
+if ($all != NULL && $all!= false ){
+  $material = $daoGuias->queryGuias();
+} else {
+  $material = $daoGuias->queryGuiasByFuncionProceso($_SESSION['funcion'], $_SESSION['proceso']);
+}
 ?>
 <div class="page-header">
-    <h1>Guias Educación Básica</h1>
+    <h1>Guías Educación Básica</h1>
     <h2><?php print $_SESSION['proceso'].'-' .$_SESSION['funcion']?>  </h2>
 </div>
 
 <table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
-            <td>Guia</td><td> Documento PDF </td><td> Bibliografía</td>
+          <td>Guía</td><td>Función</td><td>Proceso</td><td> Documento PDF </td><td> Bibliografía</td>
         </tr>        
     </thead>
     <tbody>

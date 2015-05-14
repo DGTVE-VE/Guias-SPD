@@ -85,7 +85,7 @@ if (array_key_exists($module, $modulos)) {
                 <li class="dropdown nav pull-right" id="menuLogin"> 
                   <br>
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown" 
-                     id="navLogin">Ingreso</a>
+                     id="navLogin">Login</a>
                   <div class="dropdown-menu" style="padding:37px;">                                                 
                     <form method="POST" action="login.php" 
                           class="navbar-form navbar-right">
@@ -108,7 +108,8 @@ if (array_key_exists($module, $modulos)) {
                 </div>
               </li>
               <?php if (isset($_SESSION['usuario'])) { ?>
-                <li class="dropdown nav pull-right" id="menuLogin"><a href="cierraSesion.php"><br>Cerrar sesión</a></li>
+                <li class="dropdown nav pull-right" id="menuLogin">
+                  <a href="cierraSesion.php"><br>Cerrar sesión</a></li>
               <?php } ?>
               <ul class="nav navbar-nav">
                 <li><a class="navbar-header" href="index.php">Inicio</a></li>                                

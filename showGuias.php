@@ -17,7 +17,11 @@ if ($all != NULL && $all!= false ){
 ?>
 <div class="page-header">
     <h1>Guías Educación Básica</h1>
-    <h2><?php print $_SESSION['proceso'].'-' .$_SESSION['funcion']?>  </h2>
+    <h2><?php 
+    if ($all == NULL || $all == false ){
+      print $_SESSION['proceso'].'-' .$_SESSION['funcion'];
+    }?> 
+    </h2>
 </div>
 
 <table class="table table-striped table-bordered table-hover table-responsive">

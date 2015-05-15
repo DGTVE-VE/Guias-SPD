@@ -31,5 +31,8 @@
                 <td><a href="http://servicioprofesionaldocente.sep.gob.mx/">http://servicioprofesionaldocente.sep.gob.mx/</a></td>
             </tr>
         </table>
+        
     </div>    
+    
 </div>
+<br><br>

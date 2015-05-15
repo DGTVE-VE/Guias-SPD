@@ -26,21 +26,18 @@ and open the template in the editor.
 }
 
 .logofoot{
-    width: 120px;
+    width: 80px;
     height: 60px;
 }
 .logofoot1{
-    width: 150px;
+    width: 120px;
     height: 60px;
 }
 .logofoot2{
-    width: 200px;
+    width: 160px;
     height: 60px;
 }
-.logofoot3{
-    width: 100px;
-    height: 60px;
-}
+
 #tblRepositorio{
     width: 100%;
     border: 2px solid #ACABA9;
@@ -135,4 +132,9 @@ p{
 .li-none{
     list-style: none;
     text-align: justify;    
+}
+
+.concurso{
+    width: 70%;
+    height: 70%
 }

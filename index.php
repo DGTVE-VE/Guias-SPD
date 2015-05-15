@@ -38,6 +38,7 @@ $modulos = [
     "showPerfilesMS" => "showPerfilesMS.php",
     "concurso1" => "concurso1.php",
     "concurso2" => "concurso2.php",
+    "enconstruccion" => "enconstruccion.html"
 ];
 
 //Modulo por default
@@ -171,8 +172,8 @@ if (array_key_exists($module, $modulos)) {
                     </li>
                   </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle">Reconocimiento</a></li>
-                <li><a href="#" class="dropdown-toggle">Permanencia</a></li>
+                <li><a href="?m=enconstruccion" class="dropdown-toggle">Reconocimiento</a></li>
+                <li><a href="?m=enconstruccion" class="dropdown-toggle">Permanencia</a></li>
                 <li><a href="?m=repositorio" class="dropdown-toggle">Repositorio</a></li>
 
               </ul>

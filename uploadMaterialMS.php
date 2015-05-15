@@ -22,17 +22,12 @@ $path = $materialesDir."/".$name;
 
 
 /* @var $daoGuias BibliografiaDAO*/
-$daoGuias = DAOFactory::getBibliografiaMsDAO();
+$daoGuias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 
-$materiales = $daoGuias->load ($id);
-$materiales->url_material = $path;
-$daoGuias->update($materiales);
-//$todos = $daoGuias->queryByBIBLIOGRAFIA($materiales->bIBLIOGRAFIA);
-//foreach ($todos as $material){
-//    $material->url_material = $path;
-//    $daoGuias->update($material);
-//}
+$material = $daoGuias->load ($id);
+$material->uRLMATERIAL = $path;
+$daoGuias->update($material);
 
-//header('Location: index.php?m=uploadMaterialesMS');
-//die ();
+header('Location: index.php?m=uploadMaterialesMS');
+die ();
 

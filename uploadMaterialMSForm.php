@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
 }
 require 'validaUsuario.php';
 
-$bibliografia = DAOFactory::getBibliografiaMsDAO()->queryMateriales();
+$bibliografia = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO()->queryMateriales();
 ?>
 <h2> Sólo se muestran los materiales que no tienen PDF. </h2>
 <h3> Si no quieres que se muestre el material, presiona el botón <span>Omitir</span></h3>
@@ -28,7 +28,7 @@ $bibliografia = DAOFactory::getBibliografiaMsDAO()->queryMateriales();
                         '</form>' .
                         '</td>';
                 print '<td>' . $b->gUIADEESTUDIO . '</td>';     
-                print '<td>' . $b->bIBLIOGRAFIA . '</td>';                                
+                print '<td>' . $b->bIBLIOGRAFIAREVISADA . '</td>';                                
             }
             ?>
         </table>

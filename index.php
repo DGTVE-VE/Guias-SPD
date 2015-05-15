@@ -190,7 +190,7 @@ if (array_key_exists($module, $modulos)) {
           <ul class="nav nav-sidebar">
             <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle">
-                Nivel Modalidad y Asignatura <b class="caret"></b></a>
+                Perfiles, Guías y Bibliografía <b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
                 <li><a href="?m=showGuias">Básica</a></li>
                 <li><a href="?m=showGuiasMS">Media Superior</a></li>

@@ -8,6 +8,26 @@
  */
 class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
 
+  public function queryRepositorioGuias($busqueda) {
+    $sql = 'SELECT DISTINCT GUIA_DE_ESTUDIO, URL_GUIA FROM '
+            . '(SELECT * FROM bibliografia '
+            . 'WHERE MATCH(GUIA_DE_ESTUDIO) '
+            . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readGUIA_URL($tab[$i]);
+    }
+    return $ret;
+  }
+
+  protected function readGUIA_URL($row) {
+    $bibliografia = new Bibliografia();
+    $bibliografia->bIBLIOGRAFIA = $row['GUIA_DE_ESTUDIO'];
+    $bibliografia->uRLMATERIAL = $row['URL_GUIA'];
+    return $bibliografia;
+  }
   public function queryPerfiles() {
     $sql = 'SELECT DISTINCT PERFIL, URL_PERFIL FROM bibliografia';
     $sqlQuery = new SqlQuery($sql);

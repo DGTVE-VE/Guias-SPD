@@ -18,12 +18,11 @@ $tmp_name = $_FILES['perfil']['tmp_name'];
 $name = $_FILES['perfil']['name'];
 
 $path = $perfilesDir."/".$name;
-
 move_uploaded_file($tmp_name, $path);
 
 /* @var $dao PerfilesDAO*/
 $dao = DAOFactory::getBibliografiaDAO();
-$perfiles = $dao->queryByPerfil ();
+$perfiles = $dao->queryByPerfil($id);
 foreach ($perfiles as $perfil){
     $perfil->uRLPERFIL = $path;
     $dao->update($perfil);

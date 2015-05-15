@@ -50,7 +50,8 @@ extends BibliografiaMediaSuperiorNormalizadaMySqlDAO {
   }
 
   public function queryMateriales() {
-    $sql = 'SELECT * FROM bibliografia_ms WHERE URL_MATERIAL IS NULL'
+    $sql = 'SELECT * FROM bibliografia_media_superior_normalizada '
+            . ' WHERE URL_MATERIAL IS NULL'
             . ' ORDER BY GUIA_DE_ESTUDIO';
     $sqlQuery = new SqlQuery($sql);
     return $this->getList($sqlQuery);

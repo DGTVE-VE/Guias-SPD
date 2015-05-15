@@ -8,9 +8,9 @@ require_once './funciones.php';
 $numero = filter_input(INPUT_POST, 'numero');
 
 
-$dao = DAOFactory::getBibliografiaMsDAO();
+$dao = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $material = $dao->load($numero);
-$material->url_material = "#";
+$material->uRLMATERIAL = "#";
 $dao->update($material);
 
 

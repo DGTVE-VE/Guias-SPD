@@ -22,6 +22,13 @@ class DAOFactory{
 	}
 
 	/**
+	 * @return BibliografiaMediaSuperiorNormalizadaDAO
+	 */
+	public static function getBibliografiaMediaSuperiorNormalizadaDAO(){
+		return new BibliografiaMediaSuperiorNormalizadaMySqlExtDAO();
+	}
+
+	/**
 	 * @return BibliografiaMsDAO
 	 */
 	public static function getBibliografiaMsDAO(){

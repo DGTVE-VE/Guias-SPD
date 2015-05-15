@@ -17,6 +17,10 @@
 	require_once('class/dto/BibliografiaMediaSuperior.class.php');
 	require_once('class/mysql/BibliografiaMediaSuperiorMySqlDAO.class.php');
 	require_once('class/mysql/ext/BibliografiaMediaSuperiorMySqlExtDAO.class.php');
+	require_once('class/dao/BibliografiaMediaSuperiorNormalizadaDAO.class.php');
+	require_once('class/dto/BibliografiaMediaSuperiorNormalizada.class.php');
+	require_once('class/mysql/BibliografiaMediaSuperiorNormalizadaMySqlDAO.class.php');
+	require_once('class/mysql/ext/BibliografiaMediaSuperiorNormalizadaMySqlExtDAO.class.php');
 	require_once('class/dao/BibliografiaMsDAO.class.php');
 	require_once('class/dto/BibliografiaM.class.php');
 	require_once('class/mysql/BibliografiaMsMySqlDAO.class.php');

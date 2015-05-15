@@ -20,7 +20,7 @@ function showMateriales($guias) {
     foreach ($guias as $guia){
         print '<br>';
         if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
-            print '<a href="' . $guia->url_material . '">';
+            print '<a href="' . $guia->uRLMATERIAL . '">';
         }
         print trim($guia->bIBLIOGRAFIAREVISADA);
         if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {

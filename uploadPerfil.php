@@ -7,11 +7,7 @@ require_once './funciones.php';
 
 $perfilesDir = "./perfiles";
 $id = filter_input(INPUT_POST, 'id');
-//if(intval($_SERVER['CONTENT_LENGTH'])>0 && count($_POST)===0){
-//    print 'PHP discarded POST data because of request exceeding post_max_size.';
-//    echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
-//}
-//print_r($_FILES);
+
 
 if (!file_exists($perfilesDir)) {
     mkdir($perfilesDir);
@@ -26,10 +22,12 @@ $path = $perfilesDir."/".$name;
 move_uploaded_file($tmp_name, $path);
 
 /* @var $dao PerfilesDAO*/
-$dao = DAOFactory::getPerfilesDAO();
-$perfil = $dao->load($id);
-$perfil->uRL = $path;
+$dao = DAOFactory::getBibliografiaDAO();
+$perfiles = $dao->queryByPerfil ();
+foreach ($perfiles as $perfil){
+    $perfil->uRLPERFIL = $path;
+    $dao->update($perfil);
+}
 
-$dao->update($perfil);
 header('Location: index.php?m=uploadPerfiles');
 die ();

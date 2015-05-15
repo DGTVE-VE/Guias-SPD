@@ -8,98 +8,116 @@
  */
 class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
 
-    public function queryRepositorio($busqueda) {
-        $sql = 'SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
-                . '(SELECT * FROM bibliografia WHERE MATCH(BIBLIOGRAFIA) '
-                . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
-        $sqlQuery = new SqlQuery($sql);
-        $tab = QueryExecutor::execute($sqlQuery);
-        $ret = array();
-        for ($i = 0; $i < count($tab); $i++) {
-            $ret[$i] = $this->readPartialRow($tab[$i]);
-        }
-        return $ret;
+  public function queryPerfiles() {
+    $sql = 'SELECT DISTINCT PERFIL, URL_PERFIL FROM bibliografia';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readPerfil($tab[$i]);
     }
+    return $ret;
+  }
 
-    protected function readPartialRow($row) {
-        $bibliografia = new Bibliografia();
-        $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
-        $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
-        return $bibliografia;
+  protected function readPerfil($row) {
+    $bibliografia = new Bibliografia();
+    $bibliografia->pERFIL = $row['PERFIL'];
+    $bibliografia->uRLPERFIL = $row['URL_PERFIL'];
+    return $bibliografia;
+  }
+
+  public function queryRepositorio($busqueda) {
+    $sql = 'SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
+            . '(SELECT * FROM bibliografia WHERE MATCH(BIBLIOGRAFIA) '
+            . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readPartialRow($tab[$i]);
     }
+    return $ret;
+  }
 
-    public function queryByGuia_Dimension($value, $dimension) {
+  protected function readPartialRow($row) {
+    $bibliografia = new Bibliografia();
+    $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
+    $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
+    return $bibliografia;
+  }
+
+  public function queryByGuia_Dimension($value, $dimension) {
 //        var_dump ($value);
-        $sql = 'SELECT * FROM bibliografia WHERE GUIA_DE_ESTUDIO = ? AND DIMENSION = ?';
-        $sqlQuery = new SqlQuery($sql);
-        $sqlQuery->set($value);
-        $sqlQuery->setNumber($dimension);
+    $sql = 'SELECT * FROM bibliografia WHERE GUIA_DE_ESTUDIO = ? AND DIMENSION = ?';
+    $sqlQuery = new SqlQuery($sql);
+    $sqlQuery->set($value);
+    $sqlQuery->setNumber($dimension);
 
-        return $this->getList($sqlQuery);
+    return $this->getList($sqlQuery);
+  }
+
+  public function queryMateriales() {
+    $sql = 'SELECT * FROM bibliografia WHERE URL_MATERIAL IS NULL'
+            . ' ORDER BY NOMENCLATURA';
+    $sqlQuery = new SqlQuery($sql);
+    return $this->getList($sqlQuery);
+  }
+
+  public function queryGuiasNullURL() {
+    $sql = 'SELECT DISTINCT PERFIL,'
+            . ' GUIA_DE_ESTUDIO, FUNCION, '
+            . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
+            . ' FROM bibliografia WHERE URL_GUIA IS NULL';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readGuia($tab[$i]);
     }
+    return $ret;
+  }
 
-    public function queryMateriales() {
-        $sql = 'SELECT * FROM bibliografia WHERE URL_MATERIAL IS NULL'
-                . ' ORDER BY NOMENCLATURA';
-        $sqlQuery = new SqlQuery($sql);
-        return $this->getList($sqlQuery);
-    }
-
-    public function queryGuiasNullURL() {
-        $sql = 'SELECT DISTINCT PERFIL,'
-                . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
-                . ' FROM bibliografia WHERE URL_GUIA IS NULL';
-        $sqlQuery = new SqlQuery($sql);
-        $tab = QueryExecutor::execute($sqlQuery);
-        $ret = array();
-        for ($i = 0; $i < count($tab); $i++) {
-            $ret[$i] = $this->readGuia($tab[$i]);
-        }
-        return $ret;
-    }
-
-    public function queryGuiasByFuncionProceso($funcion, $proceso) {
-        $sql = 'SELECT DISTINCT PERFIL, 
+  public function queryGuiasByFuncionProceso($funcion, $proceso) {
+    $sql = 'SELECT DISTINCT PERFIL, 
                 GUIA_DE_ESTUDIO, FUNCION, 
                 PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
                 FROM bibliografia 
-                WHERE PROCESO = \''.$proceso.'\' AND FUNCION = \''. $funcion .
-                '\' ORDER BY GUIA_DE_ESTUDIO ';
-        $sqlQuery = new SqlQuery($sql);
-        $tab = QueryExecutor::execute($sqlQuery);
-        $ret = array();
-        for ($i = 0; $i < count($tab); $i++) {
-            $ret[$i] = $this->readGuia($tab[$i]);
-        }
-        return $ret;
+                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
+            '\' ORDER BY GUIA_DE_ESTUDIO ';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readGuia($tab[$i]);
     }
+    return $ret;
+  }
 
-    public function queryGuias() {
-        $sql = 'SELECT DISTINCT PERFIL, '
-                . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
-                . ' FROM bibliografia ORDER BY GUIA_DE_ESTUDIO';
-        $sqlQuery = new SqlQuery($sql);
-        $tab = QueryExecutor::execute($sqlQuery);
-        $ret = array();
-        for ($i = 0; $i < count($tab); $i++) {
-            $ret[$i] = $this->readGuia($tab[$i]);
-        }
-        return $ret;
+  public function queryGuias() {
+    $sql = 'SELECT DISTINCT PERFIL, '
+            . ' GUIA_DE_ESTUDIO, FUNCION, '
+            . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
+            . ' FROM bibliografia ORDER BY GUIA_DE_ESTUDIO';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readGuia($tab[$i]);
     }
+    return $ret;
+  }
 
-    protected function readGuia($row) {
-        $bibliografia = new Bibliografia();
-        $bibliografia->pERFIL = $row['PERFIL'];
-        $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];
-        $bibliografia->fUNCION = $row['FUNCION'];
-        $bibliografia->pROCESO = $row['PROCESO'];
-        $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];
-        $bibliografia->uRLGUIA = $row['URL_GUIA'];
-        $bibliografia->uRLPERFIL = $row['URL_PERFIL'];
-        return $bibliografia;
-    }
+  protected function readGuia($row) {
+    $bibliografia = new Bibliografia();
+    $bibliografia->pERFIL = $row['PERFIL'];
+    $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];
+    $bibliografia->fUNCION = $row['FUNCION'];
+    $bibliografia->pROCESO = $row['PROCESO'];
+    $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];
+    $bibliografia->uRLGUIA = $row['URL_GUIA'];
+    $bibliografia->uRLPERFIL = $row['URL_PERFIL'];
+    return $bibliografia;
+  }
 
 }
 

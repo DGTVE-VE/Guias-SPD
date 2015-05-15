@@ -4,9 +4,8 @@ if(!isset($_SESSION)){
 }
 require_once './include_dao.php';
 
-/*@var daoGuias BibliografiaDAO*/
-$dao = DAOFactory::getPerfilesDAO();
-$perfiles = $dao->queryAll();
+$dao = DAOFactory::getBibliografiaDAO();
+$perfiles = $dao->queryPerfiles();
 
 ?>
 <div class="page-header">
@@ -18,8 +17,7 @@ $perfiles = $dao->queryAll();
         <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
-                    <td></td><td>PPI</td><td> PROCESO</td>
-                    <td> FUNCION </td><td> NIVEL MODALIDAD </td><td>PDF</td>
+                    <td></td><td>PPI<td>PDF</td>
                 </tr>        
             </thead>
             <tbody>
@@ -29,26 +27,17 @@ $perfiles = $dao->queryAll();
                     print '<td>'. 
                               '<form action="uploadPerfil.php" method="POST" enctype="multipart/form-data">'.
                                 '<input type="file" name="perfil">'.
-                                '<input type="hidden" name="id" value="'.$perfil->nUMERO.'" >'.
+                                '<input type="hidden" name="id" value="'.$perfil->pERFIL.'" >'.
                                 '<input type="submit" value="Sube perfil">'.
                               '</form>'.
                               '</td>'; 
                     print '<td>';
-                    print $perfil->pPI;
+                    print $perfil->pERFIL;
                     print '</td>';
-                    print '<td>';
-                    print $perfil->pROCESO;
-                    print '</td>';
-                    print '<td>';
-                    print $perfil->fUNCION;
-                    print '</td>';
-                    print '<td>';
-                    print $perfil->nIVELMODALIDAD;
-                    print '</td>';
-                    print '<td>';  
                     
-                    if ($perfil->uRL !== NULL && trim($perfil->uRL)!= false){
-                        print '<a href="' . $perfil->uRL. '"> PDF </a>';
+                    print '<td>';  
+                    if ($perfil->uRLPERFIL !== NULL && trim($perfil->uRLPERFIL)!= false){
+                        print '<a href="' . $perfil->uRLPERFIL. '"> PDF </a>';
                     }                    
                     print '</td>';
                     

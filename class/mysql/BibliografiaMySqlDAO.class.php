@@ -125,6 +125,13 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
         $sqlQuery = new SqlQuery($sql);
         return $this->executeUpdate($sqlQuery);
     }
+    
+    public function queryByPerfil($value) {
+        $sql = 'SELECT * FROM bibliografia WHERE PERFIL = ?';
+        $sqlQuery = new SqlQuery($sql);
+        $sqlQuery->set($value);
+        return $this->getList($sqlQuery);
+    }
 
     public function queryByBIBLIOGRAFIA($value) {
         $sql = 'SELECT * FROM bibliografia WHERE BIBLIOGRAFIA = ?';

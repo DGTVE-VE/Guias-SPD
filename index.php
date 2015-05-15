@@ -167,13 +167,14 @@ if (array_key_exists($module, $modulos)) {
         <div class="col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">Nivel Modalidad y Asignatura <b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle">
+                Nivel Modalidad y Asignatura <b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
-                <li><a href="?m=showGuias">Básica</a></li>
-                <li><a href="?m=showGuiasMS">Media Superior</a></li>
+                <li><a href="?m=showGuias&all=true">Básica</a></li>
+                <li><a href="?m=showGuiasMS&all=true">Media Superior</a></li>
               </ul>
             </li>   
-            <li class="dropdown">
+<!--            <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
                 <li><a href="?m=showPerfiles">Básica</a></li>
@@ -181,12 +182,13 @@ if (array_key_exists($module, $modulos)) {
               </ul>                            
             </li>    
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">Guías de estudio<b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle">
+                Guías de estudio<b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
                 <li><a href="?m=showGuias&all=true">Básica</a></li>
                 <li><a href="?m=showGuiasMS&all=true">Media Superior</a></li>
               </ul>                            
-            </li> 
+            </li> -->
             
             <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
             <li><a href="?m=estrategias">Estrategias de estudio</a></li>

@@ -20,7 +20,7 @@ $name = $_FILES['material']['name'];
 
 $path = $materialesDir."/".$name;
 
-
+move_uploaded_file($tmp_name, $path);
 /* @var $daoGuias BibliografiaDAO*/
 $daoGuias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 

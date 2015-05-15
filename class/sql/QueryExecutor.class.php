@@ -27,7 +27,9 @@ class QueryExecutor{
 //                      writeToFile($query);
 //                    }
 //                }
-                $connection->executeQuery("SET NAMES 'utf8'");
+        /** Se busca en cache el resultado **/
+        
+        $connection->executeQuery("SET NAMES 'utf8'");
 		$result = $connection->executeQuery($query);
 		if(!$result){
 			throw new Exception("SQL Error: -->".$query."<--" . mysql_error());

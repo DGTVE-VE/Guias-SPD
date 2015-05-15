@@ -19,11 +19,11 @@ function showMateriales($guias) {
     /* @var $guia BibliografiaMediaSuperiorNormalizada*/
     foreach ($guias as $guia){
         print '<br>';
-        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
+        if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '<a href="' . $guia->uRLMATERIAL . '">';
         }
         print trim($guia->bIBLIOGRAFIAREVISADA);
-        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
+        if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '</a>';
         }
         print '<br>';

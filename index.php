@@ -2,12 +2,6 @@
 session_start();
 require 'include_dao.php';
 
-abstract class PROCESOS {
-
-  const INGRESO = 'INGRESO';
-  const PROMOCION = 'PROMOCIÓN';
-
-}
 
 $module = filter_input(INPUT_GET, 'm');
 if ($module === NULL || $module === false) {
@@ -85,36 +79,8 @@ if (array_key_exists($module, $modulos)) {
               </button>
             </div>
             <div class="collapse navbar-collapse">
-              <?php if (!isset($_SESSION['usuario'])) { ?>  
-                <li class="dropdown nav pull-right" id="menuLogin"> 
-                  <br>
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown" 
-                     id="navLogin">Login</a>
-                  <div class="dropdown-menu" style="padding:37px;">                                                 
-                    <form method="POST" action="login.php" 
-                          class="navbar-form navbar-right">
-                      <div class="form-group">
-                        <label></label>
-                        <input type="text" name="email" placeholder="Email" 
-                               class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label></label>
-                        <input type="password" name="password" 
-                               placeholder="Password" class="form-control">
-                        <label></label>
-                      </div>
 
-                      <button type="submit" class="btn btn-success">
-                        Inicia sesión</button>                            
-                    </form>
-                  <?php } ?>
-                </div>
-              </li>
-              <?php if (isset($_SESSION['usuario'])) { ?>
-                <li class="dropdown nav pull-right" id="menuLogin">
-                  <a href="cierraSesion.php"><br>Cerrar sesión</a></li>
-              <?php } ?>
+              
               <ul class="nav navbar-nav">
                 <li><a class="navbar-header" href="index.php">Inicio</a></li>                                
                 <li>
@@ -131,9 +97,9 @@ if (array_key_exists($module, $modulos)) {
                     </li>
                     <!--<li class="divider"></li>-->
                     <li class="dropdown-submenu">
-                    <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
-                        <ul class="dropdown-menu">
+                      <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
+                      <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
                             Docentes</a></li>
                         <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
@@ -160,8 +126,8 @@ if (array_key_exists($module, $modulos)) {
                     </li>
                     <!--<li class="divider"></li>-->
                     <li class="dropdown-submenu">
-                    <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
+                      <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
                             Director</a></li>
@@ -176,7 +142,34 @@ if (array_key_exists($module, $modulos)) {
                 <li><a href="?m=enconstruccion" class="dropdown-toggle">Reconocimiento</a></li>
                 <li><a href="?m=enconstruccion" class="dropdown-toggle">Permanencia</a></li>
                 <li><a href="?m=repositorio" class="dropdown-toggle">Repositorio</a></li>
+                <?php if (!isset($_SESSION['usuario'])) { ?>  
+                  <li id="menuLogin">                     
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+                    <div class="dropdown-menu" style="padding:37px;">                                                 
+                      <form method="POST" action="login.php" class="navbar-form navbar-right">
+                        <div class="form-group">
+                          <label></label>
+                          <input type="text" name="email" placeholder="Email" 
+                                 class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label></label>
+                          <input type="password" name="password" 
+                                 placeholder="Password" class="form-control">
+                          <label></label>
+                        </div>
 
+                        <button type="submit" class="btn btn-success">
+                          Inicia sesión</button>                            
+                      </form>
+
+                    </div>
+                  </li>
+                <?php } ?>
+                  <?php if (isset($_SESSION['usuario'])) { ?>
+                <li>
+                  <a href="cierraSesion.php" class="dropdown-toggle">Cerrar sesión</a></li>
+              <?php } ?>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -190,46 +183,22 @@ if (array_key_exists($module, $modulos)) {
         <div class="col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="show.php">Perfiles, Guías y Bibliografía
-                <?php 
-                if (isset($_SESSION['nivel'])){
-                  print "EDUCACIÓN ".$_SESSION['nivel']. " ";
+                <?php
+                if (isset($_SESSION['nivel'])) {
+                  print "EDUCACIÓN " . $_SESSION['nivel'] . " ";
                 }
-                
-                if (isset($_SESSION['proceso'])){
-                  print $_SESSION['proceso']. " ";
+
+                if (isset($_SESSION['proceso'])) {
+                  print $_SESSION['proceso'] . " ";
                 }
-                if (isset($_SESSION['funcion'])){
+                if (isset($_SESSION['funcion'])) {
                   print $_SESSION['funcion'];
                 }
-?>
-              </a></li>
-<!--            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">
-                Perfiles, Guías y Bibliografía <b class="caret"></b></a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a href="?m=showGuias">Básica</a></li>
-                <li><a href="?m=showGuiasMS">Media Superior</a></li>
-              </ul>
-            </li>   -->
-<!--            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a href="?m=showPerfiles">Básica</a></li>
-                <li><a href="?m=showPerfilesMS">Media Superior</a></li>
-              </ul>                            
-            </li>    
-            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">
-                Guías de estudio<b class="caret"></b></a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a href="?m=showGuias&all=true">Básica</a></li>
-                <li><a href="?m=showGuiasMS&all=true">Media Superior</a></li>
-              </ul>                            
-            </li> -->
-            
+                ?>
+              </a></li>            
+
             <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
-            <li><a href="?m=estrategias">Estrategias de estudio</a></li>
-            <!--<li><a href="?m=simulador">Simulador de examen</a></li>-->
+            <li><a href="?m=estrategias">Estrategias de estudio</a></li>            
             <li><a href=" http://simulador.ceneval.edu.mx" target="_black">Simulador de examen</a></li>
             <li><a href="?m=preguntas_frecuentes">Preguntas frecuentes</a></li>
             <li><a href="?m=contacto">Contacto</a></li>
@@ -257,9 +226,9 @@ if (array_key_exists($module, $modulos)) {
       </div>
     </div>
     <div class="row">
-    <footer id="footer" class="col-md-12">        
+      <footer id="footer" class="col-md-12">        
         <div class="container center-block">
-      <div class="footer-bottom">
+          <div class="footer-bottom">
             <ul class="nav nav-pills payments">
               <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
               <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
@@ -273,9 +242,9 @@ if (array_key_exists($module, $modulos)) {
             </ul> <br>
             <hr>
             <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
-      </div>
-            </div>
-    </footer>
           </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

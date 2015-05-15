@@ -38,6 +38,7 @@ $modulos = [
     "showPerfilesMS" => "showPerfilesMS.php",
     "concurso1" => "concurso1.php",
     "concurso2" => "concurso2.php",
+    "show" => "show.php",
     "enconstruccion" => "enconstruccion.html"
 ];
 
@@ -122,9 +123,9 @@ if (array_key_exists($module, $modulos)) {
                     <li class="dropdown-submenu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
                             Docentes</a></li>
-                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
                             Técnicos Docentes</a></li>
                       </ul>
                     </li>
@@ -133,9 +134,9 @@ if (array_key_exists($module, $modulos)) {
                     <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                         <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
                             Docentes</a></li>
-                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
                             Técnicos Docentes</a></li>
                       </ul>
                     </li>
@@ -149,11 +150,11 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=DIRECTOR">
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA">
                             Director</a></li>
-                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=SUPERVISOR">
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA">
                             Supervisor</a></li>
-                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=ATP">
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=ATP&nivel=BASICA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>
                     </li>
@@ -162,11 +163,11 @@ if (array_key_exists($module, $modulos)) {
                     <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=DIRECTOR">
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
                             Director</a></li>
-                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=SUPERVISOR">
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA">
                             Supervisor</a></li>
-                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=ATP">
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=ATP&nivel=MEDIA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>                      
                     </li>
@@ -188,14 +189,28 @@ if (array_key_exists($module, $modulos)) {
         <div class="col-md-1"></div>
         <div class="col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="dropdown">
+            <li><a href="show.php">Perfiles, Guías y Bibliografía
+                <?php 
+                if (isset($_SESSION['nivel'])){
+                  print "EDUCACIÓN ".$_SESSION['nivel']. " ";
+                }
+                
+                if (isset($_SESSION['proceso'])){
+                  print $_SESSION['proceso']. " ";
+                }
+                if (isset($_SESSION['funcion'])){
+                  print $_SESSION['funcion'];
+                }
+?>
+              </a></li>
+<!--            <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle">
                 Perfiles, Guías y Bibliografía <b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
                 <li><a href="?m=showGuias">Básica</a></li>
                 <li><a href="?m=showGuiasMS">Media Superior</a></li>
               </ul>
-            </li>   
+            </li>   -->
 <!--            <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle">Perfiles parámetros e indicadores<b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">

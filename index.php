@@ -36,6 +36,8 @@ $modulos = [
     "contacto" => "contacto.php",
     "uploadPerfilesMS" => "uploadPerfilesMSForm.php",
     "showPerfilesMS" => "showPerfilesMS.php",
+    "concurso1" => "concurso1.php",
+    "concurso2" => "concurso2.php",
 ];
 
 //Modulo por default
@@ -68,7 +70,7 @@ if (array_key_exists($module, $modulos)) {
     <div class='row'>
       <div class="col-md-1"></div>
       <div class="col-md-10">           
-        <div><img src="imgs/logo.png" width="70%" class="center-block"></div>
+        <div><img src="imgs/logo1.png" width="70%" class="center-block"></div>
         <div class="navbar navbar-default" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -119,14 +121,23 @@ if (array_key_exists($module, $modulos)) {
                     <li class="dropdown-submenu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=showGuias&proceso=INGRESO&funcion=DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE">
                             Docentes</a></li>
-                        <li><a href="filtro.php?pag=showGuias&proceso=INGRESO&funcion=TECNICO_DOCENTE">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE">
                             Técnicos Docentes</a></li>
                       </ul>
                     </li>
-                    <li class="divider"></li>
-                    <li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li class="dropdown-submenu">
+                    <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
+                        <ul class="dropdown-menu">
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=DOCENTE">
+                            Docentes</a></li>
+                        <li><a href="filtro.php?pag=concurso1&proceso=INGRESO&funcion=TECNICO_DOCENTE">
+                            Técnicos Docentes</a></li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -137,17 +148,27 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=DIRECTOR">
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=DIRECTOR">
                             Director</a></li>
-                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=SUPERVISOR">
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=SUPERVISOR">
                             Supervisor</a></li>
-                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=ATP">
-                            ATP</a></li>
+                        <li><a href="filtro.php?pag=concurso2&proceso=PROMOCION&funcion=ATP">
+                            Asesoría Técnica Pedagógica</a></li>
                       </ul>
                     </li>
-                    <li class="divider"></li>
-                    <li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">
-                        Educación Media Superior</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li class="dropdown-submenu">
+                    <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=DIRECTOR">
+                            Director</a></li>
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=SUPERVISOR">
+                            Supervisor</a></li>
+                        <li><a href="filtro.php?pag=concurso1&proceso=PROMOCION&funcion=ATP">
+                            Asesoría Técnica Pedagógica</a></li>
+                      </ul>                      
+                    </li>
                   </ul>
                 </li>
                 <li><a href="#" class="dropdown-toggle">Reconocimiento</a></li>
@@ -170,8 +191,8 @@ if (array_key_exists($module, $modulos)) {
               <a data-toggle="dropdown" class="dropdown-toggle">
                 Nivel Modalidad y Asignatura <b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
-                <li><a href="?m=showGuias&all=true">Básica</a></li>
-                <li><a href="?m=showGuiasMS&all=true">Media Superior</a></li>
+                <li><a href="?m=showGuias">Básica</a></li>
+                <li><a href="?m=showGuiasMS">Media Superior</a></li>
               </ul>
             </li>   
 <!--            <li class="dropdown">
@@ -192,7 +213,8 @@ if (array_key_exists($module, $modulos)) {
             
             <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
             <li><a href="?m=estrategias">Estrategias de estudio</a></li>
-            <li><a href="?m=simulador">Simulador de examen</a></li>
+            <!--<li><a href="?m=simulador">Simulador de examen</a></li>-->
+            <li><a href=" http://simulador.ceneval.edu.mx" target="_black">Simulador de examen</a></li>
             <li><a href="?m=preguntas_frecuentes">Preguntas frecuentes</a></li>
             <li><a href="?m=contacto">Contacto</a></li>
 
@@ -218,26 +240,26 @@ if (array_key_exists($module, $modulos)) {
         <div class="col-md-1"></div>
       </div>
     </div>
-
-    <footer id="footer" class="col-md-12">
+    <div class="row">
+    <footer id="footer" class="col-md-12">        
+        <div class="container center-block">
       <div class="footer-bottom">
-        <div class="container">
-          <div class="pull-right">
             <ul class="nav nav-pills payments">
               <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
               <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
               <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
               <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
-              <li><img class="col-md-1 logofoot3" src="imgs/logo-tve-solo-esfera.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/log_ilce.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/logounadm.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/normateca.png"></li>
+              <li><img class="col-md-1 logofoot" src="imgs/logo-tve-solo-esfera.png"></li>
+              <li><img class="col-md-1 logofoot" src="imgs/ilce.jpg"></li>
+              <li><img class="col-md-1 logofoot1" src="imgs/logounadm.png"></li>
+              <li><img class="col-md-1 logofoot" src="imgs/radioeducacion.jpg"></li>
+              <li><img class="col-md-1 logofoot2" src="imgs/normateca.png"></li>
             </ul> <br>
             <hr>
             <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
-          </div>
-        </div>
       </div>
+            </div>
     </footer>
+          </div>
   </body>
 </html>

@@ -77,7 +77,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
   }
 
   public function queryMateriales() {
-    $sql = 'SELECT * FROM bibliografia WHERE URL_MATERIAL IS NULL'
+    $sql = 'SELECT * FROM bibliografia WHERE URL_MATERIAL IS NULL OR URL_MATERIAL = \'\''
             . ' ORDER BY NOMENCLATURA';
     $sqlQuery = new SqlQuery($sql);
     return $this->getList($sqlQuery);
@@ -87,7 +87,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     $sql = 'SELECT DISTINCT PERFIL,'
             . ' GUIA_DE_ESTUDIO, FUNCION, '
             . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
-            . ' FROM bibliografia WHERE URL_GUIA IS NULL';
+            . ' FROM bibliografia WHERE URL_GUIA IS NULL OR URL_GUIA = \'\'';
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
     $ret = array();
@@ -98,12 +98,21 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
   }
 
   public function queryGuiasByFuncionProceso($funcion, $proceso) {
-    $sql = 'SELECT DISTINCT PERFIL, 
+    if ($proceso == 'INGRESO'){
+      $sql = 'SELECT DISTINCT PERFIL, 
+                GUIA_DE_ESTUDIO, FUNCION, 
+                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
+                FROM bibliografia 
+                WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' AND FUNCION = \'' . $funcion .
+            '\' ORDER BY GUIA_DE_ESTUDIO ';
+    } else {
+      $sql = 'SELECT DISTINCT PERFIL, 
                 GUIA_DE_ESTUDIO, FUNCION, 
                 PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
                 FROM bibliografia 
                 WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
             '\' ORDER BY GUIA_DE_ESTUDIO ';
+    }
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
     $ret = array();

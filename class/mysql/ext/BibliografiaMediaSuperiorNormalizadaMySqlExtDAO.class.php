@@ -72,7 +72,7 @@ class BibliografiaMediaSuperiorNormalizadaMySqlExtDAO extends BibliografiaMediaS
 
   public function queryMateriales() {
     $sql = 'SELECT * FROM bibliografia_media_superior_normalizada '
-            . ' WHERE URL_MATERIAL IS NULL'
+            . ' WHERE URL_MATERIAL IS NULL OR URL_MATERIAL = \'\''
             . ' ORDER BY GUIA_DE_ESTUDIO';
     $sqlQuery = new SqlQuery($sql);
     return $this->getList($sqlQuery);
@@ -94,7 +94,7 @@ class BibliografiaMediaSuperiorNormalizadaMySqlExtDAO extends BibliografiaMediaS
             . ' GUIA_DE_ESTUDIO, FUNCION, '
             . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
             . ' FROM bibliografia_media_superior_normalizada '
-            . ' WHERE URL_GUIA IS NULL';
+            . ' WHERE URL_GUIA IS NULL OR URL_GUIA = \'\'';
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
     $ret = array();

@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 
 $nombre = filter_input(INPUT_GET, 'nombre');
 
-$dao = DAOFactory::getBibliografiaMsDAO();
+$dao = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $guias1 = $dao->queryByGuia_Dimension($nombre, '1');
 $guias2 = $dao->queryByGuia_Dimension($nombre, '2');
 $guias3 = $dao->queryByGuia_Dimension($nombre, '3');
@@ -16,14 +16,14 @@ $guias7 = $dao->queryByGuia_Dimension($nombre, 'SUGERIDA');
 
 
 function showMateriales($guias) {
-    /* @var $guia BibliografiaM*/
+    /* @var $guia BibliografiaMediaSuperiorNormalizada*/
     foreach ($guias as $guia){
         print '<br>';
-        if ($guia->url_material !== NULL && $guia->url_material != '#') {
+        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
             print '<a href="' . $guia->url_material . '">';
         }
-        print trim($guia->bIBLIOGRAFIA);
-        if ($guia->url_material !== NULL && $guia->url_material != '#') {
+        print trim($guia->bIBLIOGRAFIAREVISADA);
+        if ($guia->uRLMATERIAL !== NULL && $guia->uRLMATERIAL != '#') {
             print '</a>';
         }
         print '<br>';

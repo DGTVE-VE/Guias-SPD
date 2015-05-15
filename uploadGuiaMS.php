@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require 'validaUsuario.php';
 require_once './include_dao.php';
@@ -7,11 +6,7 @@ require_once './funciones.php';
 
 $guiasDir = "./guiasMS";
 $nombre = filter_input(INPUT_POST, 'nombre');
-//if(intval($_SERVER['CONTENT_LENGTH'])>0 && count($_POST)===0){
-//    print 'PHP discarded POST data because of request exceeding post_max_size.';
-//    echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
-//}
-//print_r($_FILES);
+
 
 if (!file_exists($guiasDir)) {
     mkdir($guiasDir);
@@ -26,10 +21,10 @@ $path = $guiasDir."/".$name;
 move_uploaded_file($tmp_name, $path);
 
 /* @var $daoGuias BibliografiaDAO*/
-$daoGuias = DAOFactory::getBibliografiaMsDAO();
+$daoGuias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $guias = $daoGuias->queryByGUIADEESTUDIO($nombre);
 foreach ($guias as $guia){
-    $guia->url_guia = $path;
+    $guia->uRLGUIA = $path;
     $daoGuias->update($guia);
 }
 

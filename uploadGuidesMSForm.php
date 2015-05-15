@@ -4,18 +4,18 @@ if(!isset($_SESSION)){
 }
 require 'validaUsuario.php';
     
-$bibliografia = DAOFactory::getBibliografiaMsDAO()->queryGuiasNullURL();
+$bibliografia = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO()->queryGuiasNullURL();
 ?>
 <h2> Sólo se muestran las guías que no tienen PDF</h2>
 <div class="row">
     <div class="col-md-12">
         <table class="table-condensed table table-bordered table-hover table-responsive table-striped">
             <?php 
-                /*@var $b BibliografiaM*/
+                /*@var $b BibliografiaMediaSuperiorNormalizada*/
                 foreach ($bibliografia as $b){                    
                     print '<tr>';
-                    if ($b->url_guia !== NULL){
-                        print '<td><a href="'. $b->url_guia. '"> Link </a></td>';
+                    if ($b->uRLGUIA !== NULL){
+                        print '<td><a href="'. $b->uRLGUIA. '"> Link </a></td>';
                     }
                     else{
                         print '<td>'. 
@@ -26,6 +26,7 @@ $bibliografia = DAOFactory::getBibliografiaMsDAO()->queryGuiasNullURL();
                               '</form>'.
                               '</td>';                                                                                    
                     }
+                    print '<td>'. $b->pERFIL. '</td>';
                     print '<td>'. $b->gUIADEESTUDIO. '</td>';
                     print '<td>'. $b->fUNCION. '</td>';
                     print '<td>'. $b->pROCESO. '</td>';

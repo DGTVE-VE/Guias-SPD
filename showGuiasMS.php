@@ -5,8 +5,9 @@ if(!isset($_SESSION)){
 require_once './include_dao.php';
 
 /*@var daoGuias BibliografiaDAO*/
-$daoGuias = DAOFactory::getBibliografiaMsDAO();
+$daoGuias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $all = filter_input(INPUT_GET, 'all');
+
 
 if ($all != NULL && $all!= false ){
   $material = $daoGuias->queryGuias();
@@ -28,20 +29,39 @@ if ($all != NULL && $all!= false ){
         <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
-                    <td>Guia</td><td> Documento PDF </td><td> Bibliografía</td>
+                    <td> Función</td>
+                    <td> Perfil </td>
+                    <td> Guía de estudio</td>                    
+                    <td> PDF Guía </td>
+                    <td> PDF Perfil </td>
+                    <td> Bibliografia </td>
                 </tr>        
             </thead>
             <tbody>
                 <?php
+                /*@var $guia BibliografiaMediaSuperiorNormalizada*/
                 foreach ($material as $guia) {
                     
                     print '<tr><td>';
+                    print $guia->fUNCION;
+                    print '</td>';
+                    print '<td>';
+                    print $guia->pERFIL;
+                    print '</td>';
+                    print '<td>';
                     print $guia->gUIADEESTUDIO;
+                    print '</td>';
+                    
+                    print '<td>';  
+                    
+                    if ($guia->uRLGUIA !== NULL && trim($guia->uRLGUIA) != false){
+                        print '<a href="' . $guia->uRLGUIA. '"> PDF </a>';
+                    }                    
                     print '</td>';
                     print '<td>';  
                     
-                    if ($guia->url_guia !== NULL && trim($guia->url_guia) != false){
-                        print '<a href="' . $guia->url_guia. '"> PDF </a>';
+                    if ($guia->uRLPERFIL !== NULL && trim($guia->uRLPERFIL) != false){
+                        print '<a href="' . $guia->uRLPERFIL. '"> PDF </a>';
                     }                    
                     print '</td>';
                     print '<td> <a href="?m=showGuiaMS&nombre=' . $guia->gUIADEESTUDIO. '">';

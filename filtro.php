@@ -10,6 +10,9 @@ $constantes['PROCESO']['INGRESO'] = "INGRESO";
 $constantes['PROCESO']['PROMOCION'] = "PROMOCIÓN";
 $constantes['FUNCION']['TECNICO_DOCENTE'] = "TÉCNICO DOCENTE";
 $constantes['FUNCION']['DOCENTE'] = "DOCENTE";
+$constantes['FUNCION']['DIRECTOR'] = "DIRECTOR";
+$constantes['FUNCION']['SUPERVISOR'] = "SUPERVISOR";
+$constantes['FUNCION']['ATP'] = "ATP";
 
 $funcion = filter_input(INPUT_GET, 'funcion');
 $proceso = filter_input(INPUT_GET, 'proceso');

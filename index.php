@@ -137,10 +137,12 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=TECNICO_DOCENTE">
-                            Docentes</a></li>
-                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=TECNICO_DOCENTE">
-                            Técnicos Docentes</a></li>
+                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=DIRECTOR">
+                            Director</a></li>
+                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=SUPERVISOR">
+                            Supervisor</a></li>
+                        <li><a href="filtro.php?pag=showGuias&proceso=PROMOCION&funcion=ATP">
+                            ATP</a></li>
                       </ul>
                     </li>
                     <li class="divider"></li>

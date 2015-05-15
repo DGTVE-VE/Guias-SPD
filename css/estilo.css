@@ -126,9 +126,13 @@ hr{
     border-radius: 6px 0 6px 6px;
 }
 
-li{
+/*li{
     list-style: none;
-}
-p, li{
+}*/
+p{
  text-align: justify;    
+}
+.li-none{
+    list-style: none;
+    text-align: justify;    
 }

@@ -22,7 +22,7 @@ $path = $perfilesDir."/".$name;
 move_uploaded_file($tmp_name, $path);
 
 /* @var $dao PerfilesDAO*/
-$dao = DAOFactory::getBibliografiaMediaSuperiorDAO();
+$dao = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $perfiles = $dao->queryByPERFIL($id);
 foreach ($perfiles as $perfil){
   $perfil->uRLPERFIL = $path;

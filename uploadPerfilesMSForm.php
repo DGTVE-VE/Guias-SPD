@@ -5,7 +5,7 @@ if(!isset($_SESSION)){
 require_once './include_dao.php';
 
 /*@var daoGuias BibliografiaDAO*/
-$dao = DAOFactory::getBibliografiaMediaSuperiorDAO();
+$dao = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $perfiles = $dao->queryPerfiles();
 
 ?>

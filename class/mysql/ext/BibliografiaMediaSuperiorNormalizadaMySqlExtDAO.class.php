@@ -9,9 +9,29 @@
 class BibliografiaMediaSuperiorNormalizadaMySqlExtDAO 
 extends BibliografiaMediaSuperiorNormalizadaMySqlDAO {
 
+  public function queryPerfiles(){
+		$sql = 'SELECT DISTINCT PERFIL, URL_PERFIL FROM bibliografia_media_superior_normalizada';
+		$sqlQuery = new SqlQuery($sql);
+		$tab = QueryExecutor::execute($sqlQuery);
+		$ret = array();
+		for($i=0;$i<count($tab);$i++){
+			$ret[$i] = $this->readPerfil($tab[$i]);
+		}
+		return $ret;
+	}
+    
+    protected function readPerfil($row){
+		$bibliografiaMediaSuperior = new BibliografiaMediaSuperior();
+		
+		$bibliografiaMediaSuperior->pERFIL = $row['PERFIL'];
+        $bibliografiaMediaSuperior->uRLPERFIL = $row['URL_PERFIL'];
+		
+		return $bibliografiaMediaSuperior;
+	}
+    
   public function queryRepositorio($busqueda) {
-    $sql = 'SELECT DISTINCT BIBLIOGRAFIA, URL_MATERIAL FROM '
-            . '(SELECT * FROM bibliografia_ms WHERE MATCH(BIBLIOGRAFIA) '
+    $sql = 'SELECT DISTINCT BIBLIOGRAFIA_REVISADA, URL_MATERIAL FROM '
+            . '(SELECT * FROM bibliografia_media_superior_normalizada WHERE MATCH(BIBLIOGRAFIA) '
             . 'AGAINST (\'' . $busqueda . '\')) as TEMP';
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
@@ -24,7 +44,7 @@ extends BibliografiaMediaSuperiorNormalizadaMySqlDAO {
 
   protected function readPartialRow($row) {
     $bibliografia = new Bibliografia();
-    $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
+    $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA_REVISADA'];
     $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
     return $bibliografia;
   }

@@ -17,10 +17,8 @@
                 <div class="table-responsive">
 <?php
 if (isset($_POST['busqueda'])) {
-    $busqueda = $_POST['busqueda'];
-    $dao = DAOFactory::getBibliografiaDAO();
-    $repositorio = $dao->queryRepositorio($busqueda);
-    $repositorioMS = DAOFactory::getBibliografiaMsDAO()->queryRepositorio($busqueda);
+    $busqueda = $_POST['busqueda'];    
+    
     $mensaje = 'Resultados de la consulta';
     echo'<table id="tblRepositorio" class="table table-bordered">';
     echo'    <caption> ' . $mensaje . '</caption>';
@@ -30,7 +28,8 @@ if (isset($_POST['busqueda'])) {
     echo'        </tr>';
     echo'    </thead>';
     echo'    <tbody>';
-    
+    $dao = DAOFactory::getBibliografiaDAO();
+    $repositorio = $dao->queryRepositorio($busqueda);
     foreach ($repositorio as $rep) {
         
         if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
@@ -39,11 +38,31 @@ if (isset($_POST['busqueda'])) {
         echo'</tr>';
         }
     }
+    
+    $repositorio_guias = $dao->queryRepositorioGuias($busqueda);
+    foreach ($repositorio_guias as $rep) {
+        
+        if ($rep->uRLGUIA != NULL && trim($rep->uRLGUIA) != false){
+        echo'<tr>';           
+             echo'<td><a href="'.$rep->uRLGUIA.'">' . $rep->gUIADEESTUDIO . '</a></td>';             
+        echo'</tr>';
+        }
+    }
+    $repositorioMS = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO()->queryRepositorio($busqueda);
     foreach ($repositorioMS as $rep) {
         
         if ($rep->uRLMATERIAL != NULL && trim($rep->uRLMATERIAL) != false){
         echo'<tr>';           
              echo'<td><a href="'.$rep->uRLMATERIAL.'">' . $rep->bIBLIOGRAFIA . '</a></td>';             
+        echo'</tr>';
+        }
+    }
+    $repositorioMS_guias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO()->queryRepositorioGuias($busqueda);
+    foreach ($repositorioMS_guias as $rep) {
+        
+        if ($rep->uRLGUIA != NULL && trim($rep->uRLGUIA) != false){
+        echo'<tr>';           
+             echo'<td><a href="'.$rep->uRLGUIA.'">' . $rep->gUIADEESTUDIO . '</a></td>';             
         echo'</tr>';
         }
     }

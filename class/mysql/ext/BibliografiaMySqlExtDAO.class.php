@@ -46,9 +46,9 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     }
 
     public function queryGuiasNullURL() {
-        $sql = 'SELECT DISTINCT '
+        $sql = 'SELECT DISTINCT PERFIL,'
                 . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA'
+                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
                 . ' FROM bibliografia WHERE URL_GUIA IS NULL';
         $sqlQuery = new SqlQuery($sql);
         $tab = QueryExecutor::execute($sqlQuery);
@@ -60,9 +60,9 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     }
 
     public function queryGuiasByFuncionProceso($funcion, $proceso) {
-        $sql = 'SELECT DISTINCT 
+        $sql = 'SELECT DISTINCT PERFIL, 
                 GUIA_DE_ESTUDIO, FUNCION, 
-                PROCESO, NIVEL_SERVICIO, URL_GUIA
+                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
                 FROM bibliografia 
                 WHERE PROCESO = \''.$proceso.'\' AND FUNCION = \''. $funcion .
                 '\' ORDER BY GUIA_DE_ESTUDIO ';
@@ -76,9 +76,9 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     }
 
     public function queryGuias() {
-        $sql = 'SELECT DISTINCT '
+        $sql = 'SELECT DISTINCT PERFIL, '
                 . ' GUIA_DE_ESTUDIO, FUNCION, '
-                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA'
+                . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
                 . ' FROM bibliografia ORDER BY GUIA_DE_ESTUDIO';
         $sqlQuery = new SqlQuery($sql);
         $tab = QueryExecutor::execute($sqlQuery);
@@ -91,11 +91,13 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
 
     protected function readGuia($row) {
         $bibliografia = new Bibliografia();
+        $bibliografia->pERFIL = $row['PERFIL'];
         $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];
         $bibliografia->fUNCION = $row['FUNCION'];
         $bibliografia->pROCESO = $row['PROCESO'];
         $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];
         $bibliografia->uRLGUIA = $row['URL_GUIA'];
+        $bibliografia->uRLPERFIL = $row['URL_PERFIL'];
         return $bibliografia;
     }
 

@@ -55,12 +55,16 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
     /**
      * Insert record to table
      *
-     * @param BibliografiaMySql bibliografia
+     * @param  bibliografia Bibliografia
      */
     public function insert($bibliografia) {
-        $sql = 'INSERT INTO bibliografia (BIBLIOGRAFIA, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, DIMENSION, DISPONIBLE_EN_LINEA, EDITORIAL, LIGA_O_REFERENCIA, NOMENCLATURA, MATERIAL_DE_DESCARGA, URL_GUIA, URL_MATERIAL) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO bibliografia (PERFIL, BIBLIOGRAFIA, GUIA_DE_ESTUDIO, '
+                . 'FUNCION, PROCESO, NIVEL_SERVICIO, DIMENSION, '
+                . 'DISPONIBLE_EN_LINEA, EDITORIAL, LIGA_O_REFERENCIA, '
+                . 'NOMENCLATURA, MATERIAL_DE_DESCARGA, URL_GUIA, URL_MATERIAL, URL_PERFIL) '
+                . 'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $sqlQuery = new SqlQuery($sql);
-
+        $sqlQuery->set($bibliografia->pERFIL);
         $sqlQuery->set($bibliografia->bIBLIOGRAFIA);
         $sqlQuery->set($bibliografia->gUIADEESTUDIO);
         $sqlQuery->set($bibliografia->fUNCION);
@@ -74,6 +78,7 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
         $sqlQuery->set($bibliografia->mATERIALDEDESCARGA);
         $sqlQuery->set($bibliografia->uRLGUIA);
         $sqlQuery->set($bibliografia->uRLMATERIAL);
+        $sqlQuery->set($bibliografia->uRLPERFIL);
 
         $id = $this->executeInsert($sqlQuery);
         $bibliografia->nUMERO = $id;
@@ -86,9 +91,13 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
      * @param BibliografiaMySql bibliografia
      */
     public function update($bibliografia) {
-        $sql = 'UPDATE bibliografia SET BIBLIOGRAFIA = ?, GUIA_DE_ESTUDIO = ?, FUNCION = ?, PROCESO = ?, NIVEL_SERVICIO = ?, DIMENSION = ?, DISPONIBLE_EN_LINEA = ?, EDITORIAL = ?, LIGA_O_REFERENCIA = ?, NOMENCLATURA = ?, MATERIAL_DE_DESCARGA = ?, URL_GUIA = ?, URL_MATERIAL = ? WHERE NUMERO = ?';
+        $sql = 'UPDATE bibliografia SET PERFIL = ?, BIBLIOGRAFIA = ?, GUIA_DE_ESTUDIO = ?, '
+                . 'FUNCION = ?, PROCESO = ?, NIVEL_SERVICIO = ?, DIMENSION = ?, '
+                . 'DISPONIBLE_EN_LINEA = ?, EDITORIAL = ?, LIGA_O_REFERENCIA = ?, '
+                . 'NOMENCLATURA = ?, MATERIAL_DE_DESCARGA = ?, URL_GUIA = ?, '
+                . 'URL_MATERIAL = ?, URL_PERFIL = ? WHERE NUMERO = ?';
         $sqlQuery = new SqlQuery($sql);
-
+        $sqlQuery->set($bibliografia->pERFIL);
         $sqlQuery->set($bibliografia->bIBLIOGRAFIA);
         $sqlQuery->set($bibliografia->gUIADEESTUDIO);
         $sqlQuery->set($bibliografia->fUNCION);
@@ -102,6 +111,7 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
         $sqlQuery->set($bibliografia->mATERIALDEDESCARGA);
         $sqlQuery->set($bibliografia->uRLGUIA);
         $sqlQuery->set($bibliografia->uRLMATERIAL);
+        $sqlQuery->set($bibliografia->uRLPERFIL);
 
         $sqlQuery->setNumber($bibliografia->nUMERO);
         return $this->executeUpdate($sqlQuery);
@@ -306,9 +316,10 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
     protected function readRow($row) {
         $bibliografia = new Bibliografia();
         $bibliografia->nUMERO = $row['NUMERO'];
-      $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
+        $bibliografia->pERFIL = $row['PERFIL'];
+        $bibliografia->bIBLIOGRAFIA = $row['BIBLIOGRAFIA'];
         $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];
-          $bibliografia->fUNCION = $row['FUNCION'];
+        $bibliografia->fUNCION = $row['FUNCION'];
         $bibliografia->pROCESO = $row['PROCESO'];
         $bibliografia->nIVELSERVICIO = $row['NIVEL_SERVICIO'];
         $bibliografia->dIMENSION = $row['DIMENSION'];
@@ -319,6 +330,7 @@ class BibliografiaMySqlDAO implements BibliografiaDAO {
         $bibliografia->mATERIALDEDESCARGA = $row['MATERIAL_DE_DESCARGA'];
         $bibliografia->uRLGUIA = $row['URL_GUIA'];
         $bibliografia->uRLMATERIAL = $row['URL_MATERIAL'];
+        $bibliografia->uRLPERFIL = $row['URL_PERFIL'];
         return $bibliografia;
     }
 

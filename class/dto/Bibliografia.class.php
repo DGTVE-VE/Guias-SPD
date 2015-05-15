@@ -8,19 +8,37 @@
 	class Bibliografia{
 		
 		var $nUMERO;
-		var $bIBLIOGRAFIA;
-		var $gUIADEESTUDIO;
-		var $fUNCION;
-		var $pROCESO;
-		var $nIVELSERVICIO;
-		var $dIMENSION;
-		var $dISPONIBLEENLINEA;
-		var $eDITORIAL;
-		var $lIGAOREFERENCIA;
-		var $nOMENCLATURA;
-		var $mATERIALDEDESCARGA;
-		var $uRLGUIA;
-		var $uRLMATERIAL;
-		
+        
+        var $pERFIL;
+
+		var $bIBLIOGRAFIA;
+
+		var $gUIADEESTUDIO;
+
+		var $fUNCION;
+
+		var $pROCESO;
+
+		var $nIVELSERVICIO;
+
+		var $dIMENSION;
+
+		var $dISPONIBLEENLINEA;
+
+		var $eDITORIAL;
+
+		var $lIGAOREFERENCIA;
+
+		var $nOMENCLATURA;
+
+		var $mATERIALDEDESCARGA;
+
+		var $uRLGUIA;
+
+		var $uRLMATERIAL;
+        
+        var $uRLPERFIL;
+
+		
 	}
 ?>

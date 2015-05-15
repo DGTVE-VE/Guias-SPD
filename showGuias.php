@@ -27,7 +27,7 @@ if ($all != NULL && $all!= false ){
 <table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
-          <td>Guía</td><td>Función</td><td>Proceso</td><td> Documento PDF </td><td> Bibliografía</td>
+          <td>Perfil </td><td>Guía</td><td>Guía PDF</td><td> Descripción del Perfil</td><td> Bibliografía</td>
         </tr>        
     </thead>
     <tbody>
@@ -35,18 +35,19 @@ if ($all != NULL && $all!= false ){
         foreach ($material as $guia) {
             print '<tr>';            
             print '<td>';            
+            print $guia->pERFIL;
+            print '</td>';
+            print '<td>';            
             print $guia->gUIADEESTUDIO;
             print '</td>';
-            print '<td>';            
-            print $guia->fUNCION;
-            print '</td>';
-            print '<td>';            
-            print $guia->pROCESO;
-            print '</td>';
             print '<td>';
-
             if ($guia->uRLGUIA !== NULL) {
                 print '<a href="' . $guia->uRLGUIA . '"> PDF </a>';
+            }
+            print '<td>';
+
+            if ($guia->uRLPERFIL !== NULL) {
+                print '<a href="' . $guia->uRLPERFIL . '"> PDF </a>';
             }
             print '</td>';
             print '<td> <a href="?m=showGuia&nombre=' . $guia->gUIADEESTUDIO . '">';

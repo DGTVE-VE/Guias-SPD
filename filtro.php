@@ -7,6 +7,7 @@ if(!isset($_SESSION)){
 $pag      = filter_input(INPUT_GET, 'pag');
 $nivel      = filter_input(INPUT_GET, 'nivel');
 
+$_SESSION['imagen'] = filter_input(INPUT_GET, 'imagen');
 $_SESSION['nivel'] = $nivel;
 
 $constantes['PROCESO']['INGRESO'] = "INGRESO";

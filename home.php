@@ -1,5 +1,5 @@
 
-<h1>¡BIENVENIDOS!</h1>
+<!--<h1>¡BIENVENIDOS!</h1>
 <p>
 La Secretaría de Educación Pública invita a participar en el Concurso de 
 Oposición para el Ingreso a la Educación  Básica, 2015-2016, a:
@@ -30,4 +30,4 @@ participación en este proceso!</b>
 </p>
 <h3>CONCURSO DE OPOSICIÓN PARA EL INGRESO A LA EDUACCIÓN BÁSICA CICLO ESCOLAR 2015 - 2016</h3>
 
-<img src='imgs/icoWEB.jpg' class='img-responsive'>
+<img src='imgs/icoWEB.jpg' class='img-responsive'>-->

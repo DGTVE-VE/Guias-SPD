@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
 }
 require_once './include_dao.php';
 
-/*@var daoGuias BibliografiaDAO*/
+/*@var daoGuias BibliografiaMediaSuperiorNormalizadaMySqlExtDAO*/
 $daoGuias = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
 $all = filter_input(INPUT_GET, 'all');
 
@@ -19,7 +19,9 @@ if ($all != NULL && $all!= false ){
     <h1>Guías Media Superior</h1>
     <h2><?php 
     if ($all == NULL || $all == false ){
-      print $_SESSION['proceso'].'-' .$_SESSION['funcion'];
+//      print $_SESSION['proceso'].'-' .$_SESSION['funcion'];
+        if($_SESSION['funcion'] === 'DOCENTE'){print $_SESSION['proceso'].'- DOCENTES Y TÉCNICOS DOCENTES';}
+        else{print $_SESSION['proceso'].'-' .$_SESSION['funcion'];}
     }?> 
     </h2>    
 </div>
@@ -40,9 +42,11 @@ if ($all != NULL && $all!= false ){
             <tbody>
                 <?php
                 /*@var $guia BibliografiaMediaSuperiorNormalizada*/
+//                $cont = 1;
                 foreach ($material as $guia) {
                     
-                    print '<tr><td>';
+                    print '<tr>';
+                    print '<td>';
                     print $guia->fUNCION;
                     print '</td>';
                     print '<td>';

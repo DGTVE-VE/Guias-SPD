@@ -98,20 +98,45 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
   }
 
   public function queryGuiasByFuncionProceso($funcion, $proceso) {
-    if ($proceso == 'INGRESO'){
-      $sql = 'SELECT DISTINCT PERFIL, 
-                GUIA_DE_ESTUDIO, FUNCION, 
-                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
-                FROM bibliografia 
-                WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' AND FUNCION = \'' . $funcion .
-            '\' ORDER BY GUIA_DE_ESTUDIO ';
+     if ($funcion == 'DOCENTE'){
+            if ($proceso == 'INGRESO'){
+            $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+                    . 'FROM bibliografia '
+                    . 'WHERE PROCESO = \'INGRESO\' OR PROCESO = \'INGRESO/COMPLEMENTARIO\' '
+                    . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
+                    . 'AND PERFIL IS NOT NULL '
+                    . 'ORDER BY GUIA_DE_ESTUDIO';
+          } else {
+            $sql = 'SELECT DISTINCT PERFIL,GUIA_DE_ESTUDIO, FUNCION,PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+                    . 'FROM bibliografia '
+                    . 'WHERE PROCESO = \'' . $proceso . '\' '
+                    . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
+                    . 'AND PERFIL IS NOT NULL  '
+                    . 'ORDER BY GUIA_DE_ESTUDIO ';
+          }
+          $sqlQuery = new SqlQuery($sql);
+          $tab = QueryExecutor::execute($sqlQuery);
+          $ret = array();
+          for ($i = 0; $i < count($tab); $i++) {
+            $ret[$i] = $this->readGuia($tab[$i]);
+          }
+          return $ret;
+     }
+     else{
+      if ($proceso == 'INGRESO'){
+      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+              . 'FROM bibliografia '
+              . 'WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' '
+              . 'AND FUNCION = \'' . $funcion . '\' '
+              . 'AND PERFIL IS NOT NULL  '
+              . 'ORDER BY GUIA_DE_ESTUDIO ';
     } else {
-      $sql = 'SELECT DISTINCT PERFIL, 
-                GUIA_DE_ESTUDIO, FUNCION, 
-                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
-                FROM bibliografia 
-                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
-            '\' ORDER BY GUIA_DE_ESTUDIO ';
+      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+              . 'FROM bibliografia '
+              . 'WHERE PROCESO = \'' . $proceso . '\' '
+              . 'AND FUNCION = \'' . $funcion . '\' '
+              . 'AND PERFIL IS NOT NULL  '
+              . 'ORDER BY GUIA_DE_ESTUDIO ';
     }
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
@@ -119,7 +144,30 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     for ($i = 0; $i < count($tab); $i++) {
       $ret[$i] = $this->readGuia($tab[$i]);
     }
-    return $ret;
+     return $ret;}
+      
+//    if ($proceso == 'INGRESO'){
+//      $sql = 'SELECT DISTINCT PERFIL, 
+//                GUIA_DE_ESTUDIO, FUNCION, 
+//                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
+//                FROM bibliografia 
+//                WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' AND FUNCION = \'' . $funcion .
+//            '\' ORDER BY GUIA_DE_ESTUDIO ';
+//    } else {
+//      $sql = 'SELECT DISTINCT PERFIL, 
+//                GUIA_DE_ESTUDIO, FUNCION, 
+//                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
+//                FROM bibliografia 
+//                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
+//            '\' ORDER BY GUIA_DE_ESTUDIO ';
+//    }
+//    $sqlQuery = new SqlQuery($sql);
+//    $tab = QueryExecutor::execute($sqlQuery);
+//    $ret = array();
+//    for ($i = 0; $i < count($tab); $i++) {
+//      $ret[$i] = $this->readGuia($tab[$i]);
+//    }
+//    return $ret;
   }
 
   public function queryGuias() {

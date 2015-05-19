@@ -2,7 +2,6 @@
 session_start();
 require 'include_dao.php';
 
-
 $module = filter_input(INPUT_GET, 'm');
 if ($module === NULL || $module === false) {
   $module = 'home';
@@ -78,8 +77,6 @@ if (array_key_exists($module, $modulos)) {
               </button>
             </div>
             <div class="collapse navbar-collapse">
-
-
               <ul class="nav navbar-nav">
                 <li><a class="navbar-header" href="index.php">
                     Inicio
@@ -95,19 +92,13 @@ if (array_key_exists($module, $modulos)) {
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=INGRESO-EB-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
                             Docentes y Técnicos Docentes</a></li>
-                        <!--                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
-                                                    Técnicos Docentes</a></li>-->
                       </ul>
                     </li>
-                    <!--<li class="divider"></li>-->
                     <li class="dropdown-submenu">
-                      <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-INGRESO-EMS-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
-                            Docentes y Técnicos Docentes</a></li>
-                        <!--                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
-                                                    Técnicos Docentes</a></li>-->
+                            Docentes y Técnicos Docentes</a></li>                    
                       </ul>
                     </li>
                   </ul>
@@ -128,9 +119,9 @@ if (array_key_exists($module, $modulos)) {
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>
                     </li>
-                    <!--<li class="divider"></li>-->
+
                     <li class="dropdown-submenu">
-                      <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
+
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-DIRECCION-EMS-OK.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
@@ -190,13 +181,13 @@ if (array_key_exists($module, $modulos)) {
           <div class="col-md-1"></div>
           <div class="col-md-2 sidebar"><b>
               <?php
-              if (isset($_SESSION['proceso'])) {                
+              if (isset($_SESSION['proceso'])) {
                 print $_SESSION['proceso'] . " ";
               }
               if (isset($_SESSION['funcion'])) {
-                if ($_SESSION['funcion'] == 'DIRECTOR'){
+                if ($_SESSION['funcion'] == 'DIRECTOR') {
                   print 'DIRECCIÓN';
-                }else{
+                } else {
                   print $_SESSION['funcion'];
                 }
               }
@@ -239,7 +230,8 @@ if (array_key_exists($module, $modulos)) {
               <?php if (isset($_SESSION['usuario'])) { ?>
                 <h3>Administración</h3>
                 <li class="dropdown nav nav-sidebar">
-                  <a data-toggle="dropdown" class="dropdown-toggle"> Subir Documentos <b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="dropdown-toggle"> 
+                    Subir Documentos <b class="caret"></b></a>
                   <ul role="menu" class="dropdown-menu">
                     <li><a href="?m=uploadGuia">Guias Básica</a></li>
                     <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>

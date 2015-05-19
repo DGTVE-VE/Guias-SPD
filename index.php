@@ -46,6 +46,7 @@ if (array_key_exists($module, $modulos)) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -264,25 +265,29 @@ if (array_key_exists($module, $modulos)) {
     </div>
 
     <div class="row">
-      <footer id="footer" class="col-md-12">        
-        <div class="container center-block">
-          <div class="footer-bottom">
-            <ul class="nav nav-pills payments">
-              <li><img class="col-md-1 logofoot2" src="imgs/sep.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/seb.jpg"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/imgres.jpg"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/inee.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/logo-tve-solo-esfera.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/ilce.jpg"></li>
-              <li><img class="col-md-1 logofoot1" src="imgs/logounadm.png"></li>
-              <li><img class="col-md-1 logofoot" src="imgs/radioeducacion.jpg"></li>
-              <li><img class="col-md-1 logofoot2" src="imgs/normateca.png"></li>
-            </ul> <br>
-            <hr>
-            <p class="pull-left">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
-          </div>
-        </div>
-      </footer>
-    </div>
+        <footer class="footer-bottom" id="foot">        
+            <p class="col-md-12 text-center textoFoot" id="footer">Argentina 28, Col. Centro, Deleg. Cuauhtémoc, México, D.F.  </p>
+            <div class="col-md-12">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 footer-bottom text-center">                               
+                    <a href="http://www.sep.gob.mx/" target="_black"><img class="imgfoot"  src="imgs/SriaEducacion.png"></a>&nbsp;&nbsp;
+                    <a href="http://basica.sep.gob.mx/" target="_black"><img class="imgfoot" src="imgs/LogoSEB.png"></a>&nbsp;&nbsp;
+                    <a href="http://www.sems.gob.mx/" target="_black"><img class="imgfoot" src="imgs/LogoEMS.png"></a>&nbsp;&nbsp;
+                    <a href="http://servicioprofesionaldocente.sep.gob.mx/ba/ingreso/ordinaria/" target="_black"><img class="imgfoot" src="imgs/LogoCNSPD5cm.png"></a>&nbsp;&nbsp;       
+                    <a href="http://www.inee.edu.mx/" target="_black"><img class="imgfoot" src="imgs/LogoINEE.png"></a>&nbsp;&nbsp;
+                    <a href="http://www.televisioneducativa.gob.mx/" target="_black"><img class="imgfoot" src="imgs/logotv.png"></a>&nbsp;&nbsp;
+                    <a href="http://www.ilce.edu.mx/" target="_black"><img class="imgfoot" src="imgs/LogoILCE.png"></a>&nbsp;&nbsp;
+                    <a href="http://www.unadmexico.mx/" target="_black"><img class="imgfoot" src="imgs/logoUNADM.png"></a>&nbsp;&nbsp;
+                    <a href="http://www.radioeducacion.edu.mx/" target="_black"><img class="imgfoot" src="imgs/LogoRadioEducacion.png"></a>
+                    <a href="http://normatecainterna.sep.gob.mx/" target="_black"><img class="imgfoot" src="imgs/logo_normateca.png"></a>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <br><br><br><br><br><br>
+            <p class="col-md-12 text-center" id="derechos">© 2015 DGTVE Desarrollado por Ventana Educativa  </p>
+            </div>
+        </footer>
+    </div>            
   </body>
 </html>

@@ -61,7 +61,7 @@ if (array_key_exists($module, $modulos)) {
     <script src="js/spd.js"></script>
     <title>Guías Servicio Profesional Docente</title>
   </head>
-  <body>
+  <body><?php include_once("analyticstracking.php") ?>
     <div class='row'>
       <div class="col-md-1"></div>
       <div class="col-md-10">           

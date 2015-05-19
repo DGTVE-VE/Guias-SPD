@@ -32,7 +32,7 @@ $modulos = [
     "showPerfilesMS" => "showPerfilesMS.php",
     "concurso" => "concurso.php",
     "show" => "show.php",
-    "enconstruccion" => "enconstruccion.html"
+    "enconstruccion" => "enconstruccion.php"
 ];
 
 //Modulo por default
@@ -80,19 +80,24 @@ if (array_key_exists($module, $modulos)) {
             </div>
             <div class="collapse navbar-collapse">
 
-              
+
               <ul class="nav navbar-nav">
-                <li><a class="navbar-header" href="index.php">Inicio</a></li>                                
+                <li><a class="navbar-header" href="index.php">
+                    Inicio
+                  </a></li>                                
                 <li>
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso<b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Ingreso
+                    <b class="caret"></b></a>
                   <ul class="dropdown-menu multi-level">
                     <li class="dropdown-submenu">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Educación Básica</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=INGRESO-EB-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
                             Docentes y Técnicos Docentes</a></li>
-<!--                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
-                            Técnicos Docentes</a></li>-->
+                        <!--                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
+                                                    Técnicos Docentes</a></li>-->
                       </ul>
                     </li>
                     <!--<li class="divider"></li>-->
@@ -102,8 +107,8 @@ if (array_key_exists($module, $modulos)) {
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-INGRESO-EMS-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
                             Docentes y Técnicos Docentes</a></li>
-<!--                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
-                            Técnicos Docentes</a></li>-->
+                        <!--                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
+                                                    Técnicos Docentes</a></li>-->
                       </ul>
                     </li>
                   </ul>
@@ -139,9 +144,12 @@ if (array_key_exists($module, $modulos)) {
                     </li>
                   </ul>
                 </li>
-                <li><a href="?m=enconstruccion" class="dropdown-toggle">Reconocimiento</a></li>
-                <li><a href="?m=enconstruccion" class="dropdown-toggle">Permanencia</a></li>
-                <li><a href="?m=repositorio" class="dropdown-toggle">Repositorio</a></li>
+                <li><a href="?m=enconstruccion" class="dropdown-toggle">
+                    Reconocimiento</a></li>
+                <li><a href="?m=enconstruccion" class="dropdown-toggle">
+                    Permanencia</a></li>
+                <li><a href="?m=repositorio" class="dropdown-toggle">
+                    Repositorio</a></li>
                 <?php if (!isset($_SESSION['usuario'])) { ?>  
                   <li id="menuLogin">                     
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
@@ -166,10 +174,10 @@ if (array_key_exists($module, $modulos)) {
                     </div>
                   </li>
                 <?php } ?>
-                  <?php if (isset($_SESSION['usuario'])) { ?>
-                <li>
-                  <a href="cierraSesion.php" class="dropdown-toggle">Cerrar sesión</a></li>
-              <?php } ?>
+                <?php if (isset($_SESSION['usuario'])) { ?>
+                  <li>
+                    <a href="cierraSesion.php" class="dropdown-toggle">Cerrar sesión</a></li>
+                <?php } ?>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -177,60 +185,93 @@ if (array_key_exists($module, $modulos)) {
       </div>
     </div>
 
-    <?php if ($modulo != 'home.php'){?>
-    <div class="container-fluid theme-showcase" role="main">                        
-      <div class="row"> 
-        <div class="col-md-1"></div>
-        <div class="col-md-2 sidebar"><b>
-          <?php
-//                if (isset($_SESSION['nivel'])) {
-//                  print "EDUCACIÓN " . $_SESSION['nivel'] . " ";
-//                }
-
-                if (isset($_SESSION['proceso'])) {
-                  print $_SESSION['proceso'] . " ";
-                }
-                if (isset($_SESSION['funcion'])) {
+    <?php if ($modulo != 'home.php' && $modulo != 'enconstruccion.php') { ?>
+      <div class="container-fluid theme-showcase" role="main">                        
+        <div class="row"> 
+          <div class="col-md-1"></div>
+          <div class="col-md-2 sidebar"><b>
+              <?php
+              if (isset($_SESSION['proceso'])) {                
+                print $_SESSION['proceso'] . " ";
+              }
+              if (isset($_SESSION['funcion'])) {
+                if ($_SESSION['funcion'] == 'DIRECTOR'){
+                  print 'DIRECCIÓN';
+                }else{
                   print $_SESSION['funcion'];
                 }
-                ?>
+              }
+              ?>
             </b>
-          <ul class="nav nav-sidebar">
-            <li><a href="show.php">Perfiles, Guías y Bibliografía                
-              </a></li>            
+            <ul class="nav nav-sidebar">
+              <li><a href="show.php">
+                  <?php
+                  if ($_SESSION['nivel'] == 'MEDIA') {
+                    print 'Perfiles, Parámetros e Indicadores (PPI)';
+                  } else {
+                    print 'Perfiles, Guías y Bibliografía';
+                  }
+                  ?>                  
+                </a></li>       
+              <?php
+              if ($_SESSION['nivel'] == 'MEDIA') {
+                print '<li><a href="#">';
+                print 'Guías de estudio';
+                print '</a></li>';
+              }
+              ?>                  
+              <li><a href="?m=repositorio">
+                  Repositorio de materiales de estudio
+                </a></li>
+              <?php
+              if ($_SESSION['nivel'] == 'BASICA') {
+                print '<li><a href="?m=estrategias">';
+                print 'Estrategias de estudio';
+                print '</a></li>';
+              }
+              ?>                                
+              <li><a href=" http://simulador.ceneval.edu.mx" target="_black">
+                  Simulador de examen</a></li>
+              <li><a href="?m=preguntas_frecuentes">
+                  Preguntas frecuentes</a></li>
+              <li><a href="?m=contacto">
+                  Contacto</a></li>
 
-            <li><a href="?m=repositorio">Repositorio de materiales de consulta</a></li>
-            <li><a href="?m=estrategias">Estrategias de estudio</a></li>            
-            <li><a href=" http://simulador.ceneval.edu.mx" target="_black">Simulador de examen</a></li>
-            <li><a href="?m=preguntas_frecuentes">Preguntas frecuentes</a></li>
-            <li><a href="?m=contacto">Contacto</a></li>
-
-            <?php if (isset($_SESSION['usuario'])) { ?>
-              <h3>Administración</h3>
-              <li class="dropdown nav nav-sidebar">
-                <a data-toggle="dropdown" class="dropdown-toggle"> Subir Documentos <b class="caret"></b></a>
-                <ul role="menu" class="dropdown-menu">
-                  <li><a href="?m=uploadGuia">Guias Básica</a></li>
-                  <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>
-                  <li><a href="?m=uploadMateriales">Materiales Básica</a></li>
-                  <li><a href="?m=uploadMaterialesMS">Materiales Media Superior</a></li>
-                  <li><a href="?m=uploadPerfiles">Perfiles Educación Básica</a></li>
-                  <li><a href="?m=uploadPerfilesMS">Perfiles Educación Media Superior</a></li>
-                </ul>
-              </li>  
-            <?php } ?>
-          </ul>
+              <?php if (isset($_SESSION['usuario'])) { ?>
+                <h3>Administración</h3>
+                <li class="dropdown nav nav-sidebar">
+                  <a data-toggle="dropdown" class="dropdown-toggle"> Subir Documentos <b class="caret"></b></a>
+                  <ul role="menu" class="dropdown-menu">
+                    <li><a href="?m=uploadGuia">Guias Básica</a></li>
+                    <li><a href="?m=uploadGuiaMS">Guias Media Superior</a></li>
+                    <li><a href="?m=uploadMateriales">Materiales Básica</a></li>
+                    <li><a href="?m=uploadMaterialesMS">Materiales Media Superior</a></li>
+                    <li><a href="?m=uploadPerfiles">Perfiles Educación Básica</a></li>
+                    <li><a href="?m=uploadPerfilesMS">Perfiles Educación Media Superior</a></li>
+                  </ul>
+                </li>  
+              <?php } ?>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <?php require $modulo; ?>
+          </div>
+          <div class="col-md-1"></div>
         </div>
-        <div class="col-md-8">
-          <?php require $modulo; ?>
-        </div>
-        <div class="col-md-1"></div>
+      </div>
+    <?php } else {
+      ?>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <?php
+          require_once $modulo;
+        }
+        ?>  
+        <br><br>
       </div>
     </div>
-    <?php } else {
-      print '<br><br><br><br><br><br>';              
-    }
-?>
+
     <div class="row">
         <footer class="footer-bottom" id="foot">        
             <p class="col-md-12 text-center textoFoot" id="footer">Argentina 28, Col. Centro, Deleg. Cuauhtémoc, México, D.F.  </p>

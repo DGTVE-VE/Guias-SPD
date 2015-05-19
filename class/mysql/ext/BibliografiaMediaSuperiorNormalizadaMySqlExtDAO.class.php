@@ -105,12 +105,28 @@ class BibliografiaMediaSuperiorNormalizadaMySqlExtDAO extends BibliografiaMediaS
   }
 
   public function queryGuiasByFuncionProceso($funcion, $proceso) {
+      if ($funcion === 'DOCENTE') {
+    $sql = 'SELECT DISTINCT PERFIL,GUIA_DE_ESTUDIO, FUNCION,PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+            . 'FROM bibliografia_media_superior_normalizada '
+            . 'WHERE PROCESO = \'INGRESO\' OR PROCESO = \'INGRESO/COMPLEMENTARIO\' '
+                    . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
+                    . 'AND PERFIL IS NOT NULL '
+                    . 'ORDER BY GUIA_DE_ESTUDIO ';
+    $sqlQuery = new SqlQuery($sql);
+    $tab = QueryExecutor::execute($sqlQuery);
+    $ret = array();
+    for ($i = 0; $i < count($tab); $i++) {
+      $ret[$i] = $this->readGuia($tab[$i]);
+    }
+      return $ret;
+      
+    } else {
     $sql = 'SELECT DISTINCT PERFIL,
                 GUIA_DE_ESTUDIO, FUNCION, 
                 PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
                 FROM bibliografia_media_superior_normalizada 
-                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
-            '\' ORDER BY GUIA_DE_ESTUDIO ';
+                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .                 
+            '\' AND PERFIL IS NOT NULL  ORDER BY GUIA_DE_ESTUDIO ';
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
     $ret = array();
@@ -118,6 +134,20 @@ class BibliografiaMediaSuperiorNormalizadaMySqlExtDAO extends BibliografiaMediaS
       $ret[$i] = $this->readGuia($tab[$i]);
     }
     return $ret;
+    }
+//        $sql = 'SELECT DISTINCT PERFIL,
+//                GUIA_DE_ESTUDIO, FUNCION, 
+//                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
+//                FROM bibliografia_media_superior_normalizada 
+//                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
+//            '\' ORDER BY GUIA_DE_ESTUDIO ';
+//    $sqlQuery = new SqlQuery($sql);
+//    $tab = QueryExecutor::execute($sqlQuery);
+//    $ret = array();
+//    for ($i = 0; $i < count($tab); $i++) {
+//      $ret[$i] = $this->readGuia($tab[$i]);
+//    }
+//    return $ret;
   }
 
   public function queryGuias() {

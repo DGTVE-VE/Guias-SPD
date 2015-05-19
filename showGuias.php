@@ -19,7 +19,9 @@ if ($all != NULL && $all!= false ){
     <h1>Guías Educación Básica</h1>
     <h2><?php 
     if ($all == NULL || $all == false ){
-      print $_SESSION['proceso'].'-' .$_SESSION['funcion'];
+//      print $_SESSION['proceso'].'-' .$_SESSION['funcion'];
+        if($_SESSION['funcion'] === 'DOCENTE'){print $_SESSION['proceso'].'- DOCENTES Y TÉCNICOS DOCENTES';}
+        else{print $_SESSION['proceso'].'-' .$_SESSION['funcion'];}
     }?> 
     </h2>
 </div>
@@ -27,13 +29,21 @@ if ($all != NULL && $all!= false ){
 <table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
-          <td>Perfil </td><td>Guía</td><td>Guía PDF</td><td> Descripción del Perfil</td><td> Bibliografía</td>
+          <td>Función </td><td>Perfil </td><td>Guía</td><td>Guía PDF</td><td> Descripción del Perfil</td><td> Bibliografía</td>
         </tr>        
     </thead>
     <tbody>
         <?php
+//        $con = 1;
         foreach ($material as $guia) {
-            print '<tr>';            
+            
+            print '<tr>';
+//            print '<td>';            
+//            print $con++;
+//            print '</td>';
+            print '<td>';            
+            print $guia->fUNCION;
+            print '</td>';
             print '<td>';            
             print $guia->pERFIL;
             print '</td>';

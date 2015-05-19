@@ -89,9 +89,9 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Básica</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
-                            Docentes</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
-                            Técnicos Docentes</a></li>
+                            Docentes y Técnicos Docentes</a></li>
+<!--                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
+                            Técnicos Docentes</a></li>-->
                       </ul>
                     </li>
                     <!--<li class="divider"></li>-->
@@ -100,9 +100,9 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
                         <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
-                            Docentes</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
-                            Técnicos Docentes</a></li>
+                            Docentes y Técnicos Docentes</a></li>
+<!--                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
+                            Técnicos Docentes</a></li>-->
                       </ul>
                     </li>
                   </ul>

@@ -176,7 +176,9 @@ if (array_key_exists($module, $modulos)) {
       </div>
     </div>
 
-    <?php if ($modulo != 'home.php' && $modulo != 'enconstruccion.php') { ?>
+    <?php if ($modulo != 'home.php' 
+            && $modulo != 'enconstruccion.php'
+            && $modulo != 'repositorio.php') { ?>
       <div class="container-fluid theme-showcase" role="main">                        
         <div class="row"> 
           <div class="col-md-1"></div>

@@ -93,7 +93,7 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-EB-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
                             Docentes y Técnicos Docentes</a></li>
                         <!--                        <li><a href="filtro.php?pag=concurso&imagen=ing_edu_Basica.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=BASICA">
                                                     Técnicos Docentes</a></li>-->
@@ -104,7 +104,7 @@ if (array_key_exists($module, $modulos)) {
                       <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=INGRESO&funcion=DOCENTE">Educación Media Superior</a>-->
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-INGRESO-EMS-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
                             Docentes y Técnicos Docentes</a></li>
                         <!--                        <li><a href="filtro.php?pag=concurso&imagen=Ing_MS.jpg&proceso=INGRESO&funcion=TECNICO_DOCENTE&nivel=MEDIA">
                                                     Técnicos Docentes</a></li>-->
@@ -120,11 +120,11 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=Prom_DIR_Basica.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-DIRECCION-EB-OK.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA">
                             Dirección</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=IconIngSupervisoresBasica.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-SUPERVISION-EB-OK.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA">
                             Supervisión</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=Prom_ATP_Basica.jpg&proceso=PROMOCION&funcion=ATP&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-ATP-EB-OK.jpg&proceso=PROMOCION&funcion=ATP&nivel=BASICA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>
                     </li>
@@ -133,11 +133,11 @@ if (array_key_exists($module, $modulos)) {
                       <!--<li><a href="filtro.php?pag=showGuiasMS&proceso=PROMOCION&funcion=DOCENTE">Educación Media Superior</a>-->
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=Prom_Direccion_MS.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-DIRECCION-EMS-OK.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
                             Dirección</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=Prom_Supervision_MS.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-SUPERVISION-EMS-OK.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA">
                             Supervisión</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=Prom_ATP_MS.jpg&proceso=PROMOCION&funcion=ATP&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-ATP-EMS-OK.jpg&proceso=PROMOCION&funcion=ATP&nivel=MEDIA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>                      
                     </li>

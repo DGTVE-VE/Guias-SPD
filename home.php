@@ -16,7 +16,7 @@ entre otros instrumentos.
 <p>
 A medida que avancen los procesos de evaluación, la oferta de recursos se 
 ampliará y diversificará a fin de cubrir las necesidades del personal docente 
-tanto de Educación Básica como de educación Media Superior conforme a los 
+tanto de Educación Básica como de Educación Media Superior conforme a los 
 Perfiles, parámetros e indicadores establecidos para cada función.
 </p>
 <p>

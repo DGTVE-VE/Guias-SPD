@@ -91,14 +91,14 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-EB-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=ingreso-eb-web.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=BASICA">
                             Docentes y Técnicos Docentes</a></li>
                       </ul>
                     </li>
                     <li class="dropdown-submenu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-INGRESO-EMS-OK.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=ingreso-ems-web.jpg&proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA">
                             Docentes y Técnicos Docentes</a></li>                    
                       </ul>
                     </li>
@@ -112,24 +112,33 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-DIRECCION-EB-OK.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-eb-web.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA">
                             Dirección</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-SUPERVISION-EB-OK.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-supervision-eb-web.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA">
                             Supervisión</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=INGRESO-ATP-EB-OK.jpg&proceso=PROMOCION&funcion=ATP&nivel=BASICA">
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-atp-eb-web.jpg&proceso=PROMOCION&funcion=ATP&nivel=BASICA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>
                     </li>
 
                     <li class="dropdown-submenu">
 
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación Media Superior</a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Educación Media Superior</a>
                       <ul class="dropdown-menu">
-                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-DIRECCION-EMS-OK.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
-                            Dirección</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-SUPERVISION-EMS-OK.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-ems-web.jpg&proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA">
+                            Funciones de Dirección</a></li>
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-ems-web.jpg&proceso=PROMOCION&funcion=SUBDIRECTOR_ADMINISTRATIVO&nivel=MEDIA">
+                            Subdirector administrativo</a></li>
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-ems-web.jpg&proceso=PROMOCION&funcion=SUBDIRECTOR_ACADEMICO&nivel=MEDIA">
+                            Subdirector académico</a></li>
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-ems-web.jpg&proceso=PROMOCION&funcion=JEFE_DE_DEPARTAMENTO_ADMINISTRATIVO&nivel=MEDIA">
+                            Jefe de departamento administrativo</a></li>
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-direccion-ems-web.jpg&proceso=PROMOCION&funcion=JEFE_DE_DEPARTAMENTO_ACADEMICO&nivel=MEDIA">
+                            Jefe de departamento académico</a></li>
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-supervision-ems-web.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA">
                             Supervisión</a></li>
-                        <li><a href="filtro.php?pag=concurso&imagen=PROMOCION-ATP-EMS-OK.jpg&proceso=PROMOCION&funcion=ATP&nivel=MEDIA">
+                        <li><a href="filtro.php?pag=concurso&imagen=promocion-atp-ems-web.jpg&proceso=PROMOCION&funcion=ATP&nivel=MEDIA">
                             Asesoría Técnica Pedagógica</a></li>
                       </ul>                      
                     </li>
@@ -176,9 +185,10 @@ if (array_key_exists($module, $modulos)) {
       </div>
     </div>
 
-    <?php if ($modulo != 'home.php' 
-            && $modulo != 'enconstruccion.php'
-            && $modulo != 'repositorio.php') { ?>
+    <?php  if (!in_array($modulo, array("home.php", 
+                                        "enconstruccion.php", 
+                                        "repositorio.php", 
+                                        "contacto.php"))) { ?>
       <div class="container-fluid theme-showcase" role="main">                        
         <div class="row"> 
           <div class="col-md-1"></div>
@@ -205,14 +215,7 @@ if (array_key_exists($module, $modulos)) {
                     print 'Perfiles, Guías y Bibliografía';
                   }
                   ?>                  
-                </a></li>       
-              <?php
-              if ($_SESSION['nivel'] == 'MEDIA') {
-                print '<li><a href="#">';
-                print 'Guías de estudio';
-                print '</a></li>';
-              }
-              ?>                  
+                </a></li>                                      
               <li><a href="?m=repositorio">
                   Repositorio de materiales de estudio
                 </a></li>
@@ -281,7 +284,7 @@ if (array_key_exists($module, $modulos)) {
                     <a href="http://www.ilce.edu.mx/" target="_black"><img class="imgfoot" src="imgs/LogoILCE.png"></a>&nbsp;&nbsp;
                     <a href="http://www.unadmexico.mx/" target="_black"><img class="imgfoot" src="imgs/logoUNADM.png"></a>&nbsp;&nbsp;
                     <a href="http://www.radioeducacion.edu.mx/" target="_black"><img class="imgfoot" src="imgs/LogoRadioEducacion.png"></a>
-                    <a href="http://normatecainterna.sep.gob.mx/" target="_black"><img class="imgfoot" src="imgs/logo_normateca.png"></a>
+                    <a href="http://www.tecnm.mx/" target="_black"><img class="imgfoot" src="imgs/LogoTECNOLOGICONALMEX.png"></a>
                 </div>
                 <div class="col-md-1"></div>
             </div>

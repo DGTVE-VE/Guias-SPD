@@ -4,35 +4,33 @@
             <tr>
                 <th colspan="5">Contacto</th>
             </tr>
+
             <tr>
                 <td id="espacios"></td>
-                <td colspan="4">Mesa de ayuda</td>
+                <td colspan="4"><p>Mesa de ayuda<p></td>
             </tr>
-            <tr>
-                <td id="espacios"></td>
-                <td class="text-center"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></td>
-                <td>San Antonio Abad No. 32, Piso 2, Col. Tránsito<br>
-                Del. Cuauhtémoc<br>
-                D.F.<br>
-                06820<br>
-                México</td>               
-                <td rowspan="5"><img class="thumbnail center-block" src="imgs/administrator.jpg"></td>
-                <td></td>
-            </tr>
+            <br>
             <tr>
                 <td id="espacios"></td> 
                 <td class="text-center"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></td>
-                <td>36011000</td>     
-                
+                <td>01 800 288 1566<p></td>
+            </tr>
+            <tr>
+                <td id="espacios"></td>
+                <td class="text-center"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></td>
+                <td>evaluaciondocente@sep.gob.mx<p></td>
             </tr>
             <tr>
                 <td></td>
                 <td class="text-center"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></td>
-                <td><a href="http://servicioprofesionaldocente.sep.gob.mx/">http://servicioprofesionaldocente.sep.gob.mx/</a></td>
+                <td><a href="http://servicioprofesionaldocente.sep.gob.mx">http://servicioprofesionaldocente.sep.gob.mx</a>
+                  
+                </td>                
             </tr>
+            <tr><td><br></td></tr>
         </table>
         
     </div>    
     
 </div>
-<br><br>
+<br><br><br><br><br><br>

@@ -28,6 +28,7 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     $bibliografia->uRLMATERIAL = $row['URL_GUIA'];
     return $bibliografia;
   }
+
   public function queryPerfiles() {
     $sql = 'SELECT DISTINCT PERFIL, URL_PERFIL FROM bibliografia';
     $sqlQuery = new SqlQuery($sql);
@@ -98,79 +99,34 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
   }
 
   public function queryGuiasByFuncionProceso($funcion, $proceso) {
-     if ($funcion == 'DOCENTE'){
-            if ($proceso == 'INGRESO'){
-            $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
-                    . 'FROM bibliografia '
-                    . 'WHERE PROCESO = \'INGRESO\' OR PROCESO = \'INGRESO/COMPLEMENTARIO\' '
-                    . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
-                    . 'AND PERFIL IS NOT NULL '
-                    . 'ORDER BY GUIA_DE_ESTUDIO';
-          } else {
-            $sql = 'SELECT DISTINCT PERFIL,GUIA_DE_ESTUDIO, FUNCION,PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
-                    . 'FROM bibliografia '
-                    . 'WHERE PROCESO = \'' . $proceso . '\' '
-                    . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
-                    . 'AND PERFIL IS NOT NULL  '
-                    . 'ORDER BY GUIA_DE_ESTUDIO ';
-          }
-          $sqlQuery = new SqlQuery($sql);
-          $tab = QueryExecutor::execute($sqlQuery);
-          $ret = array();
-          for ($i = 0; $i < count($tab); $i++) {
-            $ret[$i] = $this->readGuia($tab[$i]);
-          }
-          return $ret;
-     }
-     else{
-      if ($proceso == 'INGRESO'){
-      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+    if ($funcion == 'DOCENTE' && $proceso == 'INGRESO') {
+      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, '
+              . 'NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
               . 'FROM bibliografia '
-              . 'WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' '
-              . 'AND FUNCION = \'' . $funcion . '\' '
-              . 'AND PERFIL IS NOT NULL  '
-              . 'ORDER BY GUIA_DE_ESTUDIO ';
+              . 'WHERE PROCESO = \'INGRESO\' OR PROCESO = \'INGRESO/COMPLEMENTARIO\' '
+              . 'AND FUNCION = \'DOCENTE\' OR FUNCION = \'TÉCNICO DOCENTE\' '
+              . 'AND PERFIL IS NOT NULL '
+              . 'ORDER BY PROCESO,FUNCION,GUIA_DE_ESTUDIO';
     } else {
-      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
+      $sql = 'SELECT DISTINCT PERFIL, GUIA_DE_ESTUDIO, FUNCION, PROCESO, '
+              . 'NIVEL_SERVICIO, URL_GUIA, URL_PERFIL '
               . 'FROM bibliografia '
               . 'WHERE PROCESO = \'' . $proceso . '\' '
               . 'AND FUNCION = \'' . $funcion . '\' '
               . 'AND PERFIL IS NOT NULL  '
-              . 'ORDER BY GUIA_DE_ESTUDIO ';
+              . 'ORDER BY PROCESO,FUNCION,GUIA_DE_ESTUDIO ';
     }
+
     $sqlQuery = new SqlQuery($sql);
     $tab = QueryExecutor::execute($sqlQuery);
     $ret = array();
     for ($i = 0; $i < count($tab); $i++) {
       $ret[$i] = $this->readGuia($tab[$i]);
     }
-     return $ret;}
-      
-//    if ($proceso == 'INGRESO'){
-//      $sql = 'SELECT DISTINCT PERFIL, 
-//                GUIA_DE_ESTUDIO, FUNCION, 
-//                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
-//                FROM bibliografia 
-//                WHERE PROCESO = \'INGRESO\' OR \'INGRESO/COMPLEMENTARIO\' AND FUNCION = \'' . $funcion .
-//            '\' ORDER BY GUIA_DE_ESTUDIO ';
-//    } else {
-//      $sql = 'SELECT DISTINCT PERFIL, 
-//                GUIA_DE_ESTUDIO, FUNCION, 
-//                PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL
-//                FROM bibliografia 
-//                WHERE PROCESO = \'' . $proceso . '\' AND FUNCION = \'' . $funcion .
-//            '\' ORDER BY GUIA_DE_ESTUDIO ';
-//    }
-//    $sqlQuery = new SqlQuery($sql);
-//    $tab = QueryExecutor::execute($sqlQuery);
-//    $ret = array();
-//    for ($i = 0; $i < count($tab); $i++) {
-//      $ret[$i] = $this->readGuia($tab[$i]);
-//    }
-//    return $ret;
+    return $ret;
   }
 
-  public function queryGuias() {
+  function queryGuias() {
     $sql = 'SELECT DISTINCT PERFIL, '
             . ' GUIA_DE_ESTUDIO, FUNCION, '
             . ' PROCESO, NIVEL_SERVICIO, URL_GUIA, URL_PERFIL'
@@ -184,7 +140,8 @@ class BibliografiaMySqlExtDAO extends BibliografiaMySqlDAO {
     return $ret;
   }
 
-  protected function readGuia($row) {
+  protected
+          function readGuia($row) {
     $bibliografia = new Bibliografia();
     $bibliografia->pERFIL = $row['PERFIL'];
     $bibliografia->gUIADEESTUDIO = $row['GUIA_DE_ESTUDIO'];

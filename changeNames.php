@@ -1,85 +1,60 @@
 <?php
 
-$archivos = scandir ( 'guias' );
-function sanear_string($string)
-{
+include_once './include_dao.php';
 
-    $string = trim($string);
+ini_set('max_execution_time', 3000);
 
-    $string = str_replace(
-        array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
-        array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
-        $string
-    );
+convierteAscii('./guias/', 
+               DAOFactory::getBibliografiaDAO(),
+               'queryByURLGUIA',
+               'uRLGUIA');
+convierteAscii('./materiales/', 
+               DAOFactory::getBibliografiaDAO(),
+               'queryByURLMATERIAL',
+               'uRLMATERIAL');
+convierteAscii('./materialesMS/',                 
+               DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO(), 
+               'queryByURLMATERIAL',
+               'uRLMATERIAL');
 
-    $string = str_replace(
-        array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
-        array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
-        $string
-    );
-
-    $string = str_replace(
-        array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
-        array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
-        $string
-    );
-
-    $string = str_replace(
-        array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
-        array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
-        $string
-    );
-
-    $string = str_replace(
-        array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
-        array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
-        $string
-    );
-
-    $string = str_replace(
-        array('ñ', 'Ñ', 'ç', 'Ç'),
-        array('n', 'N', 'c', 'C',),
-        $string
-    );
-
-    //Esta parte se encarga de eliminar cualquier caracter extraño
-    $string = str_replace(
-        array("\\", "¨", "º", "-", "~",
-             "#", "@", "|", "!", "\"",
-             "·", "$", "%", "&", "/",
-             "(", ")", "?", "'", "¡",
-             "¿", "[", "^", "`", "]",
-             "+", "}", "{", "¨", "´",
-             ">", "< ", ";", ",", ":",
-             "."),
-        '',
-        $string
-    );
-    
-    $string = str_replace(
-        array(" "),
-        '_',
-        $string
-    );
-
-
-    return $string;
-}
-foreach ($archivos as $archivo){
-  print $archivo;
-  
-  for ($i = 0; $i<strlen ($archivo); $i++){
-    
+function quitaLetras ($cadena){
+  $respuesta = "";
+  for ($i = 0; $i<strlen($cadena); $i++){
+    if (  ctype_alpha ($cadena[$i]) ||  
+          ctype_digit ($cadena[$i]) || 
+            $cadena[$i] == '.'){
+      $respuesta = $respuesta.$cadena[$i];
+    }
   }
-  
-  print  '--';
-//  $vocales =       array('a','e','i','o','u','n','A','E','I','O','U','N','_');
-//  $vocalesAcento = array('á','é','í','ó','ú','ñ','Á','É','Í','Ó','Ú','Ñ',' ');
-//  $nuevo = str_replace ($vocalesAcento,$vocales,$archivo);
-//  
-//  $nuevo = strtr($archivo,'àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ',
-//                          'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
-  print sanear_string($archivo);
-  print  '<br>';
-//  rename ( $archivo, );
+  return $respuesta;
+}
+
+function convierteAscii($directorio, $dao, $query, $propiedad) {
+  $archivos = scandir($directorio);
+  print 'Se encontraron '.count($archivos).' archivos en '.$directorio;
+  print '<br>';
+  foreach ($archivos as $archivo) {    
+    print 'Cambiando nombre de:'.$archivo;    
+    print '<br>';
+    $texto = quitaLetras ($archivo);
+    print 'Nuevo nombre: '.$texto;
+    print '<br>';
+    $guias = $dao->$query($directorio . $archivo);    
+    print 'Se encontraron '.count($guias).' registros <br>';        
+    print 'Cambiando nombres en bases de datos...';
+    print '<br>';
+    foreach ($guias as $guia) {
+      $guia->$propiedad = $directorio . $texto;
+      $result = $dao->update($guia);
+      print 'Filas afectadas: '.$result;
+      print '<br>';
+    }
+    print 'Cambiando nombres de archivo...'.$directorio . $archivo;
+    print '<br> por: '.$directorio . $texto;
+    print '<br>';
+    $result = rename($directorio . $archivo, $directorio . $texto);
+    print 'El resultado del renombrado fue: ';
+    var_dump($result);
+    print '<br>';
+  }
 }

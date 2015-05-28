@@ -27,10 +27,13 @@
                   
                 </td>                
             </tr>
-            <tr><td><br></td></tr>
+            <tr><td><br></td> <td></td><td></td></tr>
         </table>
         
     </div>    
-    
+  <div class="text-center">
+    Horario de atención de:
+Lunes a Viernes de 9:00 a 18:00 hrs (hora del centro)
+</div>
 </div>
 <br><br><br><br><br><br>

@@ -17,7 +17,8 @@ function showMateriales($guias) {
     foreach ($guias as $guia){
         print '<br>';
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
-            print '<a href="' . $guia->uRLMATERIAL . '">';
+            print '<a href="' . $guia->uRLMATERIAL . '"'
+                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/material/'.$guia->nUMERO.'\',\'title\': \''.$guia->bIBLIOGRAFIA.'\'});">';
         }
         print trim($guia->bIBLIOGRAFIA);
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {

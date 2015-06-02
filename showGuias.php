@@ -73,15 +73,18 @@ if ($all != NULL && $all != false) {
       print '</td>';
       print '<td>';
       if ($guia->uRLGUIA !== NULL) {
-        print '<a href="' . $guia->uRLGUIA . '"> PDF </a>';
+        print '<a href="' . $guia->uRLGUIA . '"'
+                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/guia/'.$guia->gUIADEESTUDIO.'\',\'title\': \''.$guia->gUIADEESTUDIO.'\'});"> PDF </a>';
       }
       print '<td>';
 
       if ($guia->uRLPERFIL !== NULL) {
-        print '<a href="' . $guia->uRLPERFIL . '"> PDF </a>';
+        print '<a href="' . $guia->uRLPERFIL . '"'
+                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/perfil/'.$guia->pERFIL.'\',\'title\': \''.$guia->pERFIL.'\'});"> PDF </a>';
       }
       print '</td>';
-      print '<td> <a href="?m=showGuia&nombre=' . $guia->gUIADEESTUDIO . '">';
+      print '<td> <a href="?m=showGuia&nombre=' . $guia->gUIADEESTUDIO . '"'
+              . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/materiales/'.$guia->gUIADEESTUDIO.'\',\'title\': \'Materiales de '.$guia->gUIADEESTUDIO.'\'});">';
       print 'Bibliografía </a></td></tr>';
     }
     ?>

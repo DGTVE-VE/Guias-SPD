@@ -72,19 +72,19 @@ if ($all != NULL && $all != false) {
       print $guia->gUIADEESTUDIO;
       print '</td>';
       print '<td>';
-      if ($guia->uRLGUIA !== NULL) {
+      if ($guia->uRLGUIA !== NULL && trim($guia->uRLGUIA) != false) {
         print '<a href="' . $guia->uRLGUIA . '"'
-                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/guia/'.$guia->gUIADEESTUDIO.'\',\'title\': \''.$guia->gUIADEESTUDIO.'\'});"> PDF </a>';
+                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/guia/'.$guia->gUIADEESTUDIO.'\',\'title\': \''.$guia->gUIADEESTUDIO.'\'});"> PDF </a>';
       }
       print '<td>';
 
-      if ($guia->uRLPERFIL !== NULL) {
+      if ($guia->uRLPERFIL !== NULL && trim($guia->uRLPERFIL) != false) {
         print '<a href="' . $guia->uRLPERFIL . '"'
-                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/perfil/'.$guia->pERFIL.'\',\'title\': \''.$guia->pERFIL.'\'});"> PDF </a>';
+                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/perfil/'.$guia->pERFIL.'\',\'title\': \''.$guia->pERFIL.'\'});"> PDF </a>';
       }
       print '</td>';
       print '<td> <a href="?m=showGuia&nombre=' . $guia->gUIADEESTUDIO . '"'
-              . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/materiales/'.$guia->gUIADEESTUDIO.'\',\'title\': \'Materiales de '.$guia->gUIADEESTUDIO.'\'});">';
+              . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/materiales/'.$guia->gUIADEESTUDIO.'\',\'title\': \'Materiales de '.$guia->gUIADEESTUDIO.'\'});">';
       print 'Bibliografía </a></td></tr>';
     }
     ?>

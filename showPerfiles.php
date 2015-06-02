@@ -40,7 +40,8 @@ $perfiles = $dao->queryAll();
                     print '<td>';  
                     
                     if ($perfil->uRL !== NULL && trim($perfil->uRL)!= false){
-                        print '<a href="' . $perfil->uRL. '"> PDF </a>';
+                        print '<a href="' . $perfil->uRL. '"'
+                                . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/perfil/'.$perfil->pERFIL.'\',\'title\': \''.$guia->gUIADEESTUDIO.'\'});"> PDF </a>';
                     }                    
                     print '</td>';
                     

@@ -82,16 +82,19 @@ if ($all != NULL && $all != false) {
           print '<td>';
 
           if ($guia->uRLGUIA !== NULL && trim($guia->uRLGUIA) != false) {
-            print '<a href="' . $guia->uRLGUIA . '"> PDF </a>';
+            print '<a href="' . $guia->uRLGUIA . '"'
+                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/media/guia/'.$guia->gUIADEESTUDIO.'\',\'title\': \''.$guia->gUIADEESTUDIO.'\'});"> PDF </a>';
           }
           print '</td>';
           print '<td>';
 
           if ($guia->uRLPERFIL !== NULL && trim($guia->uRLPERFIL) != false) {
-            print '<a href="' . $guia->uRLPERFIL . '"> PDF </a>';
+            print '<a href="' . $guia->uRLPERFIL . '"'
+                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/media/perfil/'.$guia->pERFIL.'\',\'title\': \''.$guia->pERFIL.'\'});"> PDF </a>';
           }
           print '</td>';
-          print '<td> <a href="?m=showGuiaMS&nombre=' . $guia->gUIADEESTUDIO . '">';
+          print '<td> <a href="?m=showGuiaMS&nombre=' . $guia->gUIADEESTUDIO . '"'
+                  . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/media/materiales/'.$guia->gUIADEESTUDIO.'\',\'title\': \'Materiales de '.$guia->gUIADEESTUDIO.'\'});">';
           print 'Bibliografía </a></td></tr>';
         }
         ?>

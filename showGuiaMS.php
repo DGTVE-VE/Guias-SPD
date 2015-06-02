@@ -21,7 +21,7 @@ function showMateriales($guias) {
         print '<br>';
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '<a href="' . $guia->uRLMATERIAL . '"'
-                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/media/material/'.$guia->nUMERO.'\',\'title\': \''.$guia->bIBLIOGRAFIA.'\'});">';
+                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/media/material/'.$guia->nUMERO.'\',\'title\': \''.$guia->bIBLIOGRAFIAREVISADA.'\'});">';
         }
         print trim($guia->bIBLIOGRAFIAREVISADA);
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {

@@ -7,9 +7,13 @@ and open the template in the editor.
     Created on : 12/05/2015, 12:08:29 PM
     Author     : SMARTINEZ
 */
+
+
 *{
     /*border: 1px dashed #007FBE;*/
 }
+
+
 #footer{
     background: #8e8e8e; /* Old browsers */
     background: -moz-linear-gradient(top,  #8e8e8e 1%, #dbdbdb 63%, #ffffff 97%); /* FF3.6+ */

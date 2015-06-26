@@ -15,13 +15,6 @@ class DAOFactory{
 	}
 
 	/**
-	 * @return BibliografiaMediaSuperiorDAO
-	 */
-	public static function getBibliografiaMediaSuperiorDAO(){
-		return new BibliografiaMediaSuperiorMySqlExtDAO();
-	}
-
-	/**
 	 * @return BibliografiaMediaSuperiorNormalizadaDAO
 	 */
 	public static function getBibliografiaMediaSuperiorNormalizadaDAO(){
@@ -29,17 +22,10 @@ class DAOFactory{
 	}
 
 	/**
-	 * @return BibliografiaMsDAO
+	 * @return MaestroDAO
 	 */
-	public static function getBibliografiaMsDAO(){
-		return new BibliografiaMsMySqlExtDAO();
-	}
-
-	/**
-	 * @return PerfilesDAO
-	 */
-	public static function getPerfilesDAO(){
-		return new PerfilesMySqlExtDAO();
+	public static function getMaestroDAO(){
+		return new MaestroMySqlExtDAO();
 	}
 
 	/**

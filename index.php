@@ -140,12 +140,12 @@ if (array_key_exists($module, $modulos)) {
                           </ul>
                         </li>
                         <li class="dropdown-submenu">                          
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Supervisión</a>
                           <ul class="dropdown-menu">
                             <li>
                               <a href="filtro.php?pag=concurso&imagen=promocion-supervision-eb-web.jpg&proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA"
-                             onclick="ga('send', 'pageview', {'page': '/basica/promocion/supervision', 'title': 'Promoción Supervisión Básica'});">
+                                 onclick="ga('send', 'pageview', {'page': '/basica/promocion/supervision', 'title': 'Promoción Supervisión Básica'});">
                                 Supervisión
                               </a>
                             </li>
@@ -214,11 +214,11 @@ if (array_key_exists($module, $modulos)) {
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Educación Básica</a>
                       <ul class="dropdown-menu">
-                          <li><a href="pdf/VBReglamento_final_2015.doc.pdf">
-                              <p>PROGRAMA DE PROMOCIÓN EN LA FUNCIÓN </p>
-                              <p>POR INCENTIVOS EN LA EDUCACIÓN BÁSICA </p>
-                              <p>(sustituye al Programa de Carrera Magisterial)</p>
-                            </a></li>
+                        <li><a href="pdf/VBReglamento_final_2015.doc.pdf">
+                            <p>PROGRAMA DE PROMOCIÓN EN LA FUNCIÓN </p>
+                            <p>POR INCENTIVOS EN LA EDUCACIÓN BÁSICA </p>
+                            <p>(sustituye al Programa de Carrera Magisterial)</p>
+                          </a></li>
                       </ul>
                     </li>                    
                   </ul>
@@ -300,7 +300,7 @@ if (array_key_exists($module, $modulos)) {
                      $text = str_replace($a, $b, $text);
                      print strtolower($text);
                      ?>',
-                           'title': 'Repositorio'});">
+                             'title': 'Repositorio'});">
                        <?php
                        if ($_SESSION['nivel'] == 'MEDIA') {
                          print 'Perfiles, Parámetros e Indicadores (PPI)';
@@ -331,7 +331,7 @@ if (array_key_exists($module, $modulos)) {
                      onclick="ga('send', 'pageview', {'page': '/contacto', 'title': 'Contacto'});">
                   Contacto</a></li>
 
-  <?php if (isset($_SESSION['usuario'])) { ?>
+              <?php if (isset($_SESSION['usuario'])) { ?>
                 <h3>Administración</h3>
                 <li class="dropdown nav nav-sidebar">
                   <a data-toggle="dropdown" class="dropdown-toggle"> 
@@ -357,26 +357,33 @@ if (array_key_exists($module, $modulos)) {
                         Perfiles Educación Media Superior</a></li>
                   </ul>
                 </li>  
-            <?php } ?>
+              <?php } ?>
             </ul>
           </div>
           <div class="col-md-8">
-  <?php require $modulo; ?>
+            <?php require $modulo; ?>
           </div>
           <div class="col-md-1"></div>
         </div>
       </div>
-<?php } else {
-  ?>
+    <?php } else {
+      ?>
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-7">
+        <div class="col-md-8">
+          <?php require_once 'formNewsLetter.php'; ?>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
           <?php
           require_once $modulo;
         }
         ?>  
         <br><br>
       </div>
+
     </div>
 
     <div class="row">

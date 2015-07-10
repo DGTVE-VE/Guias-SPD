@@ -1,0 +1,168 @@
+/**{border: 2px solid red;}*/
+/* Set all parents to full height */
+html, body, 
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section { 
+    height: 100%; 
+}
+
+
+
+/* The nav is fixed on the right side  and we center it by translating it 50% 
+(we don't know it's height so we can't use the negative margin trick) */
+.cbp-fbscroller > nav {
+    /*position: fixed;
+    z-index: 9999;
+    right: 100px;
+    top: 50%;
+    width: 26px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);*/
+    margin: auto;
+    position: relative;
+    top: 25px;
+    width: 912px;
+    z-index: 100;
+}
+
+.cbp-fbscroller > nav div {
+    width: 250px;
+    height: 300px;
+    float: left;
+    margin-right: 40px;
+}
+
+.cbp-fbscroller > nav div.menucomun {
+    background-image: url("../images/bg_enlaces.png");
+    clear: both;
+    color: #000000;
+    margin-top: 199px;
+    width: 250px;
+    height:90px;
+}
+
+.cbp-fbscroller > nav div .menucomunrecursos {
+    background-image: url("../images/bg_enlaces.png");
+    clear: both;
+    color: #000000;
+    margin-top: 700px;
+    width: 50%;
+    height:900px;
+}
+
+.enlaces {
+    background-image: url("../images/bull_01.png");
+    background-position: 16px 12px;
+    background-repeat: no-repeat;
+    color: #000000;
+    display: block;
+    font-size: 15px;
+    padding: 5px 0 5px 33px;
+    text-decoration: none;
+    /*padding-top: 10px;
+    padding-bottom: 10px;
+    background-image: url("../images/bg_enlaces.png")*/
+}
+
+.cbp-fbscroller section#fbsection1 > nav {
+    margin-top: 200px;
+}
+
+nav .seccion {
+    width: 200px;
+    float: left;
+    background: khaki;
+}
+
+.cbp-fbscroller > nav a {
+    /*display: block;
+    position: relative;
+    z-index: 9999;
+    color: transparent;
+    width: 26px;
+    height: 26px;
+    outline: none;
+    margin: 25px 0;
+    border-radius: 50%;
+    border: 4px solid #fff;*/
+    background-image: url("../images/bull_01.png");
+    background-position: 16px 12px;
+    background-repeat: no-repeat;
+    color: #000000;
+    display: block;
+    font-size: 15px;
+    padding: 5px 0 5px 33px;
+    text-decoration: none;
+}
+
+.no-touch .cbp-fbscroller > nav a:hover, nav a:hover {
+    background-image: url("../images/bull_01_ov.png");
+    color: #000000;
+    font-weight: bold;
+}
+
+.no-touch .cbp-fbscroller > nav .sec_ingreso a:hover {
+    background-color: #fabe82;
+}
+
+.no-touch .cbp-fbscroller > nav .sec_promocion a:hover {
+    background-color: #91d4f6;
+}
+
+.no-touch .cbp-fbscroller > nav .sec_permanencia a:hover {
+    background-color: #bcd579;
+}
+
+.no-touch .cbp-fbscroller > nav .menucomun a:hover {
+    background-color: #dadada;
+}
+
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.no-touch .cbp-fbscroller section {
+    background-attachment: fixed;
+}
+
+#fbsection1 {
+    background-image: url(../images/1.jpg);
+    height: 783px;
+}
+
+#fbsection2 {
+    background-image: url(../images/2.jpg);
+}
+
+#fbsection3 {
+    background-image: url(../images/3.jpg);
+}
+
+#fbsection4 {
+    background-image: url(../images/4.jpg);
+}
+
+#fbsection5 {
+    background-image: url(../images/5.jpg);
+}
+
+.imagen{
+    margin-left: 30%;   
+}
+.sec_ingreso, .sec_promocion, .sec_permanencia{
+    /*margin-left: -15%;*/
+}
+
+.module{
+    box-shadow: 5px 5px 10px #000000;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}

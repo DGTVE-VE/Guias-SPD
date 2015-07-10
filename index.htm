@@ -1,7 +1,3 @@
-<?php
-session_start();
-require 'include_dao.php';
-?>
 <!DOCTYPE html>
 <html class=" js no-touch" style="" lang="en"><head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -17,13 +13,6 @@ require 'include_dao.php';
         <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">-->
         <!-- <link href="css/default.css" type="text/css" rel="stylesheet"> -->
         <link rel="stylesheet" href="css/component1.css">
-        <!--link agrego Sonia-->
-<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.js">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/css/bootstrap-modal.css">-->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-        <script src="http://getbootstrap.com/dist/js/bootstrap.js" type="text/javascript"></script>
-        
-        
         <style type="text/css">
             a:link {
                 color: #c10435;
@@ -43,7 +32,7 @@ require 'include_dao.php';
                 background-color: #E8E7E7 !important;
             }
             .titulo-naranja{
-                background-color: #F0A541 !important;
+                  background-color: #F0A541 !important;
             }
             .titulo-azul{
                 background-color: #45A0D9  !important;
@@ -59,7 +48,7 @@ require 'include_dao.php';
 
         <link href="css/style.css" type="text/css" rel="stylesheet">
 
-
+        
 
         <script src="js/jquery.js"></script>
     </head>
@@ -67,13 +56,13 @@ require 'include_dao.php';
     <body>
         <div class="container">
             <div class="row">
-                <div class="pull-right"><a href="http://10.20.12.155/prueba">Inicio</a> | <a href="#preguntasfrecuentes">Preguntas frecuentes</a> | <a href="#contacto">Contacto
-                    </a></div><a href="#contacto">
+                    <div class="pull-right"><a href="http://10.20.12.155/prueba">Inicio</a> | <a href="#preguntasfrecuentes">Preguntas frecuentes</a> | <a href="#contacto">Contacto
+                        </a></div><a href="#contacto">
             </div>
             <div class="row">
-                <br>
-                <br>
-                <br>
+            <br>
+            <br>
+            <br>
                 </a><header><a href="#contacto">
                         <img style="margin-top: -4%; margin-left: 5%;" src="propuesta_files/encabezado.png" class="img-responsive">
                     </a><h1><a href="#contacto">
@@ -110,7 +99,7 @@ require 'include_dao.php';
                             <li class="azul"><a href="#PromocionDireccionMS">.:Promoción Dirección</a></li>
                             <li class="azul"><a href="#PromocionSupervisi%C3%B3nMS">.:Promoción Supervisión</a></li>
                             <li class="azul"><a href="#PromocionATPMS">.:Promoción Asesor Técnico Pedagógico</a></li>
-
+                            
                         </ul>
                     </div>
                 </div>
@@ -118,22 +107,22 @@ require 'include_dao.php';
                     <!--<h2>PERMANENCIA</h2>-->
                     <img class="imagen img-responsive"  src="propuesta_files/ico_permanencia.png">
                     <div class="gris">
-                        <ul>
-                            <li class="verde"><a href="#permanenciaEB"><strong>Educación Básica</strong></a></li>
-                            <li class="verde"><a href="#permanenciaMS"><strong>Eduacción Media Superior</strong></a></li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li class="verde"><a href="#permanenciaEB"><strong>Educación Básica</strong></a></li>
+                        <li class="verde"><a href="#permanenciaMS"><strong>Eduacción Media Superior</strong></a></li>
+                    </ul>
+                        </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="gris">
-                        <ul>
-                            <li class="gato"> <a class="" href="http://simulador.ceneval.edu.mx/">Simulador</a></li>
-                            <li class="gato"> <a class="" href="#estrategiasestudio">Estrategias de estudio</a></li>
-                            <li class="gato"><a class="" href="#preguntasfrecuentes">Preguntas frecuentes</a></li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li class="gato"> <a class="" href="http://simulador.ceneval.edu.mx/">Simulador</a></li>
+                        <li class="gato"> <a class="" href="#estrategiasestudio">Estrategias de estudio</a></li>
+                        <li class="gato"><a class="" href="#preguntasfrecuentes">Preguntas frecuentes</a></li>
+                    </ul>
+                        </div>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <form action="resultado_repo.php?recurso=" method="get" target="new">
@@ -161,7 +150,7 @@ require 'include_dao.php';
                 </div>
                 <div class="col-md-6 module beneficios">
                     <div class="col-md-12 titulo-naranja">
-                        <h2 id="IngEducacionBasica" class="textVis">Educación Básica</h2>
+                    <h2 id="IngEducacionBasica" class="textVis">Educación Básica</h2>
                     </div>
                     <h2><p>Bienvenida</p></h2>
                     <p align="justify">Con el objetivo de ofrecer mayores 
@@ -190,30 +179,26 @@ require 'include_dao.php';
                          class="infografia" width="376" height="645">
                 </div>
             </div>
-            <div class="row descargables module x2 shadow2">
-                <div class="col-md-12 titulo-naranja">
+                <div class="row descargables module x2 shadow2">
+                    <div class="col-md-12 titulo-naranja">
                     <h3 id="IngDocentesTecnicosDocentesBasica" class="textVis">
                         Ingreso Docentes y Técnicos Docentes. Perfiles, guías y bibliografía</h3>
+                    </div>
+                    <li>                        
+                        <!--<a href="javascript:void(0);" onclick="SINO('demo1')">Perfiles, guías y bibliografía</a>-->              
+                        <a href="show.php" onclick="ga('send', 'pageview', {'page': '/guias/basica/promocion/atp',
+                           'title': 'Repositorio'});">Perfiles, guías y bibliografía</a>
+                    </li>
+                    <div id="demo1" style="display:none;">
+                        
+                    </div>
                 </div>
-                <li>                        
-                    <a href="javascript:void(0);" onclick="SINO('demo1')">Perfiles, guías y bibliografía</a>              
-                </li>
-                <div id="demo1" style="display:none;">                       
-                    <?php
-//                    proceso=INGRESO&funcion=DOCENTE&nivel=BASICA
-                    $_SESSION['nivel'] = 'BASICA';
-                    $_SESSION['funcion'] = 'DOCENTE';
-                    $_SESSION['proceso'] = 'INGRESO';
-                    require "./showGuias.php";
-                    ?>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6 module">
                         <div class="col-md-12 titulo-naranja">
-                            <h3 id="IngMediaSuperior" class="textVis">Educación Media Superior</h3></div>
+                        <h3 id="IngMediaSuperior" class="textVis">Educación Media Superior</h3></div>
                         <h2><p>Bienvenida</p></h2>
                         <p align="justify">Con el objetivo de ofrecer mayores 
                             condiciones de equidad y de igualdad de oportunidades para todos los 
@@ -241,26 +226,19 @@ require 'include_dao.php';
                              class="infografia" width="376" height="645">
                     </div>
 
-
+                    
                 </div>
             </div>
             <div class="row descargables module x2 shadow2">
                 <div class="col-md-12 titulo-naranja">
-                    <h3 id="IngDocentesTecnicosDocentesMS" class="textVis">
-                        Ingreso Docentes y Técnicos Docentes Educación Media Superior. Perfiles, guías y bibliografía
-                    </h3>
+                        <h3 id="IngDocentesTecnicosDocentesMS" class="textVis">
+                            Ingreso Docentes y Técnicos Docentes Educación Media Superior. Perfiles, guías y bibliografía
+                        </h3>
                 </div>
-                <ul><li><a href="javascript:void(0);" onclick="SINO('ingreso1')">Perfiles, guías y bibliografía</a></li></ul>
-                <div id="ingreso1" style="display:none;">                       
-                    <?php
-//                    proceso=INGRESO&funcion=DOCENTE&nivel=MEDIA
-                    $_SESSION['nivel'] = 'MEDIA';
-                    $_SESSION['funcion'] = 'DOCENTE';
-                    $_SESSION['proceso'] = 'INGRESO';
-                    require "./showGuias.php";
-                    ?>
-                </div>
-            </div>
+                        <ul>
+                            <li><a href="#">Perfiles, guías y bibliografía</a></li>
+                        </ul>
+                    </div>
 
             <div class="row">
                 <!-- EMPIEZA PROMOCIÓN -->
@@ -271,12 +249,12 @@ require 'include_dao.php';
                         <img src="propuesta_files/tit_promocion.png">
                         <div class="module">
                             <div class="col-md-12 titulo-azul">
-                                <h3 id="PromocionEduaccionBasica" class="textVis">Promoción Educación Básica</h3>
-                                <p><strong>La promoción a cargos con funciones de Dirección comprenden:</strong></p>
-                                <ul></div>
-                            <li>Directores</li>
-                            <li>Subdirectores</li>
-                            <li>Coordinadores de Actividades</li>
+                            <h3 id="PromocionEduaccionBasica" class="textVis">Promoción Educación Básica</h3>
+                            <p><strong>La promoción a cargos con funciones de Dirección comprenden:</strong></p>
+                            <ul></div>
+                                <li>Directores</li>
+                                <li>Subdirectores</li>
+                                <li>Coordinadores de Actividades</li>
                             </ul>
                             <p><strong>La promoción a cargos con funciones de supervisión, comprenden:</strong></p>
                             <ul>
@@ -298,116 +276,61 @@ require 'include_dao.php';
 
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionDireccion" class="textVis">Promoción Dirección Educación Básica</h3>
+                        <h3 id="PromocionDireccion" class="textVis">Promoción Dirección Educación Básica</h3>
                         </div>
                         <ul>
-                            <li>Dirección</li>
-                            <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPdireccion')">Perfiles, guías y bibliografía</a></li></ul>
-                            <div id="EBPdireccion" style="display:none;">                       
-                                <?php
-                                //proceso=PROMOCION&funcion=DIRECTOR&nivel=BASICA
-                                $_SESSION['nivel'] = 'BASICA';
-                                $_SESSION['funcion'] = 'DIRECTOR';
-                                $_SESSION['proceso'] = 'PROMOCION';
-                                require "./showGuias.php";
-                                ?>
-                            </div>
-                            <li>Subdirección</li>
-                            <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPsubdireccion')">Perfiles, guías y bibliografía</a></li></ul>
-                            <div id="EBPsubdireccion" style="display:none;">                       
-                                <?php
-//                                proceso=PROMOCION&funcion=SUBDIRECTOR&nivel=BASICA
-                                $_SESSION['nivel'] = 'BASICA';
-                                $_SESSION['funcion'] = 'SUBDIRECTOR';
-                                $_SESSION['proceso'] = 'PROMOCION';
-                                require "./showGuias.php";
-                                ?>
-                            </div>
-                            <li>Coordinador de Actividades</li>
-                            <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPcoordinador')">Perfiles, guías y bibliografía</a></li></ul>
-                            <div id="EBPcoordinador" style="display:none;">                       
-                                <?php
-//                                proceso=PROMOCION&funcion=COORDINADOR&nivel=BASICA
-                                $_SESSION['nivel'] = 'BASICA';
-                                $_SESSION['funcion'] = 'COORDINADOR DE ACTIVIDADES';
-                                $_SESSION['proceso'] = 'PROMOCION';
-                                require "./showGuias.php";
-                                ?>
-                            </div>
+                            <li><a href="#">Dirección</a></li>
+                            <ul>
+                                <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                            </ul>
+                            <li><a href="#">Subdirección</a></li>
+                            <ul>
+                                <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                            </ul>
+                            <li><a href="#">Coordinador de Actividades</a></li>
+                            <ul>
+                                <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                            </ul>
                         </ul>
                     </div>
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionSupervisión" class="textVis">Promoción Supervisión Educación Básica</h3>
+                        <h3 id="PromocionSupervisión" class="textVis">Promoción Supervisión Educación Básica</h3>
                         </div>
                         <ul>
-                            <li>Supervisión
-                            <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPsupervision')">Perfiles, guías y bibliografía</a></li></ul>
-                            <div id="EBPsupervision" style="display:none;">                       
-                                <?php
-//                                proceso=PROMOCION&funcion=SUPERVISOR&nivel=BASICA
-                                $_SESSION['nivel'] = 'BASICA';
-                                $_SESSION['funcion'] = 'SUPERVISOR';
-                                $_SESSION['proceso'] = 'PROMOCION';
-                                require "./showGuias.php";
-                                ?>
-                            </div>
+                            <li>
+                                <a href="#">Supervisión</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                                Jefe de Sector
-                                <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPjefe')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EBPjefe" style="display:none;">                       
-                                    <?php
-//                                proceso=PROMOCION&funcion=JEFE_SECTOR&nivel=BASICA
-                                    $_SESSION['nivel'] = 'BASICA';
-                                    $_SESSION['funcion'] = 'JEFE DE SECTOR';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuias.php";
-                                    ?>
-                                </div>
+                                <a href="#">Jefe de Sector</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                                Jefe de Enseñanza
-                                <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPensenanza')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EBPensenanza" style="display:none;">                       
-                                    <?php
-//                                proceso=PROMOCION&funcion=JEFE_ENSENANZA&nivel=BASICA
-                                    $_SESSION['nivel'] = 'BASICA';
-                                    $_SESSION['funcion'] = 'JEFE DE ENSEÑANZA';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuias.php";
-                                    ?>
-                                </div>
+                                <a href="#">Jefe de Enseñanza</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                                Inspector General
-                                <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBPinspector')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EBPinspector" style="display:none;">                       
-                                    <?php
-//                                proceso=PROMOCION&funcion=INSPECTOR&nivel=BASICA
-                                    $_SESSION['nivel'] = 'BASICA';
-                                    $_SESSION['funcion'] = 'INSPECTOR';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuias.php";
-                                    ?>
-                                </div>
+                                <a href="#">Inspector General</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionATP" class="textVis">Promoción Asesor Técnico Pedagógico Educación Básica</h3>
+                        <h3 id="PromocionATP" class="textVis">Promoción Asesor Técnico Pedagógico Educación Básica</h3>
                         </div>
-                        <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EBatp')">Perfiles, guías y bibliografía</a></li></ul>
-                        <div id="EBatp" style="display:none;">                       
-                            <?php
-//                               proceso=PROMOCION&funcion=ATP&nivel=BASICA
-                            $_SESSION['nivel'] = 'BASICA';
-                            $_SESSION['funcion'] = 'ATP';
-                            $_SESSION['proceso'] = 'PROMOCION';
-                            require "./showGuias.php";
-                            ?>
-                        </div>
+                        <ul>
+                            <li><a href="#">Perfiles, Guías y bibliografía</a></li>
+                        </ul>
                     </div>
 
 
@@ -415,7 +338,7 @@ require 'include_dao.php';
                     <div class="row">
                         <div class="beneficios col-md-6 module">
                             <div class="col-md-12 titulo-azul">
-                                <h3 id="PromocionMS" class="textVis">Promoción Educación Media Superior</h3>
+                            <h3 id="PromocionMS" class="textVis">Promoción Educación Media Superior</h3>
                             </div>
                             <p><strong>La promoción a cargos con funciones de Dirección comprenden:</strong></p>
                             <ul>
@@ -442,73 +365,38 @@ require 'include_dao.php';
 
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionDireccionMS" class="textVis">Promoción Dirección Educación Media Superior</h3>
+                        <h3 id="PromocionDireccionMS" class="textVis">Promoción Dirección Educación Media Superior</h3>
                         </div>
                         <ul>
                             <li>
-                                Dirección
-                                <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMdireccion')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EMdireccion" style="display:none;">                       
-                                    <?php
-//                               proceso=PROMOCION&funcion=DIRECTOR&nivel=MEDIA
-                                    $_SESSION['nivel'] = 'MEDIA';
-                                    $_SESSION['funcion'] = 'DIRECTOR';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuiasMS.php";
-                                    ?>
-                                </div>
+                                <a href="#">Dirección</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                                Subdirector Administrativo
-                               <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMsubdireccionad')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EMsubdireccionad" style="display:none;">                       
-                                    <?php
-//                               proceso=PROMOCION&funcion=SUBDIRECTOR_ADMINISTRATIVO&nivel=MEDIA
-                                    $_SESSION['nivel'] = 'MEDIA';
-                                    $_SESSION['funcion'] = 'SUBDIRECTOR ADMINISTRATIVO';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuiasMS.php";
-                                    ?>
-                                </div>
+                                <a href="#">Subdirector Administrativo</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                               Subdirector Académico
-                               <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMsubdireccionac')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EMsubdireccionac" style="display:none;">                       
-                                    <?php
-//                              proceso=PROMOCION&funcion=SUBDIRECTOR_ACADEMICO&nivel=MEDIA
-                                    $_SESSION['nivel'] = 'MEDIA';
-                                    $_SESSION['funcion'] = 'SUBDIRECTOR ACADÉMICO';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuiasMS.php";
-                                    ?>
-                                </div>
+                                <a href="#">Subdirector Académico</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                                Jefe de Departamento Administrativo
-                               <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMjefead')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EMjefead" style="display:none;">                       
-                                    <?php
-//                               proceso=PROMOCION&funcion=JEFE_DE_DEPARTAMENTO_ADMINISTRATIVO&nivel=MEDIA
-                                    $_SESSION['nivel'] = 'MEDIA';
-                                    $_SESSION['funcion'] = 'JEFE DE DEPARTAMENTO ADMINISTRATIVO';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuiasMS.php";
-                                    ?>
-                                </div>
+                                <a href="#">Jefe de Departamento Administrativo</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                             <li>
-                               Jefe de Departamento Académico
-                               <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMjefeac')">Perfiles, guías y bibliografía</a></li></ul>
-                                <div id="EMjefeac" style="display:none;">                       
-                                    <?php
-//                               proceso=PROMOCION&funcion=JEFE_DE_DEPARTAMENTO_ACADEMICO&nivel=MEDIA
-                                    $_SESSION['nivel'] = 'MEDIA';
-                                    $_SESSION['funcion'] = 'JEFE DE DEPARTAMENTO ACADÉMICO';
-                                    $_SESSION['proceso'] = 'PROMOCION';
-                                    require "./showGuiasMS.php";
-                                    ?>
-                                </div>
+                                <a href="#">Jefe de Departamento Académico</a>
+                                <ul>
+                                    <li><a href="#" class="textVis">Perfiles, Guías y Bibliografía</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -517,34 +405,20 @@ require 'include_dao.php';
 
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionSupervisiónMS" class="textVis">Promoción Supervisión Educación Media Superior</h3>
+                        <h3 id="PromocionSupervisiónMS" class="textVis">Promoción Supervisión Educación Media Superior</h3>
                         </div>
-                        <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMpromocion')">Perfiles, guías y bibliografía</a></li></ul>
-                        <div id="EMpromocion" style="display:none;">                       
-                            <?php
-//                               proceso=PROMOCION&funcion=SUPERVISOR&nivel=MEDIA
-                            $_SESSION['nivel'] = 'MEDIA';
-                            $_SESSION['funcion'] = 'SUPERVISOR';
-                            $_SESSION['proceso'] = 'PROMOCION';
-                            require "./showGuiasMS.php";
-                            ?>
-                        </div>
+                        <ul>
+                            <li><a href="#">Perfiles, Guías y bibliografía</a></li>
+                        </ul>
                     </div>
 
                     <div class="col-md-12 module x2 shadow2">
                         <div class="col-md-12 titulo-azul">
-                            <h3 id="PromocionATPMS" class="textVis">Promoción Asesor Técnico Pedagógico Educación Media Superior</h3>
+                        <h3 id="PromocionATPMS" class="textVis">Promoción Asesor Técnico Pedagógico Educación Media Superior</h3>
                         </div>
-                        <ul><li><a class="textVis" href="javascript:void(0);" onclick="SINO('EMatp')">Perfiles, guías y bibliografía</a></li></ul>
-                        <div id="EMatp" style="display:none;">                       
-                            <?php
-//                               proceso=PROMOCION&funcion=ATP&nivel=MEDIA
-                            $_SESSION['nivel'] = 'MEDIA';
-                            $_SESSION['funcion'] = 'ATP';
-                            $_SESSION['proceso'] = 'PROMOCION';
-                            require "./showGuiasMS.php";
-                            ?>
-                        </div>
+                        <ul>
+                            <li><a href="#">Perfiles, Guías y bibliografía</a></li>
+                        </ul>
                     </div>
 
                 </div>
@@ -560,41 +434,41 @@ require 'include_dao.php';
                     </div>
                     <div class="module">
                         <div class="module x2 shadow2 col-md-12">
-                            <div class="col-md-12 titulo-verde">
-                                <h3 id="permanenciaEB" class="textVis">PERMANENCIA EDUCACIÓN BÁSICA</h3>
-                            </div>
+                           <div class="col-md-12 titulo-verde">
+                            <h3 id="permanenciaEB" class="textVis">PERMANENCIA EDUCACIÓN BÁSICA</h3>
+                           </div>
                             <p><strong>Texto permanencia Educación Básica</strong></p>
                         </div>
                         <div class="module x2 shadow2 col-md-12">
                             <div class="col-md-12 titulo-verde">
-                                <h3 id="procedimiento3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN BÁSICA</h3>
+                            <h3 id="procedimiento3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN BÁSICA</h3>
                             </div>
                             <p>Texto Permanencia Educación Básica</p>
-
+                            
                         </div>
                         <div class="module x2 shadow2 col-md-12">
                             <div class="col-md-12 titulo-verde">
-                                <h3 id="guiaEstudio3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN BÁSICA 2</h3>
+                            <h3 id="guiaEstudio3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN BÁSICA 2</h3>
                             </div>
                             <p>Texto Permanencia Educación Básica2</p>
                         </div>
                         <div class="beneficios module col-md-12">
                             <div>
                                 <div class="col-md-12 titulo-verde">
-                                    <h3 id="permanenciaMS" class="textVis">PERMANENCIA EDUCACIÓN MEDIA SUPERIOR</h3>
+                                <h3 id="permanenciaMS" class="textVis">PERMANENCIA EDUCACIÓN MEDIA SUPERIOR</h3>
                                 </div>
                             </div>
                             <p>Texto introducción permanencia Educación Media Superior</p>
                         </div>
                         <div class="module x2 shadow2 col-md-12">
                             <div class="col-md-12 titulo-verde">
-                                <h3 id="procedimiento3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN MEDIA SUPERIOR</h3>
+                            <h3 id="procedimiento3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN MEDIA SUPERIOR</h3>
                             </div>
                             <p>Texto Permanencia Educación Media Superior</p>
                         </div>
                         <div class="module x2 shadow2 col-md-12">
                             <div class="col-md-12 titulo-verde">
-                                <h3 id="guiaEstudio3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN MEDIA SUPERIOR 2</h3>
+                            <h3 id="guiaEstudio3" class="textVis">TEXTO PERMANENCIA EDUCACIÓN MEDIA SUPERIOR 2</h3>
                             </div>
                             <p>Texto Permanencia Educación Media Superior 2</p>
                         </div>
@@ -608,7 +482,7 @@ require 'include_dao.php';
                 <div class="col-md-12">
                     <div class="module x2 shadow2 col-md-12">
                         <div class="col-md-12 titulo-gris">
-                            <h3 id="estrategiasestudio" class="textVis">ESTRATEGIAS DE ESTUDIO</h3>
+                        <h3 id="estrategiasestudio" class="textVis">ESTRATEGIAS DE ESTUDIO</h3>
                         </div>
                         <h2><p align="center"><strong>Estrategias y sugerencias para preparar el Concurso de Oposición</strong></p></h2>
                         <p align="justify">El Concurso de Oposición para el Ingreso 
@@ -781,7 +655,7 @@ require 'include_dao.php';
 
                     <div class="module col-md-12">
                         <div class="col-md-12 titulo-gris">
-                            <h3 id="preguntasfrecuentes" class="textVis">PREGUNTAS FRECUENTES</h3>
+                        <h3 id="preguntasfrecuentes" class="textVis">PREGUNTAS FRECUENTES</h3>
                         </div>
                         <h4><strong>¿Cómo puedo modificar mis datos cuando ya he iniciado el proceso de Pre-registro pero 
                                 aún no obtengo mi ficha? </strong></h4>
@@ -874,7 +748,7 @@ require 'include_dao.php';
                     <div class="beneficios row">
                         <div class="col-md-6 module">
                             <div class="col-md-12 titulo-gris">
-                                <h3 id="contacto" class="textVis">CONTACTO</h3>
+                            <h3 id="contacto" class="textVis">CONTACTO</h3>
                             </div>
                             <p>Mesa de ayuda</p>
                             <p>Tel. 01 800 288 1566</p>
@@ -900,27 +774,27 @@ require 'include_dao.php';
         COMIENZA SECCIÓN FINAL -->
         <a class="cd-top" href="#0">Top</a>
         <script src="Propuesta_files/main.js">
-<!-- Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/main.js -->
+    <!-- Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/main.js -->
         </script>
         <script src="Propuesta_files/jquery.htm">
-<!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.easing.min.js-->
+    <!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.easing.min.js-->
         </script>
         <script src="Propuesta_files/waypoints.htm">
-                            <!--Reargar la página para obtener la fuente:
+            <!--Reargar la página para obtener la fuente:
         http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/waypoints.min.js-->
         </script>
         <script src="Propuesta_files/jquery_002.htm">
-<!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.debouncedresize.js-->
+    <!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.debouncedresize.js-->
         </script>
 
     </div></div></body></html>
 <script>
-    function SINO(cual) {
-        var elElemento = document.getElementById(cual);
-        if (elElemento.style.display === 'block') {
-            elElemento.style.display = 'none';
-        } else {
-            elElemento.style.display = 'block';
-        }
-    }
+function SINO(cual) {
+   var elElemento=document.getElementById(cual);
+   if(elElemento.style.display === 'block') {
+      elElemento.style.display = 'none';
+   } else {
+      elElemento.style.display = 'block';
+   }
+}
 </script>

@@ -138,7 +138,7 @@ require 'include_dao.php';
                 <div class="col-xs-8 col-sm-8 col-md-8">
                     <form action="resultado_repo.php?recurso=" method="get" target="new">
                         <div class="col-xs-12 col-sm-4 col-md-4">
-                            <img src="Propuesta_files/recursos.png" class="img-responsive">
+                            <img src="propuesta_files/recursos.png" class="img-responsive">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4">
                             <div class="col-xs-8 col-sm-10 col-md-10">
@@ -147,7 +147,7 @@ require 'include_dao.php';
                             </div>      
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <br>
-                                <input src="Propuesta_files/icon_lupa.png" alt="" name="button" id="button" value="Enviar" type="image" width="50" height="50">
+                                <input src="propuesta_files/icon_lupa.png" alt="" name="button" id="button" value="Enviar" type="image" width="50" height="50">
                             </div>
                         </div>
                     </form>
@@ -186,7 +186,7 @@ require 'include_dao.php';
                         cotidiana. </p>
                 </div>
                 <div class="col-md-6" style="text-align: center; font-style: italic;">
-                    <img src="Propuesta_files/ingreso-eb-web.jpg" alt="Infografía ingreso Educación Básica" 
+                    <img src="propuesta_files/ingreso-eb-web.jpg" alt="Infografía ingreso Educación Básica" 
                          class="infografia" width="376" height="645">
                 </div>
             </div>
@@ -237,7 +237,7 @@ require 'include_dao.php';
                             cotidiana. </p>
                     </div>
                     <div class="col-md-6" style="text-align: center; font-style: italic;">
-                        <img src="Propuesta_files/Ing_MS.jpg" alt="Infografía ingreso Educación Básica" 
+                        <img src="propuesta_files/Ing_MS.jpg" alt="Infografía ingreso Educación Básica" 
                              class="infografia" width="376" height="645">
                     </div>
 
@@ -292,7 +292,7 @@ require 'include_dao.php';
                         </div>
                     </div>
                     <div class="col-md-6" style="text-align: center; font-style: italic;">
-                        <img src="Propuesta_files/promocion-direccion-eb-web.jpg" alt="Infografía ingreso Educación Básica" 
+                        <img src="propuesta_files/promocion-direccion-eb-web.jpg" alt="Infografía ingreso Educación Básica" 
                              class="infografia" width="376" height="645">
                     </div>
 
@@ -435,7 +435,7 @@ require 'include_dao.php';
                                 </li></ul>
                         </div>
                         <div class="col-md-6" style="text-align: center; font-style: italic;">
-                            <img src="Propuesta_files/promocion-direccion-ems-web.jpg" alt="Infografía ingreso Educación Básica" 
+                            <img src="propuesta_files/promocion-direccion-ems-web.jpg" alt="Infografía ingreso Educación Básica" 
                                  class="infografia" width="376" height="645">
                         </div>
                     </div> 
@@ -663,7 +663,7 @@ require 'include_dao.php';
                             relacionados con los parámetros, indicadores y aspectos a evaluar, lo 
                             cual constituye un insumo fundamental para la preparación de los 
                             aspirantes.</p>
-                        <img class="infografia1" alt="Estrategias de estudio" src="Propuesta_files/estrategias.png" width="100%" height="auto">
+                        <img class="infografia1" alt="Estrategias de estudio" src="propuesta_files/estrategias.png" width="100%" height="auto">
                         <h4><p align="left"><strong>Recomendaciones para el estudio</strong></p></h4>
                         <h4><p align="left"><strong>Sesiones de estudio</strong></p></h4>
                         <ul>
@@ -884,7 +884,7 @@ require 'include_dao.php';
                         </div>
                     </div>
                 </div></div>
-            <img src="Propuesta_files/FRANJA-LOGOS-WEB.jpg" width="100%" height="102" align="middle">
+            <img src="propuesta_files/FRANJA-LOGOS-WEB.jpg" width="100%" height="102" align="middle">
         </div>
 
 
@@ -899,17 +899,17 @@ require 'include_dao.php';
         
         COMIENZA SECCIÓN FINAL -->
         <a class="cd-top" href="#0">Top</a>
-        <script src="Propuesta_files/main.js">
+        <script src="propuesta_files/main.js">
 <!-- Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/main.js -->
         </script>
-        <script src="Propuesta_files/jquery.htm">
+        <script src="propuesta_files/jquery.htm">
 <!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.easing.min.js-->
         </script>
-        <script src="Propuesta_files/waypoints.htm">
+        <script src="propuesta_files/waypoints.htm">
                             <!--Reargar la página para obtener la fuente:
         http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/waypoints.min.js-->
         </script>
-        <script src="Propuesta_files/jquery_002.htm">
+        <script src="propuesta_files/jquery_002.htm">
 <!--Reargar la página para obtener la fuente: http://sems.gob.mx/work/models/sems/OrientacionServicioProfesionalDocente/js/jquery.debouncedresize.js-->
         </script>
 

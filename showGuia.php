@@ -2,8 +2,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-//require_once './include_dao.php';
-
 
 $nombre = filter_input(INPUT_GET, 'nombre');
 

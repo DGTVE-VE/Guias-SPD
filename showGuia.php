@@ -20,14 +20,18 @@ function showMateriales($guias) {
         print '<br>';
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '<a href="' . $guia->uRLMATERIAL . '"'
-                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/material/'.$guia->nUMERO.'\',\'title\': \''.$guia->bIBLIOGRAFIA.'\'});">';
+                    . ' onclick="ga(\'send\', \'pageview\', {\'page\': \'/basica/material/'
+                    .$guia->nUMERO.'\',\'title\': \''.$guia->bIBLIOGRAFIA.'\'});">';
         }
         print trim($guia->bIBLIOGRAFIA);
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '</a>';
         }
-        print '<br>';
+        print '<br><br>';
+        print '<button class="btn btn-success" value="">Si me sirvió este material</button> ';
+        print '<button class="btn btn-default" value="">No me sirvió este material</button> ';
         print '<hr>';
+        
     }
 }
 ?>

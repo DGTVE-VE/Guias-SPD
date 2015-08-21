@@ -27,7 +27,13 @@ function showMateriales($guias) {
         if ($guia->uRLMATERIAL !== NULL && trim($guia->uRLMATERIAL) != false && $guia->uRLMATERIAL != '#') {
             print '</a>';
         }
-        print '<br>';
+        print '<br><br>';
+        if (!isset($_SESSION['feedbackbiblioMS_'.$guia->nUMERO])){
+            print '<div id="btn_'.$guia->nUMERO.'">';
+            print '<button class="btn btn-success" onclick="sendData ('.$guia->nUMERO.', 1)">Si me sirvió este material</button> ';
+            print '<button class="btn btn-default" onclick="sendData ('.$guia->nUMERO.', 0)">No me sirvió este material</button> ';
+            print '</div>';
+        } 
         print '<hr>';
     }
 }
@@ -101,3 +107,32 @@ function showMateriales($guias) {
         </div>
     </div>
 </div>
+<script>
+    function sendData (guia, respuesta ){
+        $.ajax({
+            method: "POST",
+            url: "guardaCalificacionBiblioMS.php",
+           data: { calificacion: respuesta, guia: guia }
+        })
+        .done(function( msg ) {            
+            console.log(msg);
+            div = $('#btn_'+guia);
+            div.hide();            
+        });
+    }
+    
+    /*
+     * Equivalente a var_dump de PHP
+     * 
+     * @param {HTMLObject} obj
+     * @returns {undefined}
+     */
+    function dump(obj) {
+        var out = '';
+        for (var i in obj) {
+            out += i + ": " + obj[i] + "\n";
+        }
+        alert(out);
+}
+
+</script>

@@ -26,4 +26,13 @@
 	require_once('class/mysql/UsuariosMySqlDAO.class.php');
 	require_once('class/mysql/ext/UsuariosMySqlExtDAO.class.php');
 
+        require_once 'class/dao/FeedBackBiblioDAO.class.php';
+        require_once 'class/dto/FeedBackBiblio.class.php';
+        require_once 'class/mysql/FeedBackBiblioMySqlDAO.class.php';
+        require_once 'class/mysql/ext/FeedBackBiblioMySqlExtDAO.class.php';
+        
+        require_once 'class/dao/FeedBackBiblioMSDAO.class.php';
+        require_once 'class/dto/FeedBackBiblioMS.class.php';
+        require_once 'class/mysql/FeedBackBiblioMSMySqlDAO.class.php';
+        require_once 'class/mysql/ext/FeedBackBiblioMSMySqlExtDAO.class.php';
 ?>

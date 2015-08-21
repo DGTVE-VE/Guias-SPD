@@ -35,6 +35,10 @@ class DAOFactory{
 		return new UsuariosMySqlExtDAO();
 	}
 
-
+	/**
+	 * @return PreguntasFrecuentesDAO
+	 */
+	public static function getPreguntasFrecuentesDAO(){
+		return new PreguntasFrecuentesMySqlDAO();
+	}
 }
-?>

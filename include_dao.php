@@ -29,14 +29,14 @@
 	require_once('class/mysql/UsuariosMySqlDAO.class.php');
 	require_once('class/mysql/ext/UsuariosMySqlExtDAO.class.php');
 
-<<<<<<< HEAD
+
         require_once('class/dao/PreguntasFrecuentesDAO.class.php');
 	require_once('class/dto/PreguntasFrecuentes.class.php');
 	require_once('class/mysql/PreguntasFrecuentesMySqlDAO.class.php');
 	require_once('class/mysql/ext/PreguntasFrecuentesMySqlExtDAO.class.php');
         
-||||||| merged common ancestors
-=======
+
+
         require_once 'class/dao/FeedBackBiblioDAO.class.php';
         require_once 'class/dto/FeedBackBiblio.class.php';
         require_once 'class/mysql/FeedBackBiblioMySqlDAO.class.php';
@@ -46,5 +46,5 @@
         require_once 'class/dto/FeedBackBiblioMS.class.php';
         require_once 'class/mysql/FeedBackBiblioMSMySqlDAO.class.php';
         require_once 'class/mysql/ext/FeedBackBiblioMSMySqlExtDAO.class.php';
->>>>>>> 83afd421216af30044aff8777600db2f9f055cce
+
 ?>

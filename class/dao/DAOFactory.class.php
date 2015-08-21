@@ -7,6 +7,12 @@
  */
 class DAOFactory{
 	
+        public static function getFeedBackBibilioMSDAO (){
+            return new FeedBackBiblioMSMySQLExtDAO ();
+        }
+        public static function getFeedBackBibilioDAO (){
+            return new FeedBackBiblioMySQLExtDAO ();
+        }
 	/**
 	 * @return BibliografiaDAO
 	 */

@@ -371,7 +371,7 @@ if (array_key_exists($module, $modulos)) {
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <?php require_once 'formNewsLetter.php'; ?>
+          <?php // require_once 'formNewsLetter.php'; ?>
         </div>
       </div>
       <div class="row">

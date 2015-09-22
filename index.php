@@ -31,7 +31,8 @@ $modulos = [
     "showPerfilesMS" => "showPerfilesMS.php",
     "concurso" => "concurso.php",
     "show" => "show.php",
-    "enconstruccion" => "enconstruccion.php"
+    "enconstruccion" => "enconstruccion.php",
+    "reconocimiento" => "reconocimiento.php"
 ];
 
 //Modulo por default
@@ -223,7 +224,7 @@ if (array_key_exists($module, $modulos)) {
                     </li>                    
                   </ul>
                 </li>
-                <li><a href="?m=enconstruccion" class="dropdown-toggle"
+                <li><a href="?m=reconocimiento" class="dropdown-toggle"
                        onclick="ga('send', 'pageview', {'page': '/reconocimiento', 'title': 'Reconocimiento'});">
                     Reconocimiento</a></li>
                 <li><a href="?m=enconstruccion" class="dropdown-toggle"
@@ -272,6 +273,7 @@ if (array_key_exists($module, $modulos)) {
     if (!in_array($modulo, array("home.php",
                 "enconstruccion.php",
                 "repositorio.php",
+                "reconocimiento.php",
                 "contacto.php"))) {
       ?>
       <div class="container-fluid theme-showcase" role="main">                        

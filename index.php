@@ -32,7 +32,9 @@ $modulos = [
     "concurso" => "concurso.php",
     "show" => "show.php",
     "enconstruccion" => "enconstruccion.php",
-    "reconocimiento" => "reconocimiento.php"
+    "reconocimiento" => "reconocimiento.php",
+    "reconocimientoBasica" => "reconocimientoBasica.php",
+    "reconocimientoMedia" => "reconocimientoMedia.php"
 ];
 
 //Modulo por default
@@ -274,7 +276,10 @@ if (array_key_exists($module, $modulos)) {
                 "enconstruccion.php",
                 "repositorio.php",
                 "reconocimiento.php",
-                "contacto.php"))) {
+                "contacto.php",
+                "reconocimientoBasica",
+                "reconocimientoMedia"
+        ))) {
       ?>
       <div class="container-fluid theme-showcase" role="main">                        
         <div class="row"> 

@@ -32,9 +32,7 @@ $modulos = [
     "concurso" => "concurso.php",
     "show" => "show.php",
     "enconstruccion" => "enconstruccion.php",
-    "reconocimiento" => "reconocimiento.php",
-    "reconocimientoBasica" => "reconocimientoBasica.php",
-    "reconocimientoMedia" => "reconocimientoMedia.php"
+    "permanencia" => "permanencia.php"
 ];
 
 //Modulo por default
@@ -226,12 +224,41 @@ if (array_key_exists($module, $modulos)) {
                     </li>                    
                   </ul>
                 </li>
-                <li><a href="?m=reconocimiento" class="dropdown-toggle"
-                       onclick="ga('send', 'pageview', {'page': '/reconocimiento', 'title': 'Reconocimiento'});">
-                    Reconocimiento</a></li>
                 <li><a href="?m=enconstruccion" class="dropdown-toggle"
-                       onclick="ga('send', 'pageview', {'page': '/permanencia', 'title': 'Permanencia'});">
-                    Permanencia</a></li>
+                       onclick="ga('send', 'pageview', {'page': '/reconocimiento', 'title': 'reconocimiento'});">
+                    Reconocimiento</a></li>
+                <li>
+                  <a href="?m=permanencia" class="dropdown-toggle" data-toggle="dropdown"
+                     onclick="ga('send', 'pageview', {'page': '/permanencia', 'title': 'Permanencia'});">
+                    Permanencia
+                    <b class="caret"></b></a>
+                  <ul class="dropdown-menu multi-level">
+                    <li class="dropdown-submenu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Educación Básica</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="?m=permanencia&nivel=BASICA&funcion=EDD"
+                               onclick="ga('send', 'pageview', {'page': '/permanencia', 'title': 'Evaluación de Desempeño Docente'});">
+                            <p>Evaluación del Desempeño Docente</p>
+                          </a></li>
+                        <li><a href="?m=permanencia&nivel=BASICA&funcion=EDPFD"
+                               onclick="ga('send', 'pageview', {'page': '/permanencia', 'title': 'Evaluación del Desempeño de Personal con Funciones de Dirección'});">
+                            <p>Evaluación del Desempeño de Personal con Funciones de Dirección</p>
+                          </a></li>
+                      </ul>
+                    </li>  
+                    <li class="dropdown-submenu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Educación Media Superior</a>
+                      <ul class="dropdown-menu">
+                    <li><a href="?m=permanencia&nivel=MEDIA&funcion=EDD"
+                               onclick="ga('send', 'pageview', {'page': '/permanencia', 'title': 'Evaluación del Desempeño Docente 2015-2016'});">
+                            <p>Evaluación del Desempeño Docente 2015-2016</p>
+                          </a></li>
+                      </ul>
+                    </li>      
+                  </ul>
+                </li>
                 <li><a href="?m=repositorio" class="dropdown-toggle"
                        onclick="ga('send', 'pageview', {'page': '/repositorio', 'title': 'Repositorio'});">
                     Repositorio</a></li>
@@ -275,14 +302,13 @@ if (array_key_exists($module, $modulos)) {
     if (!in_array($modulo, array("home.php",
                 "enconstruccion.php",
                 "repositorio.php",
-                "reconocimiento.php",
                 "contacto.php",
-                "reconocimientoBasica",
-                "reconocimientoMedia"
+                "permanencia.php",
         ))) {
       ?>
       <div class="container-fluid theme-showcase" role="main">                        
-        <div class="row"> 
+        <div class="row">
+          
           <div class="col-md-1"></div>
           <div class="col-md-2 sidebar"><b>
               <?php

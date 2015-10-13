@@ -369,522 +369,132 @@
                 </tbody>
             </table>
         </div>    
-        <div class="col-md-9">
-            <h3>Normatividad (Acuerdos Secretariales)</h3>
-            <table class="table table-bordered">
-                <thead>
-                <th>Acuerdo Secretarial</th>
-                <th>Documento</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Acuerdo No. 442, Sistema Nacional de Bachillerato</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 444, Competencias, Marco Curricular Común</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 445, Opciones Educativas en Diferentes Modalidades</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 447, Competencias Docentes, Modelo Escolarizado</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 449, Competencias Perfil Director</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 486, Competencias Disciplinares, Bachillerato General</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                    <tr>
-                        <td>Acuerdo No. 488, Modificación de los Acuerdos 442, 444, 447</td>
-                        <td><a href="pdf/">PDF</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>    
-
-    </div>
-</div>    
-
-
-
-
-
-<div class="container">
-    <div class="row col-md-9">
         <h3>Guías para el Expediente de Evidencias de Enseñanza:</h3>
         <table class="table table-bordered">
             <thead>
-            <th>Nivel / Asignatura / Servicio</th>
+            <th>Disciplina </th>
             <th>Guía Académica</th>
             <th>Guía Técnica</th>
             </thead>
             <tbody>
                 <tr>
                     <td>Matemáticas</td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_MAT.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Dibujo</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_DBJ.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Biología</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_BIO.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Ciencias de la Salud</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_CIESAL.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Física</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_FIS.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Geografía</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_GEO.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Química</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_QUIM">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                                 <tr>
                     <td>Psicología</td>
+                    <td><a href="">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Humanidades</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HUM.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Historia del Arte</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HISAR.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Economía</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ECON.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Derecho</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_DER.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Administración</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ADM.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Historia</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HIST.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Sociología y Política</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_SOCPOL.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Metodología de la Investigación</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_METINV.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Literatura</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_LIT.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Lectura, Expresión Oral y Escrita</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_LEXOES.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Informática</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_INFO.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Etimología grecolatina</td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ETIM.pdf">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                    <td><a href="pdf/">PDF</a></td>
                 </tr>                                                       
             </tbody>
         </table>
-    </div>
-    <div class="col-md-9">
-        <h3>Guías para el Informe de Cumplimiento de Responsabilidades:</h3>
-        <table class="table table-bordered">
-            <thead>
-            <th>Instrumento</th>
-            <th>Guía Académica</th>
-            <th>Guía Técnica</th>
-            </thead>
-            <tbody>
-                <tr>
-                   <td>Informe de Cumplimiento de Responsabilidades Profesionales</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>                         
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-9">
-        <h3>Guías para la Planeación didáctica argumentada</h3>
-        <table class="table table-bordered">
-            <thead>
-            <th>Disciplina</th>
-            <th>Guía Académica</th>
-            <th>Guía Técnica</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Matemáticas</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Dibujo</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Biología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Ciencias de la Salud</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Física</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Geografía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Química</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                                <tr>
-                    <td>Psicología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Humanidades</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia del Arte</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Economía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Derecho</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Administración</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Sociología y Política</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Metodología de la Investigación</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Literatura</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Lectura, Expresión Oral y Escrita</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Informática</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Etimología grecolatina</td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>                                                       
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-9">
-        <h3>Guías para el examen de conocimientos</h3>
-        <table class="table table-bordered">
-            <thead>
-            <th>Disciplina</th>
-            <th>Guía</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Matemáticas</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Dibujo</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Biología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Ciencias de la Salud</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Física</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Geografía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Química</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Psicología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Humanidades</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia del Arte</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Economía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Derecho</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Administración</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Sociología y Política</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Metodología de la Investigación</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Literatura</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Lectura, Expresión Oral y Escrita</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Informática</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Etimología grecolatina</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>                                                       
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-9">
-        <h3>Guías para el examen de casos de competencias didácticas</h3>
-        <table class="table table-bordered">
-            <thead>
-            <th>Disciplina</th>
-            <th>Guía</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Matemáticas</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Dibujo</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Biología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Ciencias de la Salud</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Física</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Geografía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Química</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Psicología</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Humanidades</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia del Arte</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Economía</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Derecho</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Administración</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Historia</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Sociología y Política</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Metodología de la Investigación</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Literatura</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Lectura, Expresión Oral y Escrita</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Informática</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Etimología grecolatina</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>                                                       
-            </tbody>
-        </table>
-    </div>    
-    <div class="col-md-9">
-        <h3>Normatividad (Acuerdos Secretariales)</h3>
-        <table class="table table-bordered">
-            <thead>
-            <th>Acuerdo Secretarial</th>
-            <th>Documento</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Acuerdo No. 442, Sistema Nacional de Bachillerato</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 444, Competencias, Marco Curricular Común</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 445, Opciones Educativas en Diferentes Modalidades</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 447, Competencias Docentes, Modelo Escolarizado</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 449, Competencias Perfil Director</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 486, Competencias Disciplinares, Bachillerato General</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Acuerdo No. 488, Modificación de los Acuerdos 442, 444, 447</td>
-                   <td><a href="pdf/">PDF</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>    
-    
-</div>
-
-
-<!--        <ul>
-            <li><a href="pdf/">Perfiles, parámetros e indicadores</a></li>
-            <li><a href="pdf/">Etapas, aspectos, métodos e instrumentos</a></li>
-
-        </ul>-->

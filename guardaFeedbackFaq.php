@@ -73,6 +73,7 @@ function almacenaFaq($faq, $resp) {
     $PreguntasFrecuentes->numPregunta = $faq;
     $dao = DAOFactory::getPreguntasFrecuentesDAO();
     $dao->insert($PreguntasFrecuentes);
+    header('Location: index.php?m=preguntas_frecuentes');
 }
 
-header('Location: index.php?m=preguntas_frecuentes');
+

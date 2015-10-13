@@ -380,121 +380,105 @@
                 <tr>
                     <td>Matemáticas</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_MAT.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_MAT.pdf">PDF</a></td>                   
                 </tr>
                 <tr>
                     <td>Dibujo</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_DBJ.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_DBJ.pdf">PDF</a></td>                   
                 </tr>
                 <tr>
                     <td>Biología</td>
-                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_BIO.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_BIO.pdf">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_BIO.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Ciencias de la Salud</td>
-                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_CIESAL.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_CIESAL.pdf">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_CIESAL.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Física</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_FIS.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_FIS.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Geografía</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_GEO.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_GEO.pdf">PDF</a></td>
+                   
                 </tr>
                 <tr>
                     <td>Química</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_QUIM">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_QUIM">PDF</a></td>                   
                 </tr>
                                 <tr>
                     <td>Psicología</td>
-                    <td><a href="">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td></td>
+                   <td></td>
                 </tr>
                 <tr>
                     <td>Humanidades</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HUM.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_HUM.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Historia del Arte</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HISAR.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_HISAR.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Economía</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ECON.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_ECON.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Derecho</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_DER.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_DER.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Administración</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ADM.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_ADM.pdf">PDF</a></td>
+                   
                 </tr>
                 <tr>
                     <td>Historia</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_HIST.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_HIST.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Sociología y Política</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_SOCPOL.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                    <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_SOCPOL.pdf">PDF</a></td>
+                   
                 </tr>
                 <tr>
                     <td>Metodología de la Investigación</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_METINV.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_METINV.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Literatura</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_LIT.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_LIT.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Lectura, Expresión Oral y Escrita</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_LEXOES.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_LEXOES.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Informática</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_INFO.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_INFO.pdf">PDF</a></td>
                 </tr>
                 <tr>
                     <td>Etimología grecolatina</td>
                     <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Academicas/EMS_Desemp_GuiaAca_ETIM.pdf">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
-                   <td><a href="pdf/">PDF</a></td>
+                   <td><a href="MS/Guías para el Expediente de Evidencias de Enseñanza/Tecnicas/EMS_GuiaTec_ETIM.pdf">PDF</a></td>
                 </tr>                                                       
             </tbody>
         </table>

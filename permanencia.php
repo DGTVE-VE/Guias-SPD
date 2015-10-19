@@ -159,6 +159,7 @@
                                         <td><a href="permanencia/MS/Guías para el Informe de Cumplimiento de Responsabilidades/EMS_Desempeno_IRP_Director.pdf"  target="_blank" >PDF</a></td>
                                         <td><a href="permanencia/MS/Guías para el Informe de Cumplimiento de Responsabilidades/EMS_Guia_Tecnica_DIRECTOR_IRP.pdf"  target="_blank" >PDF</a></td>                   
                                     </tr>
+
                                 </tbody>
                             </table>            
                         </div><!--fin EM2-->
@@ -166,7 +167,7 @@
                             <h3>Guías para la Planeación Didáctica Argumentada:</h3>
                             <table class="table table-bordered">
                                 <thead>
-                                <th>Instrumento </th>
+                                <th>Disciplina </th>
                                 <th>Guía Académica</th>
                                 <th>Guía Técnica</th>
                                 </thead>

@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Guias-SPD/permanencia.php</file>
             <file>file:/C:/xampp/htdocs/Guias-SPD/showGuias.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/api/material.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/showGuiasMS.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/class/mysql/ext/BibliografiaMySqlExtDAO.class.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/api/guias.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/showGuia.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/class/mysql/ext/BibliografiaMediaSuperiorNormalizadaMySqlExtDAO.class.php</file>
             <file>file:/C:/xampp/htdocs/Guias-SPD/show.php</file>
-            <file>file:/C:/xampp/htdocs/Guias-SPD/index.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/showGuiaMS.php</file>
+            <file>file:/C:/xampp/htdocs/Guias-SPD/class/dao/DAOFactory.class.php</file>
         </group>
     </open-files>
 </project-private>

@@ -8,7 +8,7 @@ class Material_api {
         $dimension = filter_input(INPUT_GET, 'dimension');
         $nivel = filter_input(INPUT_GET, 'nivel');
 
-        if ($nivel === 'MEDIA') {
+        if ($nivel === 'BASICA') {
             $dao = DAOFactory::getBibliografiaDAO();
         } else {
             $dao = DAOFactory::getBibliografiaMediaSuperiorNormalizadaDAO();
